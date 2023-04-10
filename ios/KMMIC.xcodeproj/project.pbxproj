@@ -10,6 +10,7 @@
 		1C78D463CC922763F6615AC8 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16897117C3D255AD607579B5 /* ApplicationSpec.swift */; };
 		21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176DD13AA12CA27C74DEA58 /* UseCaseFactoryProtocol.swift */; };
 		22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59BFCE88DF2FA38BD7670FB /* Navigator.swift */; };
+		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
 		3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087CA974BF0EEE1A2205E776 /* LaunchScreen.storyboard */; };
 		45C74EE307D4EC4F0E5578AC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16A793A2861119518D934C /* R.generated.swift */; };
 		4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427DE4B2A263982BCACC180 /* KIF+Swift.swift */; };
@@ -95,6 +96,7 @@
 		26D27737E7A40BA93FFCEA6F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
 		2BCACD218B44170173B946DB /* Pods-KMMICTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.debug staging.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.debug staging.xcconfig"; sourceTree = "<group>"; };
 		2C2B48425335264BB9C2101E /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		2D21F31E29E3C71C00E0913F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3427DE4B2A263982BCACC180 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		3D573462BD1C3E7B689F70E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 		5DBBFE4BE7306DDB669EF3FA /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				2D21F31E29E3C71C00E0913F /* App.swift */,
 				A74C318FDB48F053F69A96AC /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -996,6 +999,7 @@
 				69D361AF13806D4B786A39D1 /* Constants.swift in Sources */,
 				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
 				CD624191F6E99C3028E07DD0 /* HomeViewController.swift in Sources */,
+				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */,
 				DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */,
 				22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */,
