@@ -1,0 +1,9 @@
+sources:
+  - KMMIC/Sources
+templates:
+  - tools/sourcery/templates
+output:
+  KMMICTests/Sources/Mocks/Sourcery 
+args:
+  autoMockableTestableImports:
+    - KMMIC
