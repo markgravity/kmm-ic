@@ -1487,6 +1487,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4TWS7E2EPE;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KMMIC/Configurations/Plists/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1496,6 +1500,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = KMMIC;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AdHoc co.nimblehq.mark.kmmic.staging";
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
