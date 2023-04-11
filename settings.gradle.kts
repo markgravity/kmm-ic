@@ -14,4 +14,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KMM_IC"
-include(":Shared")
+include(":shared")

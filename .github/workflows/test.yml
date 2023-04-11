@@ -47,7 +47,6 @@ jobs:
           ${{ runner.os }}-pods-
 
     - name: Generate KMM frameworks for Cocoapods
-      working-directory: ./Shared
       run: |
         cd ..
         ./gradlew generateDummyFramework

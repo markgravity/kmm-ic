@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C78D463CC922763F6615AC8 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16897117C3D255AD607579B5 /* ApplicationSpec.swift */; };
 		21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176DD13AA12CA27C74DEA58 /* UseCaseFactoryProtocol.swift */; };
 		22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59BFCE88DF2FA38BD7670FB /* Navigator.swift */; };
 		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
@@ -89,7 +88,6 @@
 		0A9DB00FB5E27FB0FA8FA826 /* Pods-KMMIC-KMMICKIFUITests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC-KMMICKIFUITests.release production.xcconfig"; path = "Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests.release production.xcconfig"; sourceTree = "<group>"; };
 		0B558C4EA4CC2271C0321779 /* Pods_KMMIC_KMMICKIFUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMIC_KMMICKIFUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16551276F6F35E3230F3F7A3 /* Pods-KMMIC.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC.debug production.xcconfig"; path = "Target Support Files/Pods-KMMIC/Pods-KMMIC.debug production.xcconfig"; sourceTree = "<group>"; };
-		16897117C3D255AD607579B5 /* ApplicationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSpec.swift; sourceTree = "<group>"; };
 		1B3694568F9B706365045D48 /* ReleaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseStaging.xcconfig; sourceTree = "<group>"; };
 		1E16A793A2861119518D934C /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		224D64D46C47F58258F5DE3E /* Pods-KMMICTests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.debug production.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.debug production.xcconfig"; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 		45E4D70DE4D4EB69B3C8F8AE /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				16897117C3D255AD607579B5 /* ApplicationSpec.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -633,7 +630,6 @@
 				2DA67D951DD827C5AABCA6E1 /* Resources */,
 				08E23B86891E7256A5CEA0A1 /* Embed Frameworks */,
 				FF4C774189CD1D3F08CB7114 /* Frameworks */,
-				288B2B5BB74BAA6A73172ECF /* Copy GoogleService-Info.plist */,
 				C8C8D8924DD6AE1F070CFDF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -788,24 +784,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"";
-		};
-		288B2B5BB74BAA6A73172ECF /* Copy GoogleService-Info.plist */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy GoogleService-Info.plist";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "PATH_TO_GOOGLE_PLISTS=\"$SRCROOT/$PROJECT_NAME/Configurations/Plists/GoogleService\"\n\ncase \"${CONFIGURATION}\" in\n\"Debug Staging\" | \"Release Staging\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Staging/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n\"Debug Production\" | \"Release Production\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Production/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n*)\n;;\nesac";
 		};
 		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1015,7 +993,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C78D463CC922763F6615AC8 /* ApplicationSpec.swift in Sources */,
 				4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
