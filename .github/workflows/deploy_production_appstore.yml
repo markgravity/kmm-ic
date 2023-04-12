@@ -1,0 +1,99 @@
+name: Deploy Staging Build To Firebase
+
+# SECRETS needed:
+### SSH_PRIVATE_KEY for Match Repo
+### MATCH_PASS
+### FIREBASE_TOKEN
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: ios
+
+jobs:
+  build:
+    name: Build
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v2.1.0
+      with:
+       distribution: 'adopt'
+       java-version: '11'
+
+    - name: Install SSH key
+      uses: webfactory/ssh-agent@v0.5.4
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Install Firebase-Tools
+      run: |
+        yarn global add firebase-tools
+        echo "$(yarn global bin)" >> $GITHUB_PATH
+
+    - name: Setup Google Services for Production
+      env:
+        IOS_GOOGLE_SERVICE_INFO_PRODUCTION: ${{ secrets.IOS_GOOGLE_SERVICE_INFO_PRODUCTION }}
+      run: |
+        mkdir -p KMMIC/Configurations/Plists/GoogleService/Production
+        touch KMMIC/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+        echo $IOS_GOOGLE_SERVICE_INFO_PRODUCTION | base64 --decode > ./KMMIC/Configurations/Plists/GoogleService/Production/GoogleService-Info.plist
+
+    - name: Bundle install
+      # if: steps.bundleCache.outputs.cache-hit != 'true'
+      run: bundle install
+
+    - name: Cache Pods
+      uses: actions/cache@v2
+      id: cocoapodCache
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-
+
+    - name: Generate KMM frameworks for Cocoapods
+      run: |
+        cd ..
+        ./gradlew generateDummyFramework
+
+    - name: Install Pods Dependencies
+      run: bundle exec pod install
+      shell: bash
+
+    - name: Build and Test
+      run: bundle exec fastlane buildAndTest
+
+    - name: Match AppStore
+      run: bundle exec fastlane syncAppStoreCodeSigning
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
+
+    - name: Build App and Distribute to AppStore
+      run: bundle exec fastlane buildAndUploadToAppStore
+      env:
+        APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
+        API_KEY_ID: ${{ secrets.API_KEY_ID }}
+        ISSUER_ID: ${{ secrets.ISSUER_ID }}
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ format('v{0}({1})-{2}', env.VERSION_NUMBER, env.BUILD_NUMBER, env.TAG_TYPE) }}
+        path: |
+          ${{ env.IPA_OUTPUT_PATH }}
+          ${{ env.DSYM_OUTPUT_PATH }}
+      env:
+        TAG_TYPE: Staging_Firebase

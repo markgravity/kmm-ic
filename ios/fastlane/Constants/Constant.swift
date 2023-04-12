@@ -17,13 +17,13 @@ enum Constant {
     // MARK: - Firebase
 
     static let stagingFirebaseAppId = "1:200867779713:ios:b0a4ccd7e1cf4bdb7ea980"
-    static let productionFirebaseAppId = "<#productionFirebaseAppId#>"
-    static let firebaseTesterGroups = ""
+    static let productionFirebaseAppId = "1:55360409043:ios:e0bfe2fb9ecad8b625b326"
+    static let firebaseTesterGroups = "nimble-dev"
 
     // MARK: - Match
 
     static let userName = "Fastlane"
-    static let teamId = "<#teamId#>"
+    static let teamId = "4TWS7E2EPE"
     static let keychainName = "github_action_keychain"
     static let matchURL = "git@github.com:nimblehq/match-certificates.git"
 
