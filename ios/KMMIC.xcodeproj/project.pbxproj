@@ -24,7 +24,6 @@
 		948867088067BB9EB3C94D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF5D609781C2B6B71CA4508 /* Assets.xcassets */; };
 		B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC37E6784E632573528739E /* Navigator+Scene.swift */; };
 		C15FB33899C7F703E8896254 /* Pods_KMMIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DAF4B47DBDE81B38888DE9 /* Pods_KMMIC.framework */; };
-		CD624191F6E99C3028E07DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F681EE334B7209E19B323230 /* HomeViewController.swift */; };
 		D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */; };
 		DAF103B992DDA5CC10B2BD37 /* Pods_KMMIC_KMMICKIFUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B558C4EA4CC2271C0321779 /* Pods_KMMIC_KMMICKIFUITests.framework */; };
 		DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06792694355D406D5CDA72A /* Navigator+Transition.swift */; };
@@ -125,7 +124,6 @@
 		D8DAF4B47DBDE81B38888DE9 /* Pods_KMMIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5249E84DE2510414BE8EAB9 /* DebugStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugStaging.xcconfig; sourceTree = "<group>"; };
 		F0BDB054888FD65CD9273993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F681EE334B7209E19B323230 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +265,6 @@
 		3E59ED3B60404CFF8E6D509A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F681EE334B7209E19B323230 /* HomeViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -976,7 +973,6 @@
 				8DAF890BC5BC48D7546F64CB /* Constants+API.swift in Sources */,
 				69D361AF13806D4B786A39D1 /* Constants.swift in Sources */,
 				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
-				CD624191F6E99C3028E07DD0 /* HomeViewController.swift in Sources */,
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */,
 				DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */,
