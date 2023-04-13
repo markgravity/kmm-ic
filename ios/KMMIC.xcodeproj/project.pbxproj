@@ -1,0 +1,1609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C78D463CC922763F6615AC8 /* ApplicationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16897117C3D255AD607579B5 /* ApplicationSpec.swift */; };
+		21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176DD13AA12CA27C74DEA58 /* UseCaseFactoryProtocol.swift */; };
+		22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59BFCE88DF2FA38BD7670FB /* Navigator.swift */; };
+		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
+		3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087CA974BF0EEE1A2205E776 /* LaunchScreen.storyboard */; };
+		45C74EE307D4EC4F0E5578AC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16A793A2861119518D934C /* R.generated.swift */; };
+		4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427DE4B2A263982BCACC180 /* KIF+Swift.swift */; };
+		5C65F290D588E679684E6914 /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D27737E7A40BA93FFCEA6F /* Optional+Unwrap.swift */; };
+		68BC59E5B4D16A9814C72D13 /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B48425335264BB9C2101E /* UIView+Subviews.swift */; };
+		69D361AF13806D4B786A39D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E522FB6BBDAB0E2417653 /* Constants.swift */; };
+		876DCB90B926758C03181811 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750EC13E62E444A49030CD9A /* Typealiases.swift */; };
+		8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07218018BB7DA96908A9417A /* OptionalUnwrapSpec.swift */; };
+		8C61280EF5985EA00FA312E6 /* Pods_KMMICTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FC8C25804E3286DD14F8EE /* Pods_KMMICTests.framework */; };
+		8DAF890BC5BC48D7546F64CB /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C5AC0BC393EF070DD097EE /* Constants+API.swift */; };
+		8F0809CE6372F5AD4902E64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C318FDB48F053F69A96AC /* AppDelegate.swift */; };
+		948867088067BB9EB3C94D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF5D609781C2B6B71CA4508 /* Assets.xcassets */; };
+		B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC37E6784E632573528739E /* Navigator+Scene.swift */; };
+		C15FB33899C7F703E8896254 /* Pods_KMMIC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DAF4B47DBDE81B38888DE9 /* Pods_KMMIC.framework */; };
+		CD624191F6E99C3028E07DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F681EE334B7209E19B323230 /* HomeViewController.swift */; };
+		D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */; };
+		DAF103B992DDA5CC10B2BD37 /* Pods_KMMIC_KMMICKIFUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B558C4EA4CC2271C0321779 /* Pods_KMMIC_KMMICKIFUITests.framework */; };
+		DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06792694355D406D5CDA72A /* Navigator+Transition.swift */; };
+		E74B3DF5C228137F7B2FB7D0 /* Color+Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E811040F17260BBD4B574A /* Color+Application.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C7AD0E42AEF6C59B82A1626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 232190F6DC4B4AEB20B100F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED634CA4B11252701B95C00C;
+			remoteInfo = KMMIC;
+		};
+		DF7940A218C22726391E503E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 232190F6DC4B4AEB20B100F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED634CA4B11252701B95C00C;
+			remoteInfo = KMMIC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		08E23B86891E7256A5CEA0A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5A4D927152FA236942866FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B635AF6C5218AF92A5C6384D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0408141732E25BC25080A4E6 /* KMMICKIFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMMICKIFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07218018BB7DA96908A9417A /* OptionalUnwrapSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalUnwrapSpec.swift; sourceTree = "<group>"; };
+		087CA974BF0EEE1A2205E776 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A9DB00FB5E27FB0FA8FA826 /* Pods-KMMIC-KMMICKIFUITests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC-KMMICKIFUITests.release production.xcconfig"; path = "Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests.release production.xcconfig"; sourceTree = "<group>"; };
+		0B558C4EA4CC2271C0321779 /* Pods_KMMIC_KMMICKIFUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMIC_KMMICKIFUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16551276F6F35E3230F3F7A3 /* Pods-KMMIC.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC.debug production.xcconfig"; path = "Target Support Files/Pods-KMMIC/Pods-KMMIC.debug production.xcconfig"; sourceTree = "<group>"; };
+		16897117C3D255AD607579B5 /* ApplicationSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSpec.swift; sourceTree = "<group>"; };
+		1B3694568F9B706365045D48 /* ReleaseStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseStaging.xcconfig; sourceTree = "<group>"; };
+		1E16A793A2861119518D934C /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		224D64D46C47F58258F5DE3E /* Pods-KMMICTests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.debug production.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.debug production.xcconfig"; sourceTree = "<group>"; };
+		26D27737E7A40BA93FFCEA6F /* Optional+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrap.swift"; sourceTree = "<group>"; };
+		2BCACD218B44170173B946DB /* Pods-KMMICTests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.debug staging.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		2C2B48425335264BB9C2101E /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
+		2D21F31E29E3C71C00E0913F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		3427DE4B2A263982BCACC180 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
+		374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
+		3D573462BD1C3E7B689F70E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4980345D3EE01E7EDEB8D91B /* Pods-KMMIC.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC.release production.xcconfig"; path = "Target Support Files/Pods-KMMIC/Pods-KMMIC.release production.xcconfig"; sourceTree = "<group>"; };
+		4BC37E6784E632573528739E /* Navigator+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigator+Scene.swift"; sourceTree = "<group>"; };
+		5510902883C4BEDB7A69937C /* Pods-KMMIC-KMMICKIFUITests.debug production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC-KMMICKIFUITests.debug production.xcconfig"; path = "Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests.debug production.xcconfig"; sourceTree = "<group>"; };
+		6B7B72BED5218051F587B35B /* Pods-KMMICTests.release production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.release production.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.release production.xcconfig"; sourceTree = "<group>"; };
+		750EC13E62E444A49030CD9A /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		76E0A4564442FAF69751E084 /* KMMIC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMMIC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E811040F17260BBD4B574A /* Color+Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Application.swift"; sourceTree = "<group>"; };
+		7A2E522FB6BBDAB0E2417653 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		895A6A45D818B545AE0698FF /* Pods-KMMIC-KMMICKIFUITests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC-KMMICKIFUITests.release staging.xcconfig"; path = "Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests.release staging.xcconfig"; sourceTree = "<group>"; };
+		8BF5D609781C2B6B71CA4508 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EE76E60DD4C1E54B55A2EEB /* Pods-KMMIC.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC.debug staging.xcconfig"; path = "Target Support Files/Pods-KMMIC/Pods-KMMIC.debug staging.xcconfig"; sourceTree = "<group>"; };
+		90240848B4105CF09BA80468 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
+		95FC8C25804E3286DD14F8EE /* Pods_KMMICTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMICTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		984427B479BCA5DB2642529B /* Pods-KMMICTests.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMICTests.release staging.xcconfig"; path = "Target Support Files/Pods-KMMICTests/Pods-KMMICTests.release staging.xcconfig"; sourceTree = "<group>"; };
+		A06792694355D406D5CDA72A /* Navigator+Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigator+Transition.swift"; sourceTree = "<group>"; };
+		A63A993E7A91202B6C56B145 /* ReleaseProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ReleaseProduction.xcconfig; sourceTree = "<group>"; };
+		A74C318FDB48F053F69A96AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB55579BC52D8517560A9FC2 /* Pods-KMMIC.release staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC.release staging.xcconfig"; path = "Target Support Files/Pods-KMMIC/Pods-KMMIC.release staging.xcconfig"; sourceTree = "<group>"; };
+		B4FD9486016753400F25DEF8 /* Pods-KMMIC-KMMICKIFUITests.debug staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMIC-KMMICKIFUITests.debug staging.xcconfig"; path = "Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests.debug staging.xcconfig"; sourceTree = "<group>"; };
+		C176DD13AA12CA27C74DEA58 /* UseCaseFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactoryProtocol.swift; sourceTree = "<group>"; };
+		C59BFCE88DF2FA38BD7670FB /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		C97B69EAF25CDE733FA325EB /* KMMICTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMMICTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C5AC0BC393EF070DD097EE /* Constants+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+API.swift"; sourceTree = "<group>"; };
+		D3D3A35251285E78BD3C2C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D8DAF4B47DBDE81B38888DE9 /* Pods_KMMIC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMIC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5249E84DE2510414BE8EAB9 /* DebugStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugStaging.xcconfig; sourceTree = "<group>"; };
+		F0BDB054888FD65CD9273993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F681EE334B7209E19B323230 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98A2BC81D70A95997DEE8D23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAF103B992DDA5CC10B2BD37 /* Pods_KMMIC_KMMICKIFUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B570677554C3DA77016BC534 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C61280EF5985EA00FA312E6 /* Pods_KMMICTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF4C774189CD1D3F08CB7114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C15FB33899C7F703E8896254 /* Pods_KMMIC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		113333F8EC1BAFD38C4BD5C7 /* XCConfigs */ = {
+			isa = PBXGroup;
+			children = (
+				90240848B4105CF09BA80468 /* DebugProduction.xcconfig */,
+				E5249E84DE2510414BE8EAB9 /* DebugStaging.xcconfig */,
+				A63A993E7A91202B6C56B145 /* ReleaseProduction.xcconfig */,
+				1B3694568F9B706365045D48 /* ReleaseStaging.xcconfig */,
+			);
+			path = XCConfigs;
+			sourceTree = "<group>";
+		};
+		129655D97F22BC3AA64C5F61 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				D3D3A35251285E78BD3C2C11 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		1ADE90C2E9C03F766B3C237D /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				3D573462BD1C3E7B689F70E9 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		1EDA4409E51984DEB6D33F53 /* Dummy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dummy;
+			sourceTree = "<group>";
+		};
+		227B56B046708557057044C9 /* Rswift */ = {
+			isa = PBXGroup;
+			children = (
+				1E16A793A2861119518D934C /* R.generated.swift */,
+			);
+			path = Rswift;
+			sourceTree = "<group>";
+		};
+		2AE0C1C41E1E1E106AE6F892 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16551276F6F35E3230F3F7A3 /* Pods-KMMIC.debug production.xcconfig */,
+				8EE76E60DD4C1E54B55A2EEB /* Pods-KMMIC.debug staging.xcconfig */,
+				4980345D3EE01E7EDEB8D91B /* Pods-KMMIC.release production.xcconfig */,
+				AB55579BC52D8517560A9FC2 /* Pods-KMMIC.release staging.xcconfig */,
+				5510902883C4BEDB7A69937C /* Pods-KMMIC-KMMICKIFUITests.debug production.xcconfig */,
+				B4FD9486016753400F25DEF8 /* Pods-KMMIC-KMMICKIFUITests.debug staging.xcconfig */,
+				0A9DB00FB5E27FB0FA8FA826 /* Pods-KMMIC-KMMICKIFUITests.release production.xcconfig */,
+				895A6A45D818B545AE0698FF /* Pods-KMMIC-KMMICKIFUITests.release staging.xcconfig */,
+				224D64D46C47F58258F5DE3E /* Pods-KMMICTests.debug production.xcconfig */,
+				2BCACD218B44170173B946DB /* Pods-KMMICTests.debug staging.xcconfig */,
+				6B7B72BED5218051F587B35B /* Pods-KMMICTests.release production.xcconfig */,
+				984427B479BCA5DB2642529B /* Pods-KMMICTests.release staging.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2DBA869C5529F0FCE523BF7E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5DBBFE4BE7306DDB669EF3FA /* Application */,
+				7D5A485DC6BAF42707FCE6DC /* Constants */,
+				622B2FF97360C04F27274F6A /* Data */,
+				53A9CAFB4FD368E2934DFA13 /* Domain */,
+				DE4F9F8211B87D001E6CBA9D /* Presentation */,
+				D59F7F6D06873C1BC2478ED9 /* Supports */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		32C0255AAB5E7DD101E24E87 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A2BBB1C6F0A34C5B607C5C5E /* Assets */,
+				973A6181FF6ADD7810429A9D /* LaunchScreen */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		376571CB7DB989FB285FD65E /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				64500587A8929D062CEFE5AD /* Plists */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		3A810AC74C4142E8B8F0A5AD /* KMMICTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC3779EFA73A6194F12E051D /* Configurations */,
+				C5960C6BF72E6D6ABE497299 /* Resources */,
+				CCA99044A843B5E01E1BA8BE /* Sources */,
+			);
+			path = KMMICTests;
+			sourceTree = "<group>";
+		};
+		3DAD59DD049F1AF5B79D5705 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		3E59ED3B60404CFF8E6D509A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F681EE334B7209E19B323230 /* HomeViewController.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3FB7356EA7046F06C3040D0D /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				45E4D70DE4D4EB69B3C8F8AE /* Application */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		43B5AFF787DD5ADFC86F9695 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C176DD13AA12CA27C74DEA58 /* UseCaseFactoryProtocol.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		45E4D70DE4D4EB69B3C8F8AE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				16897117C3D255AD607579B5 /* ApplicationSpec.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		477AAC4C210ECAAFF0EE3B53 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4781E796C0194C9BC22D3AA0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				26D27737E7A40BA93FFCEA6F /* Optional+Unwrap.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4A31E7AD8625E88E8540371A /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				D09EED17F040EDC03BD7A481 /* Supports */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		53A9CAFB4FD368E2934DFA13 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F04421AEDF791303C073000B /* Entities */,
+				976F93AF3787B42A129B8234 /* Interfaces */,
+				43B5AFF787DD5ADFC86F9695 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5DBBFE4BE7306DDB669EF3FA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2D21F31E29E3C71C00E0913F /* App.swift */,
+				A74C318FDB48F053F69A96AC /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		622B2FF97360C04F27274F6A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3DAD59DD049F1AF5B79D5705 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		64500587A8929D062CEFE5AD /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+				F0BDB054888FD65CD9273993 /* Info.plist */,
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		65514AB2EF09880AC47BAB33 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE90C2E9C03F766B3C237D /* Plists */,
+				113333F8EC1BAFD38C4BD5C7 /* XCConfigs */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		667F7DFF5D590917E9560422 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8E3F5D11F87559E3A8104315 /* Foundation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		67D6BF52D22097BD1A3EDFD8 /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		70ECD1BA9BEE6313CDE7BFA5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				227B56B046708557057044C9 /* Rswift */,
+				8558A47D20E6A30E6CE36781 /* Typealiases */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		77490BB09902519913482E98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7CD87CC3933A09C2E7BD32D1 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				D699B2BE5D9706BAFEA794C9 /* KMMIC */,
+				A10F447D14DA44E94C962BEB /* KMMICKIFUITests */,
+				3A810AC74C4142E8B8F0A5AD /* KMMICTests */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		7D5A485DC6BAF42707FCE6DC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7A2E522FB6BBDAB0E2417653 /* Constants.swift */,
+				D0C5AC0BC393EF070DD097EE /* Constants+API.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		7F626B05B44B8638EFF3CD0C /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				78E811040F17260BBD4B574A /* Color+Application.swift */,
+				2C2B48425335264BB9C2101E /* UIView+Subviews.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8558A47D20E6A30E6CE36781 /* Typealiases */ = {
+			isa = PBXGroup;
+			children = (
+				750EC13E62E444A49030CD9A /* Typealiases.swift */,
+			);
+			path = Typealiases;
+			sourceTree = "<group>";
+		};
+		8CB88C9E9A7B8D33FD3945D2 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3FB7356EA7046F06C3040D0D /* Specs */,
+				F47495212A4294F03CA21226 /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8E2737DA2E362927E5A97540 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4781E796C0194C9BC22D3AA0 /* Foundation */,
+				7F626B05B44B8638EFF3CD0C /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8E3F5D11F87559E3A8104315 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				07218018BB7DA96908A9417A /* OptionalUnwrapSpec.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		8EB5E112F21DFA7A051950A7 = {
+			isa = PBXGroup;
+			children = (
+				7CD87CC3933A09C2E7BD32D1 /* Project */,
+				A3D23A9ECB22ED9C64FF444C /* Frameworks */,
+				E42EB7C932465BADFC3EFE33 /* Products */,
+				2AE0C1C41E1E1E106AE6F892 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		973A6181FF6ADD7810429A9D /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				087CA974BF0EEE1A2205E776 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		976F93AF3787B42A129B8234 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		A10F447D14DA44E94C962BEB /* KMMICKIFUITests */ = {
+			isa = PBXGroup;
+			children = (
+				376571CB7DB989FB285FD65E /* Configurations */,
+				8CB88C9E9A7B8D33FD3945D2 /* Sources */,
+			);
+			path = KMMICKIFUITests;
+			sourceTree = "<group>";
+		};
+		A2BBB1C6F0A34C5B607C5C5E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8BF5D609781C2B6B71CA4508 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A3D23A9ECB22ED9C64FF444C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8DAF4B47DBDE81B38888DE9 /* Pods_KMMIC.framework */,
+				0B558C4EA4CC2271C0321779 /* Pods_KMMIC_KMMICKIFUITests.framework */,
+				95FC8C25804E3286DD14F8EE /* Pods_KMMICTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3D80CD366F657F2F444C34B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				67D6BF52D22097BD1A3EDFD8 /* Sourcery */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C5960C6BF72E6D6ABE497299 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCA99044A843B5E01E1BA8BE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1EDA4409E51984DEB6D33F53 /* Dummy */,
+				A3D80CD366F657F2F444C34B /* Mocks */,
+				4A31E7AD8625E88E8540371A /* Specs */,
+				477AAC4C210ECAAFF0EE3B53 /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D09EED17F040EDC03BD7A481 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				667F7DFF5D590917E9560422 /* Extensions */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		D59F7F6D06873C1BC2478ED9 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				8E2737DA2E362927E5A97540 /* Extensions */,
+				70ECD1BA9BEE6313CDE7BFA5 /* Helpers */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		D699B2BE5D9706BAFEA794C9 /* KMMIC */ = {
+			isa = PBXGroup;
+			children = (
+				65514AB2EF09880AC47BAB33 /* Configurations */,
+				32C0255AAB5E7DD101E24E87 /* Resources */,
+				2DBA869C5529F0FCE523BF7E /* Sources */,
+			);
+			path = KMMIC;
+			sourceTree = "<group>";
+		};
+		DE4F9F8211B87D001E6CBA9D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3E59ED3B60404CFF8E6D509A /* Modules */,
+				F811FE57013C9B5B1B680D51 /* Navigator */,
+				77490BB09902519913482E98 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E42EB7C932465BADFC3EFE33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76E0A4564442FAF69751E084 /* KMMIC.app */,
+				0408141732E25BC25080A4E6 /* KMMICKIFUITests.xctest */,
+				C97B69EAF25CDE733FA325EB /* KMMICTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC3779EFA73A6194F12E051D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				129655D97F22BC3AA64C5F61 /* Plists */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		F04421AEDF791303C073000B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F47495212A4294F03CA21226 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3427DE4B2A263982BCACC180 /* KIF+Swift.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F811FE57013C9B5B1B680D51 /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				C59BFCE88DF2FA38BD7670FB /* Navigator.swift */,
+				4BC37E6784E632573528739E /* Navigator+Scene.swift */,
+				A06792694355D406D5CDA72A /* Navigator+Transition.swift */,
+			);
+			path = Navigator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED634CA4B11252701B95C00C /* KMMIC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9733618F72F2F921F14D7D20 /* Build configuration list for PBXNativeTarget "KMMIC" */;
+			buildPhases = (
+				403A4ED4AA1C32AD4C47FEDD /* [CP] Check Pods Manifest.lock */,
+				09567295DA68978E8B12D592 /* Sourcery */,
+				25EEEEF8E2FB0370DF37C707 /* R.swift */,
+				F674A531DC1B69736E92BD6E /* SwiftLint */,
+				6402473BB546B4AB57966B37 /* SwiftFormat Lint */,
+				971D2FD16EA1E80293BCAEBE /* Sources */,
+				2DA67D951DD827C5AABCA6E1 /* Resources */,
+				08E23B86891E7256A5CEA0A1 /* Embed Frameworks */,
+				FF4C774189CD1D3F08CB7114 /* Frameworks */,
+				288B2B5BB74BAA6A73172ECF /* Copy GoogleService-Info.plist */,
+				C8C8D8924DD6AE1F070CFDF3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMMIC;
+			productName = KMMIC;
+			productReference = 76E0A4564442FAF69751E084 /* KMMIC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA3B83DD01837E54D8A8F1A5 /* KMMICTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8CFDA08302A99780932048 /* Build configuration list for PBXNativeTarget "KMMICTests" */;
+			buildPhases = (
+				4318DB485AFE985E314254B2 /* [CP] Check Pods Manifest.lock */,
+				342DDCF25736486EE261EE45 /* SwiftFormat */,
+				3D07BE9C45B91843317F7ABA /* Sources */,
+				8524C605EB5BA719AE583510 /* Resources */,
+				B635AF6C5218AF92A5C6384D /* Embed Frameworks */,
+				B570677554C3DA77016BC534 /* Frameworks */,
+				8A08D03AA08B19BDCBFC597C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B623DE71CCF778434ED741E /* PBXTargetDependency */,
+			);
+			name = KMMICTests;
+			productName = KMMICTests;
+			productReference = C97B69EAF25CDE733FA325EB /* KMMICTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FB6E3E1E03F58CB3F14FB742 /* KMMICKIFUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E7D370160EFE8C855C01D56 /* Build configuration list for PBXNativeTarget "KMMICKIFUITests" */;
+			buildPhases = (
+				AC313FD7F09637B9AD28089C /* [CP] Check Pods Manifest.lock */,
+				F4E69F79DD233159799D1C79 /* Sources */,
+				E2435666F1453ACFB14BD7FB /* Resources */,
+				A5A4D927152FA236942866FF /* Embed Frameworks */,
+				98A2BC81D70A95997DEE8D23 /* Frameworks */,
+				62BFE7A2D8D8FD71B0F1CD64 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22631861023FC3F8A5E59528 /* PBXTargetDependency */,
+			);
+			name = KMMICKIFUITests;
+			productName = KMMICKIFUITests;
+			productReference = 0408141732E25BC25080A4E6 /* KMMICKIFUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		232190F6DC4B4AEB20B100F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Nimble;
+				TargetAttributes = {
+					FA3B83DD01837E54D8A8F1A5 = {
+						TestTargetID = ED634CA4B11252701B95C00C;
+					};
+					FB6E3E1E03F58CB3F14FB742 = {
+						TestTargetID = ED634CA4B11252701B95C00C;
+					};
+				};
+			};
+			buildConfigurationList = 878951DE811CBEC9FE271F02 /* Build configuration list for PBXProject "KMMIC" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8EB5E112F21DFA7A051950A7;
+			productRefGroup = E42EB7C932465BADFC3EFE33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED634CA4B11252701B95C00C /* KMMIC */,
+				FA3B83DD01837E54D8A8F1A5 /* KMMICTests */,
+				FB6E3E1E03F58CB3F14FB742 /* KMMICKIFUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2DA67D951DD827C5AABCA6E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948867088067BB9EB3C94D19 /* Assets.xcassets in Resources */,
+				3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8524C605EB5BA719AE583510 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2435666F1453ACFB14BD7FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09567295DA68978E8B12D592 /* Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Sourcery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"";
+		};
+		25EEEEF8E2FB0370DF37C707 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"";
+		};
+		288B2B5BB74BAA6A73172ECF /* Copy GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy GoogleService-Info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH_TO_GOOGLE_PLISTS=\"$SRCROOT/$PROJECT_NAME/Configurations/Plists/GoogleService\"\n\ncase \"${CONFIGURATION}\" in\n\"Debug Staging\" | \"Release Staging\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Staging/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n\"Debug Production\" | \"Release Production\" )\ncp -r \"$PATH_TO_GOOGLE_PLISTS/Production/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\"\n;;\n*)\n;;\nesac";
+		};
+		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\nfi";
+		};
+		403A4ED4AA1C32AD4C47FEDD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMIC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4318DB485AFE985E314254B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMICTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62BFE7A2D8D8FD71B0F1CD64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMIC-KMMICKIFUITests/Pods-KMMIC-KMMICKIFUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6402473BB546B4AB57966B37 /* SwiftFormat Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftFormat Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n    \"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\" --lint --lenient\nfi";
+		};
+		8A08D03AA08B19BDCBFC597C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMICTests/Pods-KMMICTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMICTests/Pods-KMMICTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMICTests/Pods-KMMICTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC313FD7F09637B9AD28089C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMIC-KMMICKIFUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8C8D8924DD6AE1F070CFDF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMIC/Pods-KMMIC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMIC/Pods-KMMIC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMIC/Pods-KMMIC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F674A531DC1B69736E92BD6E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D07BE9C45B91843317F7ABA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
+				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		971D2FD16EA1E80293BCAEBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F0809CE6372F5AD4902E64B /* AppDelegate.swift in Sources */,
+				8DAF890BC5BC48D7546F64CB /* Constants+API.swift in Sources */,
+				69D361AF13806D4B786A39D1 /* Constants.swift in Sources */,
+				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
+				CD624191F6E99C3028E07DD0 /* HomeViewController.swift in Sources */,
+				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
+				B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */,
+				DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */,
+				22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */,
+				5C65F290D588E679684E6914 /* Optional+Unwrap.swift in Sources */,
+				E74B3DF5C228137F7B2FB7D0 /* Color+Application.swift in Sources */,
+				68BC59E5B4D16A9814C72D13 /* UIView+Subviews.swift in Sources */,
+				45C74EE307D4EC4F0E5578AC /* R.generated.swift in Sources */,
+				876DCB90B926758C03181811 /* Typealiases.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4E69F79DD233159799D1C79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C78D463CC922763F6615AC8 /* ApplicationSpec.swift in Sources */,
+				4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22631861023FC3F8A5E59528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMIC;
+			target = ED634CA4B11252701B95C00C /* KMMIC */;
+			targetProxy = 4C7AD0E42AEF6C59B82A1626 /* PBXContainerItemProxy */;
+		};
+		8B623DE71CCF778434ED741E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KMMIC;
+			target = ED634CA4B11252701B95C00C /* KMMIC */;
+			targetProxy = DF7940A218C22726391E503E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		153208B7526DCEA4A33387EA /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16551276F6F35E3230F3F7A3 /* Pods-KMMIC.debug production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KMMIC/Configurations/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMIC;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug Production";
+		};
+		185D7307CB8139AF51EF39BD /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A63A993E7A91202B6C56B145 /* ReleaseProduction.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Production";
+		};
+		35CB1A9DC5037ACB0F6956B6 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 224D64D46C47F58258F5DE3E /* Pods-KMMICTests.debug production.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICTests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICTests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Debug Production";
+		};
+		4AC567DF20AC1E31C91CD31A /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9DB00FB5E27FB0FA8FA826 /* Pods-KMMIC-KMMICKIFUITests.release production.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICKIFUITests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICKIFUITests;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Release Production";
+		};
+		7877212477DE508922627041 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B3694568F9B706365045D48 /* ReleaseStaging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release Staging";
+		};
+		80030DE5F213359B1D311682 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EE76E60DD4C1E54B55A2EEB /* Pods-KMMIC.debug staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KMMIC/Configurations/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMIC;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Debug Staging";
+		};
+		9424429B87C0387D074F5BE0 /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BCACD218B44170173B946DB /* Pods-KMMICTests.debug staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICTests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICTests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Debug Staging";
+		};
+		9A334C83A8311E80B5DCF9FC /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5249E84DE2510414BE8EAB9 /* DebugStaging.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug Staging";
+		};
+		9D15AAB7EA1CB06BF0E046D9 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 895A6A45D818B545AE0698FF /* Pods-KMMIC-KMMICKIFUITests.release staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICKIFUITests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICKIFUITests;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Release Staging";
+		};
+		9D98F982F3ED8A962E039F08 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90240848B4105CF09BA80468 /* DebugProduction.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug Production";
+		};
+		9E6DADD7CC522A9A445E8E69 /* Debug Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5510902883C4BEDB7A69937C /* Pods-KMMIC-KMMICKIFUITests.debug production.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICKIFUITests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICKIFUITests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Debug Production";
+		};
+		B48433406EBA10B3E96BF2DF /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4980345D3EE01E7EDEB8D91B /* Pods-KMMIC.release production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KMMIC/Configurations/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMIC;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Release Production";
+		};
+		BC707AB8191DF1176326429C /* Debug Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4FD9486016753400F25DEF8 /* Pods-KMMIC-KMMICKIFUITests.debug staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICKIFUITests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICKIFUITests;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Debug Staging";
+		};
+		DA40602593E483BA9010CD12 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984427B479BCA5DB2642529B /* Pods-KMMICTests.release staging.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICTests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICTests;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Release Staging";
+		};
+		DED1ADA057AEAEE8C2376F85 /* Release Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB55579BC52D8517560A9FC2 /* Pods-KMMIC.release staging.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KMMIC/Configurations/Plists/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMIC;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = "Release Staging";
+		};
+		F2D27CFA73D8CC1B2DECDA1B /* Release Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7B72BED5218051F587B35B /* Pods-KMMICTests.release production.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = KMMICTests/Configurations/Plists/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
+				PRODUCT_NAME = KMMICTests;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.7.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMIC.app/KMMIC";
+				TEST_TARGET_NAME = KMMIC;
+			};
+			name = "Release Production";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E7D370160EFE8C855C01D56 /* Build configuration list for PBXNativeTarget "KMMICKIFUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E6DADD7CC522A9A445E8E69 /* Debug Production */,
+				BC707AB8191DF1176326429C /* Debug Staging */,
+				4AC567DF20AC1E31C91CD31A /* Release Production */,
+				9D15AAB7EA1CB06BF0E046D9 /* Release Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Production";
+		};
+		878951DE811CBEC9FE271F02 /* Build configuration list for PBXProject "KMMIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D98F982F3ED8A962E039F08 /* Debug Production */,
+				9A334C83A8311E80B5DCF9FC /* Debug Staging */,
+				185D7307CB8139AF51EF39BD /* Release Production */,
+				7877212477DE508922627041 /* Release Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Production";
+		};
+		9733618F72F2F921F14D7D20 /* Build configuration list for PBXNativeTarget "KMMIC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				153208B7526DCEA4A33387EA /* Debug Production */,
+				80030DE5F213359B1D311682 /* Debug Staging */,
+				B48433406EBA10B3E96BF2DF /* Release Production */,
+				DED1ADA057AEAEE8C2376F85 /* Release Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Production";
+		};
+		EB8CFDA08302A99780932048 /* Build configuration list for PBXNativeTarget "KMMICTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35CB1A9DC5037ACB0F6956B6 /* Debug Production */,
+				9424429B87C0387D074F5BE0 /* Debug Staging */,
+				F2D27CFA73D8CC1B2DECDA1B /* Release Production */,
+				DA40602593E483BA9010CD12 /* Release Staging */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "Release Production";
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 232190F6DC4B4AEB20B100F5 /* Project object */;
+}
