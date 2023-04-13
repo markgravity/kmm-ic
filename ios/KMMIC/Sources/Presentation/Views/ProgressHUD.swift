@@ -11,7 +11,7 @@ import SwiftUI
 struct ProgressHUD: View {
 
     var body: some View {
-        HStack(spacing: 10) {
+        HStack {
             VStack {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
