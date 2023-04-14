@@ -17,7 +17,7 @@ struct KMMApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Text(Greeting().greet())
+            SplashScreen()
         }
     }
 }
