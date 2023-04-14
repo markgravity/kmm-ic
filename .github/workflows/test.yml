@@ -90,10 +90,10 @@ jobs:
          distribution: 'adopt'
          java-version: '11'
 
-#       - name: Running tests
-#         run: |
-#           cd ..
-#           ./gradlew clean Shared:test
+      - name: Running tests
+        run: |
+          cd ..
+          ./gradlew clean Shared:test
 
       - name: Run Detekt
         run: |
