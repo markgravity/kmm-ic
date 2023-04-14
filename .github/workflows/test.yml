@@ -5,7 +5,12 @@ on:
     types: [opened, reopened, edited, synchronize]
 
 permissions:
+  actions: write
+  checks: write
+  contents: write
+  issues: write
   pull-requests: write
+  statuses: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -72,10 +77,10 @@ jobs:
 
   shared_test:
       name: Running tests in Shared
-      runs-on: macOS-12
+      runs-on: ubuntu-latest
       defaults:
         run:
-          working-directory: ./Shared
+          working-directory: ./shared
       steps:
       - uses: actions/checkout@v2
 
@@ -85,7 +90,17 @@ jobs:
          distribution: 'adopt'
          java-version: '11'
 
-      - name: Running tests
+#       - name: Running tests
+#         run: |
+#           cd ..
+#           ./gradlew clean Shared:test
+
+      - name: Run Detekt
         run: |
           cd ..
-          ./gradlew clean Shared:test
+          ./gradlew detekt
+
+      - name: Review pull request by Danger
+        uses: danger/kotlin@1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

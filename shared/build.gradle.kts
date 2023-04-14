@@ -63,3 +63,22 @@ android {
         targetSdk = 32
     }
 }
+
+val detekt by configurations.creating
+
+val detektTask = tasks.register<JavaExec>("detekt") {
+    main = "io.gitlab.arturbosch.detekt.cli.Main"
+    classpath = detekt
+
+    val input = "$projectDir"
+    val config = "$projectDir/detekt.yml"
+    val exclude = ".*/build/.*,.*/resources/.*,**/*.kts"
+    val report = "sarif:$buildDir/reports/detekt/report.sarif"
+    val params = listOf("-i", input, "-c", config, "-ex", exclude, "-r", report)
+
+    args(params)
+}
+
+dependencies {
+    detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.22.0")
+}
