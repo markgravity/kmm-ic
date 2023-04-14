@@ -59,6 +59,14 @@ jobs:
       env:
         CI: true
 
+    - name: Clean up previous code coverage report
+      run: bundle exec fastlane cleanUpOutput
+
+    - name: Review pull request by Danger
+      env:
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: bundle exec danger
+
   shared_test:
       name: Running tests in Shared
       runs-on: macOS-12
