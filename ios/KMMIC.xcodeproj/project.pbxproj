@@ -12,6 +12,7 @@
 		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
 		2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */; };
 		2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */; };
+		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
 		3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 087CA974BF0EEE1A2205E776 /* LaunchScreen.storyboard */; };
 		45C74EE307D4EC4F0E5578AC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E16A793A2861119518D934C /* R.generated.swift */; };
 		4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427DE4B2A263982BCACC180 /* KIF+Swift.swift */; };
@@ -98,6 +99,7 @@
 		2D21F31E29E3C71C00E0913F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Image.swift"; sourceTree = "<group>"; };
+		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		3427DE4B2A263982BCACC180 /* KIF+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KIF+Swift.swift"; sourceTree = "<group>"; };
 		374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoMockable.generated.swift; sourceTree = "<group>"; };
 		3D573462BD1C3E7B689F70E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 		77490BB09902519913482E98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */,
+				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
 				22942BB11EE80D28161D0AE4 /* Navigator.swift in Sources */,
