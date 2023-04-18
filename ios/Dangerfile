@@ -8,7 +8,7 @@ warn("This pull request doesn't have any labels, please consider to add labels t
 
 # SwiftFormat
 swiftformat.binary_path = './Pods/SwiftFormat/CommandLineTool/swiftformat'
-swiftformat.exclude = %w(Pods/**  **/*generated.swift)
+swiftformat.exclude = %w(Pods/**  **/*generated.swift fastlane/**)
 swiftformat.check_format
 
 # Swiftlint
