@@ -51,6 +51,13 @@ jobs:
         touch KMMIC/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
         echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > ./KMMIC/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
 
+    - name: Setup Konfig Properties
+      env:
+       BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+      run: |
+       touch ../buildKonfig.properties
+       echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
+
     - name: Bundle install
       # if: steps.bundleCache.outputs.cache-hit != 'true'
       run: bundle install
