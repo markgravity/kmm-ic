@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package co.nimblehq.mark.kmmic
 
 class AndroidPlatform : Platform {

@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package co.nimblehq.mark.kmmic
 
 import kotlin.test.Test
