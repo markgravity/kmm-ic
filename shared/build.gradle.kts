@@ -33,14 +33,22 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                // Coroutines
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
                 // Koin
                 implementation("io.insert-koin:koin-core:3.2.0")
                 implementation("io.insert-koin:koin-test:3.2.0")
+
+                // Ktor
+                implementation("io.ktor:ktor-client-core:2.2.4")
+                implementation("io.ktor:ktor-client-cio:2.2.4")
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
             }
         }
         val androidMain by getting
