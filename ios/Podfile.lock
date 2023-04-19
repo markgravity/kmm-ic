@@ -53,6 +53,11 @@ PODS:
   - KIF/IdentifierTests (3.8.9):
     - KIF/Core
   - Kingfisher (6.3.1)
+  - KMPNativeCoroutinesAsync (0.13.3):
+    - KMPNativeCoroutinesCore (= 0.13.3)
+  - KMPNativeCoroutinesCombine (0.13.3):
+    - KMPNativeCoroutinesCore (= 0.13.3)
+  - KMPNativeCoroutinesCore (0.13.3)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -83,6 +88,8 @@ DEPENDENCIES:
   - KIF
   - KIF/IdentifierTests
   - Kingfisher
+  - KMPNativeCoroutinesAsync
+  - KMPNativeCoroutinesCombine
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - Quick
@@ -111,6 +118,9 @@ SPEC REPOS:
     - KeychainAccess
     - KIF
     - Kingfisher
+    - KMPNativeCoroutinesAsync
+    - KMPNativeCoroutinesCombine
+    - KMPNativeCoroutinesCore
     - nanopb
     - Nimble
     - PromisesObjC
@@ -151,6 +161,9 @@ SPEC CHECKSUMS:
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   KIF: 7660c626b0f2d4562533590960db70a36d640558
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  KMPNativeCoroutinesAsync: 0fb5f7258e7b2bae50f03614a134bbbbfa3343ab
+  KMPNativeCoroutinesCombine: fbaa0c7d7370a95cceb5481327fdaa14f2617a9e
+  KMPNativeCoroutinesCore: 53c5b81bf7b74c556ce595931b3cdde87d6b2e45
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
@@ -166,6 +179,6 @@ SPEC CHECKSUMS:
   Wormholy: 09da0b876f9276031fd47383627cb75e194fc068
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: 267390e45a43bcf3f406f8a59d9ca567d35fef04
+PODFILE CHECKSUM: c9dce09ee6d7b7b19736172e340185084fc813d1
 
 COCOAPODS: 1.12.0
