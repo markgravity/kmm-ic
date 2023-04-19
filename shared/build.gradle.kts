@@ -1,6 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
-import java.io.File
 import java.util.*
 
 plugins {
@@ -87,16 +86,6 @@ val detektTask = tasks.register<JavaExec>("detekt") {
 
 dependencies {
     detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.22.0")
-}
-
-fun File.loadGradleProperties(fileName: String): Properties {
-    val properties = Properties()
-    val signingProperties = File(this, fileName)
-
-    if (signingProperties.isFile) {
-        properties.load(signingProperties.inputStream())
-    }
-    return properties
 }
 
 val buildKonfigProperties =  rootDir.loadGradleProperties("buildKonfig.properties")
