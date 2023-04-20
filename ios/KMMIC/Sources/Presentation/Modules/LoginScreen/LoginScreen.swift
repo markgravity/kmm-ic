@@ -54,6 +54,10 @@ struct LoginScreen: View {
         .onAppear {
             isAnimated = true
         }
+        .onChange(of: viewModel.didLogin) {
+            guard $0 else { return }
+            // TODO: Navigate to Home screen
+        }
     }
 }
 
