@@ -1,7 +1,12 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
+import java.util.*
+
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("com.codingfeline.buildkonfig")
 }
 
 kotlin {
@@ -19,10 +24,10 @@ kotlin {
             baseName = "Shared"
         }
 
-        xcodeConfigurationToNativeBuildType["Debug Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Debug Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.DEBUG
-        xcodeConfigurationToNativeBuildType["Release Production"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
-        xcodeConfigurationToNativeBuildType["Release Staging"] = org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["Release Production"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["Release Staging"] = NativeBuildType.RELEASE
     }
     
     sourceSets {
@@ -81,4 +86,46 @@ val detektTask = tasks.register<JavaExec>("detekt") {
 
 dependencies {
     detekt("io.gitlab.arturbosch.detekt:detekt-cli:1.22.0")
+}
+
+val buildKonfigProperties =  rootDir.loadGradleProperties("buildKonfig.properties")
+
+buildkonfig {
+    packageName = "co.nimblehq.mark.kmmic"
+
+    defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            buildKonfigProperties.getProperty("STAGING_CLIENT_ID")
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            buildKonfigProperties.getProperty("STAGING_CLIENT_SECRET")
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            buildKonfigProperties.getProperty("STAGING_BASE_URL")
+        )
+    }
+
+    defaultConfigs("production") {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            buildKonfigProperties.getProperty("PRODUCTION_CLIENT_ID")
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            buildKonfigProperties.getProperty("PRODUCTION_CLIENT_SECRET")
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            buildKonfigProperties.getProperty("PRODUCTION_BASE_URL")
+        )
+    }
 }
