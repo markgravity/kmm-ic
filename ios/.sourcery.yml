@@ -1,6 +1,8 @@
 configurations:
     - sources:
         - KMMIC/Sources
+      forceParse:
+        - generated
       templates:
         - tools/sourcery/templates/AutoMockable.stencil
       output:
@@ -8,8 +10,9 @@ configurations:
       args:
         autoMockableTestableImports:
           - KMMIC
+          - Shared
     - sources:
-        - KMMIC/Sources/Supports/Helpers/Shared/Shared.generated.swift
+        - KMMIC/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift
       templates:
         - tools/sourcery/templates/Shared.stencil
       output:

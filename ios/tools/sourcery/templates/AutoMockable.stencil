@@ -119,7 +119,9 @@ class {{ type.name }}Mock: {{ type.name }} {
 {% endfor %}
 
 {% for method in type.allMethods|!definedInExtension %}
+    {% if method.attributes.available[0].arguments.renamed == null %}
     {% call mockMethod method %}
+    {% endif %}
 {% endfor %}
 }
 

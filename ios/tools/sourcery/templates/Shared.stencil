@@ -4,6 +4,7 @@ import Combine
 
 {% for type in types.protocols where type.name | hasSuffix:"UseCase" %}
   {% for method in type.methods where method.name | hasPrefix:"invokeAsNative(" %}
+// sourcery:begin: AutoMockable
 extension {{ type.name }} {
 
   func invokeAsPublisher(
@@ -19,5 +20,6 @@ extension {{ type.name }} {
     return createPublisher(for: call)
   }
 }
+// sourcery:end: AutoMockable
 	 {% endfor %}
 {% endfor %}

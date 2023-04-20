@@ -20,6 +20,7 @@
 		2D40AA8D29F0EB3F00CEADB9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */; };
 		2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */; };
 		2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA9129F1181F00CEADB9 /* View+Alert.swift */; };
+		2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
 		2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1129EE3217006DF40A /* LoginScreen.swift */; };
 		2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -119,6 +120,7 @@
 		2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Domain.swift"; sourceTree = "<group>"; };
 		2D40AA9129F1181F00CEADB9 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
+		2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		2DFE5F1129EE3217006DF40A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
@@ -286,6 +288,30 @@
 			path = Injection;
 			sourceTree = "<group>";
 		};
+		2D967A5B29F18CBC0015BC99 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2D967A5C29F18CC50015BC99 /* Modules */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2D967A5C29F18CC50015BC99 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2D967A5D29F18CCA0015BC99 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2D967A5D29F18CCA0015BC99 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2DBA869C5529F0FCE523BF7E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +438,7 @@
 		4A31E7AD8625E88E8540371A /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				2D967A5B29F18CBC0015BC99 /* Presentation */,
 				D09EED17F040EDC03BD7A481 /* Supports */,
 			);
 			path = Specs;
@@ -874,7 +901,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n";
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\nrm -f \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n";
 		};
 		25EEEEF8E2FB0370DF37C707 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -909,11 +936,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.generated.swift",
+				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.generated.swift\"\n";
+			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n";
 		};
 		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1095,6 +1122,7 @@
 			files = (
 				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
 				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
+				2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
