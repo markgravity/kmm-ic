@@ -10,6 +10,7 @@ import Factory
 import Nimble
 import Quick
 import Shared
+import TestableCombinePublishers
 
 @testable import KMMIC
 
@@ -39,19 +40,47 @@ final class LoginViewModelSpec: QuickSpec {
 
                     beforeEach {
                         loginUseCaseMock.callAsNativeEmailPasswordReturnValue = { success, _ in
-                            {
-                                success(
-                                    .init(accessToken: "", tokenType: "", expiresIn: 2, refreshToken: "", createdAt: 2),
-                                    .shared
-                                )
-                                return .shared
-                            }
+                            _ = success(.dummy, .shared)
+                            return { .shared }
                         }
                         viewModel.login()
                     }
 
-                    it("sets isLoading to true") {
-                        expect(viewModel.isLoading) == true
+                    it("sets isLoading correctly") {
+                        viewModel.$isLoading
+                            .collect(2)
+                            .expect([true, false])
+                            .waitForExpectations(timeout: 1.0)
+                    }
+
+                    it("sets didLogin to true") {
+                        expect(viewModel.didLogin).toEventually(beTrue())
+                    }
+
+                    it("triggers logInUseCase to call") {
+                        expect(loginUseCaseMock.callAsNativeEmailPasswordCalled) == true
+                    }
+                }
+
+                context("when logInUseCase emits failure") {
+
+                    beforeEach {
+                        loginUseCaseMock.callAsNativeEmailPasswordReturnValue = { _, failure in
+                            _ = failure(TestError.dummy, .shared)
+                            return { .shared }
+                        }
+                        viewModel.login()
+                    }
+
+                    it("sets isLoading correctly") {
+                        viewModel.$isLoading
+                            .collect(2)
+                            .expect([true, false])
+                            .waitForExpectations(timeout: 1.0)
+                    }
+
+                    it("sets alertDescription correctly") {
+                        expect(viewModel.alertDescription).toEventually(equal(TestError.dummy.alertDescription))
                     }
                 }
             }

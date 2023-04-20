@@ -10,7 +10,7 @@ import Foundation
 import Shared
 import SwiftUI
 
-struct AlertDescription: Identifiable {
+struct AlertDescription: Identifiable, Equatable {
 
     let title: String
     let message: String

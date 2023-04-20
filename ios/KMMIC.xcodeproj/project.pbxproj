@@ -21,6 +21,9 @@
 		2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */; };
 		2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA9129F1181F00CEADB9 /* View+Alert.swift */; };
 		2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */; };
+		2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */; };
+		2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6729F196D10015BC99 /* Error+Dummy.swift */; };
+		2D967A6F29F19B220015BC99 /* TestableCombinePublishers in Frameworks */ = {isa = PBXBuildFile; productRef = 2D967A6E29F19B220015BC99 /* TestableCombinePublishers */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
 		2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1129EE3217006DF40A /* LoginScreen.swift */; };
 		2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -121,6 +124,8 @@
 		2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Domain.swift"; sourceTree = "<group>"; };
 		2D40AA9129F1181F00CEADB9 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
+		2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthToken+Dummy.swift"; sourceTree = "<group>"; };
+		2D967A6729F196D10015BC99 /* Error+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Dummy.swift"; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		2DFE5F1129EE3217006DF40A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C61280EF5985EA00FA312E6 /* Pods_KMMICTests.framework in Frameworks */,
+				2D967A6F29F19B220015BC99 /* TestableCombinePublishers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,8 @@
 		1EDA4409E51984DEB6D33F53 /* Dummy */ = {
 			isa = PBXGroup;
 			children = (
+				2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */,
+				2D967A6729F196D10015BC99 /* Error+Dummy.swift */,
 			);
 			path = Dummy;
 			sourceTree = "<group>";
@@ -771,6 +779,8 @@
 			dependencies = (
 			);
 			name = KMMIC;
+			packageProductDependencies = (
+			);
 			productName = KMMIC;
 			productReference = 76E0A4564442FAF69751E084 /* KMMIC.app */;
 			productType = "com.apple.product-type.application";
@@ -793,6 +803,9 @@
 				8B623DE71CCF778434ED741E /* PBXTargetDependency */,
 			);
 			name = KMMICTests;
+			packageProductDependencies = (
+				2D967A6E29F19B220015BC99 /* TestableCombinePublishers */,
+			);
 			productName = KMMICTests;
 			productReference = C97B69EAF25CDE733FA325EB /* KMMICTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -843,6 +856,9 @@
 				en,
 			);
 			mainGroup = 8EB5E112F21DFA7A051950A7;
+			packageReferences = (
+				2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */,
+			);
 			productRefGroup = E42EB7C932465BADFC3EFE33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1122,6 +1138,8 @@
 			files = (
 				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
 				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
+				2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */,
+				2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */,
 				2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1773,6 +1791,25 @@
 			defaultConfigurationName = "Release Production";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/albertbori/TestableCombinePublishers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D967A6E29F19B220015BC99 /* TestableCombinePublishers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */;
+			productName = TestableCombinePublishers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 232190F6DC4B4AEB20B100F5 /* Project object */;
 }
