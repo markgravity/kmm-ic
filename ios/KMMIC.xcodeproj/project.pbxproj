@@ -895,6 +895,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
