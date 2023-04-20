@@ -13,11 +13,17 @@ private struct ProgressHUDModifier: ViewModifier {
     let isPresented: Binding<Bool>
 
     func body(content: Content) -> some View {
-        ZStack {
-            content
-            ProgressHUD(isPresented: isPresented)
+        if #available(iOS 15.0, *) {
+            content.overlay {
+                ProgressHUD(isPresented: isPresented)
+            }
+        } else {
+            ZStack {
+                content
+                ProgressHUD(isPresented: isPresented)
+            }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 

@@ -20,7 +20,7 @@ struct KMMApp: App {
     var subscription: AnyCancellable?
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
+            NavigatorStack()
         }
     }
 

@@ -2,3 +2,5 @@
 "loginScreen.passwordTextField.title" = "Password";
 "loginScreen.forgotButton.title" = "Forgot?";
 "loginScreen.loginButton.title" = "Log in";
+
+"alert.warning.title" = "Warning!";
