@@ -41,7 +41,7 @@ struct LoginScreen: View {
                 PrimaryButton(R.string.localizable.loginScreenLoginButtonTitle()) {
                     viewModel.login()
                 }
-                .disabled(viewModel.isAllValidated)
+                .disabled(!viewModel.isAllValidated)
                 .frame(height: 56.0)
             }
             .opacity(isAnimated ? 1.0 : 0.0)
@@ -54,9 +54,6 @@ struct LoginScreen: View {
         .onAppear {
             isAnimated = true
         }
-//        .onChange(of: viewModel.didLogin) { newValue in
-//            <#code#>
-//        }
     }
 }
 

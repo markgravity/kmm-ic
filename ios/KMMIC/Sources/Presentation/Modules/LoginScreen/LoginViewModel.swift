@@ -22,6 +22,12 @@ final class LoginViewModel: ObservableObject {
     @Published var didLogin: Bool = false
     @Published var alertDescription: AlertDescription?
 
+    init() {
+        Publishers.CombineLatest($email, $password)
+            .map { !$0.0.isEmpty && !$0.1.isEmpty }
+            .assign(to: &$isAllValidated)
+    }
+
     func login() {
         isLoading = true
 

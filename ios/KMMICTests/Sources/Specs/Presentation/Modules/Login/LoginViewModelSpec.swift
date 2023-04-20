@@ -29,6 +29,33 @@ final class LoginViewModelSpec: QuickSpec {
                 viewModel = LoginViewModel()
             }
 
+            describe("its isAllValidated") {
+
+                context("when password or email is emptied") {
+
+                    beforeEach {
+                        viewModel.email = "dev@nimblehq.co"
+                        viewModel.password = ""
+                    }
+
+                    it("sets isAllValidated to true") {
+                        expect(viewModel.isAllValidated) == false
+                    }
+                }
+
+                context("when both password and email aren't emptied") {
+
+                    beforeEach {
+                        viewModel.email = "dev@nimblehq.co"
+                        viewModel.password = "12345678"
+                    }
+
+                    it("sets isAllValidated to true") {
+                        expect(viewModel.isAllValidated) == true
+                    }
+                }
+            }
+
             describe("its login call") {
 
                 beforeEach {
