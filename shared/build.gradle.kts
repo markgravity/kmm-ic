@@ -54,7 +54,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-logging:2.1.1")
 
                 // JsonApi
-                implementation(project(":jsonapi-kotlin:core"))
+                implementation("co.nimblehq.jsonapi:core:0.1.0")
 
                 // Kotlinx Serialization
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")

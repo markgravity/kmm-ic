@@ -24,3 +24,22 @@ tasks.register("clean", Delete::class) {
 repositories {
     mavenCentral()
 }
+
+allprojects {
+    val buildKonfigProperties =  rootDir.loadGradleProperties("buildKonfig.properties")
+
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+
+        maven {
+            name = "Github Packages"
+            url = uri("https://maven.pkg.github.com/nimblehq/jsonapi-kotlin")
+            credentials {
+                username = buildKonfigProperties.getProperty("GITHUB_USER")
+                password = buildKonfigProperties.getProperty("GITHUB_TOKEN")
+            }
+        }
+    }
+}

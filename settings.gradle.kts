@@ -15,4 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "KMM_IC"
 include(":shared")
-include(":jsonapi-kotlin:core")
