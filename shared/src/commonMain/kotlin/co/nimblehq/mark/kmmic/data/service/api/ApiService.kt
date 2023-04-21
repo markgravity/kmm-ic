@@ -2,9 +2,12 @@ package co.nimblehq.mark.kmmic.data.service.api
 
 import co.nimblehq.jsonapi.json.JsonApi
 import co.nimblehq.jsonapi.model.JsonApiException
+import co.nimblehq.mark.kmmic.data.service.token.TokenService
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import io.ktor.client.HttpClient
+import io.ktor.client.plugins.auth.*
+import io.ktor.client.plugins.auth.providers.*
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
@@ -17,8 +20,11 @@ import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.json.Json
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-internal class ApiService {
+internal class ApiService(requiresAuthentication: Boolean = false): KoinComponent {
+    private val tokenService: TokenService by inject()
 
     val httpClient: HttpClient
     val jsonConfigs = Json {
@@ -44,6 +50,18 @@ internal class ApiService {
 
             install(ContentNegotiation) {
                 json(jsonConfigs)
+            }
+
+            if (requiresAuthentication) {
+                install(Auth) {
+                    bearer {
+                        loadTokens {
+                            tokenService.get()?.run {
+                                BearerTokens(accessToken, refreshToken)
+                            }
+                        }
+                    }
+                }
             }
         }
     }

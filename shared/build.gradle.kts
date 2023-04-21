@@ -52,6 +52,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-content-negotiation:2.1.1")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.1")
                 implementation("io.ktor:ktor-client-logging:2.1.1")
+                implementation("io.ktor:ktor-client-auth:2.1.1")
 
                 // JsonApi
                 implementation("co.nimblehq.jsonapi:core:0.1.0")
