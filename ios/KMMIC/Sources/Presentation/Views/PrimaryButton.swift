@@ -16,7 +16,7 @@ struct PrimaryButton: View {
 
     var body: some View {
         Button(title, action: action)
-            .font(R.font.neuzeitSLTStdBookHeavy.font(size: 17.0))
+            .font(.boldBody)
             .frame(maxWidth: .infinity, maxHeight: 56.0)
             .background(isEnabled ? Color.white : Color.gray)
             .foregroundColor(Color.black)
