@@ -919,7 +919,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\nrm -f \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n";
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n";
 		};
 		25EEEEF8E2FB0370DF37C707 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -954,11 +954,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift",
+				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n";
+			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n\n\"$PODS_ROOT/Sourcery/bin/sourcery\" --config \"$SRCROOT/.shared-sourcery.yml\"\n";
 		};
 		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;

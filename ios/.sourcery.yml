@@ -1,19 +1,12 @@
-configurations:
-    - sources:
-        - KMMIC/Sources
-      forceParse:
-        - generated
-      templates:
-        - tools/sourcery/templates/AutoMockable.stencil
-      output:
-        KMMICTests/Sources/Mocks/Sourcery
-      args:
-        autoMockableTestableImports:
-          - KMMIC
-          - Shared
-    - sources:
-        - KMMIC/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift
-      templates:
-        - tools/sourcery/templates/Shared.stencil
-      output:
-        KMMIC/Sources/Supports/Helpers/Shared/Shared.generated.swift
+sources:
+  - KMMIC/Sources
+forceParse:
+  - generated
+templates:
+  - tools/sourcery/templates/AutoMockable.stencil
+output:
+  KMMICTests/Sources/Mocks/Sourcery
+args:
+  autoMockableTestableImports:
+    - KMMIC
+    - Shared
