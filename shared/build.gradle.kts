@@ -72,6 +72,8 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+                implementation("io.mockative:mockative:1.4.0")
+                implementation("io.kotest:kotest-framework-engine:5.5.1")
             }
         }
         val androidMain by getting
@@ -118,7 +120,7 @@ val detektTask = tasks.register<JavaExec>("detekt") {
 
     val input = "$projectDir"
     val config = "$projectDir/detekt.yml"
-    val exclude = ".*/build/.*,.*/resources/.*,**/*.kts"
+    val exclude = ".*/build/.*,.*/resources/.*,**/*.kts,.*/commentTest/.*,**/*.Mockative.kt"
     val report = "sarif:$buildDir/reports/detekt/report.sarif"
     val params = listOf("-i", input, "-c", config, "-ex", exclude, "-r", report)
 
@@ -187,4 +189,16 @@ tasks.withType<com.google.devtools.ksp.gradle.KspTask>().configureEach {
 nativeCoroutines {
     // The suffix used to generate the native coroutine function and property names.
     suffix = "AsNative"
+}
+
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, "io.mockative:mockative-processor:1.4.0")
+        }
+}
+
+ksp {
+    arg("mockative.stubsUnitByDefault", "true")
 }
