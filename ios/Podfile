@@ -30,7 +30,6 @@ target 'KMMIC' do
   pod 'KMPNativeCoroutinesCombine'
   pod 'FlowStacks'
   pod 'Factory'
-  pod 'SDWebImageSwiftUI'
 
   # Development
   pod 'SwiftLint'
