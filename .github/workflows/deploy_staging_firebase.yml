@@ -25,13 +25,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-       fetch-depth: 0
+        fetch-depth: 0
 
     - name: Setup Java JDK
       uses: actions/setup-java@v2.1.0
       with:
-       distribution: 'adopt'
-       java-version: '11'
+        distribution: 'adopt'
+        java-version: '11'
 
     - name: Install SSH key
       uses: webfactory/ssh-agent@v0.5.4
@@ -53,7 +53,7 @@ jobs:
 
     - name: Setup Konfig Properties
       env:
-       BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+        BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
       run: |
        touch ../buildKonfig.properties
        echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
