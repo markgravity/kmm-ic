@@ -21,6 +21,8 @@ struct NavigatorStack: View {
                     SplashScreen()
                 case .login:
                     LoginScreen()
+                case .home:
+                    HomeScreen()
                 }
             }
             .environmentObject(navigator)

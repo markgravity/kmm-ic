@@ -11,11 +11,12 @@ import SwiftUI
 
 struct HomeHeader: View {
 
+    @EnvironmentObject var viewModel: HomeViewModel
+
     var body: some View {
-        // TODO: Update with real data
         HStack {
             VStack(alignment: .leading, spacing: 4.0) {
-                Text("Monday, JUNE 15")
+                Text(viewModel.todayDateString)
                     .font(.boldSmall)
                     .foregroundColor(.white)
                 Text(R.string.localizable.homeScreenTodayText)
@@ -26,7 +27,7 @@ struct HomeHeader: View {
             ZStack {
                 Circle()
                     .fill(Color.black)
-                LazyImage(url: .init(string: "https://thumbs.dreamstime.com/z/37160339.jpg")) {
+                LazyImage(url: viewModel.userAvatar) {
                     if let image = $0.image {
                         image
                             .resizable()
