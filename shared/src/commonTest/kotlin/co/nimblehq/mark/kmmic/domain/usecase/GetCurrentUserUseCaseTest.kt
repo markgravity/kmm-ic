@@ -49,7 +49,7 @@ class GetCurrentUserUseCaseTest {
     @Test
     fun `when call is called - it returns the correctly user`() = runTest {
         given(mockUserRepository)
-            .function(mockUserRepository::me)
+            .function(mockUserRepository::getProfile)
             .whenInvoked()
             .thenReturn(
                 flow {
@@ -57,7 +57,7 @@ class GetCurrentUserUseCaseTest {
                 }
             )
 
-        useCase.call().collect {
+        useCase.invoke().collect {
             it shouldBe mockUser
         }
     }

@@ -1,7 +1,7 @@
 package co.nimblehq.mark.kmmic.data.repository
 
 import co.nimblehq.mark.kmmic.data.service.user.UserService
-import co.nimblehq.mark.kmmic.data.service.user.model.UserResponse
+import co.nimblehq.mark.kmmic.data.service.user.model.UserApiModel
 import co.nimblehq.mark.kmmic.domain.model.User
 import co.nimblehq.mark.kmmic.domain.repository.UserRepository
 import kotlin.test.BeforeTest
@@ -24,7 +24,7 @@ class UserRepositoryTest {
     @Mock
     private val mockUserService = mock(classOf<UserService>())
     private lateinit var repository: UserRepository
-    private val mockUser = UserResponse(
+    private val mockUser = UserApiModel(
         "id",
         "type",
         "dev@nimblehq.co",
@@ -53,7 +53,7 @@ class UserRepositoryTest {
     @Test
     fun `when me is called - it returns the correctly user`() = runTest {
         given(mockUserService)
-            .function(mockUserService::me)
+            .function(mockUserService::getProfile)
             .whenInvoked()
             .thenReturn(
                 flow {
@@ -61,7 +61,7 @@ class UserRepositoryTest {
                 }
             )
 
-        repository.me().collect {
+        repository.getProfile().collect {
             it shouldBe User(mockUser)
         }
     }

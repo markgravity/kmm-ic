@@ -11,9 +11,9 @@ import org.koin.core.component.inject
 internal class UserRepositoryImpl: UserRepository, KoinComponent {
     private val userService: UserService by inject()
 
-    override fun me(): Flow<User> {
+    override fun getProfile(): Flow<User> {
         return userService
-            .me()
+            .getProfile()
             .map { User(it) }
     }
 }

@@ -4,5 +4,5 @@ import co.nimblehq.mark.kmmic.domain.model.User
 import kotlinx.coroutines.flow.Flow
 
 internal interface UserRepository {
-    fun me(): Flow<User>
+    fun getProfile(): Flow<User>
 }

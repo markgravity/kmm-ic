@@ -7,13 +7,13 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 interface GetCurrentUserUseCase {
-    fun call(): Flow<User>
+    fun invoke(): Flow<User>
 }
 
 class GetCurrentUserUseCaseImpl : GetCurrentUserUseCase, KoinComponent {
     private val userRepository: UserRepository by inject()
 
-    override fun call(): Flow<User> {
-        return userRepository.me()
+    override fun invoke(): Flow<User> {
+        return userRepository.getProfile()
     }
 }
