@@ -66,7 +66,7 @@ final class LoginViewModelSpec: QuickSpec {
                 context("when logInUseCase emits success") {
 
                     beforeEach {
-                        loginUseCaseMock.callAsNativeEmailPasswordReturnValue = { success, _ in
+                        loginUseCaseMock.invokeAsNativeEmailPasswordReturnValue = { success, _ in
                             _ = success(.dummy, .shared)
                             return { .shared }
                         }
@@ -85,14 +85,14 @@ final class LoginViewModelSpec: QuickSpec {
                     }
 
                     it("triggers logInUseCase to call") {
-                        expect(loginUseCaseMock.callAsNativeEmailPasswordCalled) == true
+                        expect(loginUseCaseMock.invokeAsNativeEmailPasswordCalled) == true
                     }
                 }
 
                 context("when logInUseCase emits failure") {
 
                     beforeEach {
-                        loginUseCaseMock.callAsNativeEmailPasswordReturnValue = { _, failure in
+                        loginUseCaseMock.invokeAsNativeEmailPasswordReturnValue = { _, failure in
                             _ = failure(TestError.dummy, .shared)
                             return { .shared }
                         }

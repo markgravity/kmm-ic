@@ -31,7 +31,7 @@ final class LoginViewModel: ObservableObject {
     func login() {
         isLoading = true
 
-        loginUseCase.callAsPublisher(email: email, password: password)
+        loginUseCase.invokeAsPublisher(email: email, password: password)
             .receive(on: RunLoop.main)
             .sink { [weak self] result in
                 guard let self else { return }
