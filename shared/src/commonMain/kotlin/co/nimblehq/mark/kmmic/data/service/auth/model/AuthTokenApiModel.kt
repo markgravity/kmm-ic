@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal data class AuthTokenResponse(
+internal data class AuthTokenApiModel(
     @SerialName("id")
     val id: String,
     @SerialName("type")

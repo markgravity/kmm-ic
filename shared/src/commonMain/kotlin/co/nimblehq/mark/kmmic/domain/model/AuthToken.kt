@@ -1,10 +1,10 @@
 package co.nimblehq.mark.kmmic.domain.model
 
-import co.nimblehq.mark.kmmic.data.service.auth.model.AuthTokenResponse
+import co.nimblehq.mark.kmmic.data.service.auth.model.AuthTokenApiModel
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class AuthToken constructor(
+data class AuthToken (
     val accessToken: String,
     val tokenType: String,
     val expiresIn: Int,
@@ -12,7 +12,7 @@ data class AuthToken constructor(
     val createdAt: Int
 ) {
 
-    internal constructor(response: AuthTokenResponse) : this(
+    internal constructor(response: AuthTokenApiModel) : this(
         response.accessToken,
         response.tokenType,
         response.expiresIn,

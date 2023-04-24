@@ -10,7 +10,9 @@ private const val GRANT_TYPE_PASSWORD = "password"
 internal data class AuthLoginParams(
     @SerialName("grant_type")
     val grantType: String = GRANT_TYPE_PASSWORD,
+    @SerialName("email")
     val email: String,
+    @SerialName("password")
     val password: String,
     @SerialName("client_id")
     val clientId: String = BuildKonfig.CLIENT_ID,

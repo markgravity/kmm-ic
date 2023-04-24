@@ -8,13 +8,13 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 interface LoginUseCase {
-    fun call(email: String, password: String): Flow<AuthToken>
+    fun invoke(email: String, password: String): Flow<AuthToken>
 }
 
 class LoginUseCaseImpl : LoginUseCase, KoinComponent {
     private val authRepository: AuthRepository by inject()
 
-    override fun call(email: String, password: String): Flow<AuthToken> {
+    override fun invoke(email: String, password: String): Flow<AuthToken> {
         return authRepository
             .login(email, password)
             .onEach { authRepository.saveToken(it) }

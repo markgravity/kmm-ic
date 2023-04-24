@@ -14,7 +14,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-private const val ACCESS_TOKEN_KEY = "access_token"
+private const val KEY_ACCESS_TOKEN = "access_token"
 
 @OptIn(ExperimentalSerializationApi::class, ExperimentalSettingsApi::class)
 internal class AuthRepositoryImpl: AuthRepository, KoinComponent {
@@ -28,10 +28,10 @@ internal class AuthRepositoryImpl: AuthRepository, KoinComponent {
     }
 
     override fun saveToken(token: AuthToken) {
-        settings.encodeValue(AuthToken.serializer(), ACCESS_TOKEN_KEY, token)
+        settings.encodeValue(AuthToken.serializer(), KEY_ACCESS_TOKEN, token)
     }
 
     override fun getToken(): AuthToken? {
-        return settings.decodeValueOrNull(AuthToken.serializer(), ACCESS_TOKEN_KEY)
+        return settings.decodeValueOrNull(AuthToken.serializer(), KEY_ACCESS_TOKEN)
     }
 }
