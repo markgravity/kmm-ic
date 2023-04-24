@@ -15,11 +15,11 @@ final class LoginViewModel: ObservableObject {
 
     private var cancellableBag = Set<AnyCancellable>()
 
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var isAllValidated: Bool = false
-    @Published var isLoading: Bool = false
-    @Published var didLogin: Bool = false
+    @Published var email = ""
+    @Published var password = ""
+    @Published var isAllValidated = false
+    @Published var isLoading = false
+    @Published var didLogin = false
     @Published var alertDescription: AlertDescription?
 
     init() {

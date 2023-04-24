@@ -10,16 +10,6 @@ import Foundation
 import Shared
 import SwiftUI
 
-struct AlertDescription: Identifiable, Equatable {
-
-    let title: String
-    let message: String
-
-    var id: String {
-        "\(title) \(message)"
-    }
-}
-
 extension View {
 
     func alert(_ alertDescription: Binding<AlertDescription?>) -> some View {

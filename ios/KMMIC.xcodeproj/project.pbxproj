@@ -20,6 +20,7 @@
 		2D40AA8D29F0EB3F00CEADB9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */; };
 		2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */; };
 		2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA9129F1181F00CEADB9 /* View+Alert.swift */; };
+		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */; };
 		2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */; };
 		2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6729F196D10015BC99 /* Error+Dummy.swift */; };
@@ -123,6 +124,7 @@
 		2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Domain.swift"; sourceTree = "<group>"; };
 		2D40AA9129F1181F00CEADB9 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
+		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
 		2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthToken+Dummy.swift"; sourceTree = "<group>"; };
 		2D967A6729F196D10015BC99 /* Error+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Dummy.swift"; sourceTree = "<group>"; };
@@ -733,6 +735,7 @@
 		F04421AEDF791303C073000B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1167,6 +1170,7 @@
 				2D40AA8929F0E05F00CEADB9 /* Navigator+Screen.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
+				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */,
 				5C65F290D588E679684E6914 /* Optional+Unwrap.swift in Sources */,
 				2D40AA8729F0E03E00CEADB9 /* Navigator.swift in Sources */,
