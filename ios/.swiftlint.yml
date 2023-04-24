@@ -6,8 +6,8 @@ included:
 excluded:
   - KMMICTests/Sources/Mocks/Sourcery/AutoMockable.generated.swift
   - KMMIC/Sources/Supports/Helpers/Rswift/R.generated.swift
-  - KMMIC/Sources/Supports/Helpers/Shared/Shared.generated.swift
-  - KMMIC/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift
+  - KMMIC/Sources/Supports/Helpers/Shared/AutoSharedUseCase.generated.swift
+  - KMMIC/Sources/Supports/Helpers/Shared/AutoSharedUseCase.tmp.generated.swift
   - Pods
   - Derived
   - DerivedData

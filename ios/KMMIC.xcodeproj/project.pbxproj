@@ -12,7 +12,7 @@
 		2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */; };
 		2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */; };
 		2D40AA7329EFDBF800CEADB9 /* commonMain in Resources */ = {isa = PBXBuildFile; fileRef = 2D40AA7229EFDBF800CEADB9 /* commonMain */; };
-		2D40AA8329F05EC800CEADB9 /* Shared.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */; };
+		2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8229F05EC700CEADB9 /* AutoSharedUseCase.generated.swift */; };
 		2D40AA8529F0DFCB00CEADB9 /* NavigatorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8429F0DFCB00CEADB9 /* NavigatorStack.swift */; };
 		2D40AA8729F0E03E00CEADB9 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8629F0E03E00CEADB9 /* Navigator.swift */; };
 		2D40AA8929F0E05F00CEADB9 /* Navigator+Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8829F0E05F00CEADB9 /* Navigator+Screen.swift */; };
@@ -115,7 +115,7 @@
 		2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Image.swift"; sourceTree = "<group>"; };
 		2D40AA7229EFDBF800CEADB9 /* commonMain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = commonMain; path = ../../shared/src/commonMain; sourceTree = "<group>"; };
-		2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.generated.swift; sourceTree = "<group>"; };
+		2D40AA8229F05EC700CEADB9 /* AutoSharedUseCase.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSharedUseCase.generated.swift; sourceTree = "<group>"; };
 		2D40AA8429F0DFCB00CEADB9 /* NavigatorStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorStack.swift; sourceTree = "<group>"; };
 		2D40AA8629F0E03E00CEADB9 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		2D40AA8829F0E05F00CEADB9 /* Navigator+Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigator+Screen.swift"; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 		2D40AA7E29F0554A00CEADB9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */,
+				2D40AA8229F05EC700CEADB9 /* AutoSharedUseCase.generated.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -954,11 +954,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.generated.swift",
+				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/AutoSharedUseCase.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift\"\n\n\"$PODS_ROOT/Sourcery/bin/sourcery\" --config \"$SRCROOT/.shared-sourcery.yml\"\n";
+			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/AutoSharedUseCase.tmp.generated.swift\"\n\n\"$PODS_ROOT/Sourcery/bin/sourcery\" --config \"$SRCROOT/.shared-sourcery.yml\"\n";
 		};
 		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1160,7 +1160,7 @@
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
-				2D40AA8329F05EC800CEADB9 /* Shared.generated.swift in Sources */,
+				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
 				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				2DFE5F2829EE3E83006DF40A /* PrimaryTextField.swift in Sources */,
 				2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */,

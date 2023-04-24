@@ -1,6 +1,6 @@
 sources:
-  - KMMIC/Sources/Supports/Helpers/Shared/Shared.tmp.generated.swift
+  - KMMIC/Sources/Supports/Helpers/Shared/AutoSharedUseCase.tmp.generated.swift
 templates:
-  - tools/sourcery/templates/Shared.stencil
+  - tools/sourcery/templates/AutoSharedUseCase.stencil
 output:
-  KMMIC/Sources/Supports/Helpers/Shared/Shared.generated.swift
+  KMMIC/Sources/Supports/Helpers/Shared/AutoSharedUseCase.generated.swift
