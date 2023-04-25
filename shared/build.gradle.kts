@@ -10,6 +10,7 @@ plugins {
     id("com.codingfeline.buildkonfig")
     id("com.google.devtools.ksp").version("1.7.10-1.0.6")
     id("com.rickclephas.kmp.nativecoroutines").version("0.12.6-new-mm")
+    id("io.realm.kotlin") version "1.3.0"
 }
 
 kotlin {
@@ -66,6 +67,9 @@ kotlin {
                 // Setting
                 implementation("com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC")
                 implementation("com.russhwolf:multiplatform-settings-serialization:1.0.0-RC")
+
+                // Realm
+                implementation("io.realm.kotlin:library-base:1.3.0")
             }
         }
         val commonTest by getting {
@@ -74,6 +78,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
                 implementation("io.mockative:mockative:1.4.0")
                 implementation("io.kotest:kotest-framework-engine:5.5.1")
+                implementation("app.cash.turbine:turbine:0.12.3")
             }
         }
         val androidMain by getting
