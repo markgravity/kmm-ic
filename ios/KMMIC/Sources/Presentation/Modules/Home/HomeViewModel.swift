@@ -15,7 +15,7 @@ final class HomeViewModel: ObservableObject {
     @Injected(\.dateHelper) private var dateHelper
 
     @Published var todayDateString: String = ""
-    @Published var userAvatar: URL?
+    @Published var userAvatarURL: URL?
 
     init() {
         todayDateString = DateFormatter.wideNameDayMonth
@@ -24,6 +24,6 @@ final class HomeViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map { URL(string: $0.avatarUrl) }
             .replaceError(with: nil)
-            .assign(to: &$userAvatar)
+            .assign(to: &$userAvatarURL)
     }
 }

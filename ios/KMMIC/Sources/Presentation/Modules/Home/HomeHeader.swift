@@ -27,7 +27,7 @@ struct HomeHeader: View {
             ZStack {
                 Circle()
                     .fill(Color.black)
-                LazyImage(url: viewModel.userAvatar) {
+                LazyImage(url: viewModel.userAvatarURL) {
                     if let image = $0.image {
                         image
                             .resizable()

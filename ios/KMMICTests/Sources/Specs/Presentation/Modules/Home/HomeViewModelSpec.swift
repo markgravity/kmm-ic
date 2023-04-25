@@ -58,8 +58,8 @@ final class HomeViewModelSpec: QuickSpec {
                     viewModel = HomeViewModel()
                 }
 
-                it("sets userAvatar correctly") {
-                    viewModel.$userAvatar
+                it("sets userAvatarURL correctly") {
+                    viewModel.$userAvatarURL
                         .collect(2)
                         .expect([nil, URL(string: User.dummy.avatarUrl)])
                         .waitForExpectations(timeout: 1.0)
@@ -76,8 +76,8 @@ final class HomeViewModelSpec: QuickSpec {
                     viewModel = HomeViewModel()
                 }
 
-                it("sets userAvatar correctly") {
-                    viewModel.$userAvatar
+                it("sets userAvatarURL correctly") {
+                    viewModel.$userAvatarURL
                         .collect(2)
                         .expect([nil, nil])
                         .waitForExpectations(timeout: 1.0)
