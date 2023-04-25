@@ -43,6 +43,6 @@ fun init() {
     }
 
     startKoin {
-        modules(listOf(commonModule, dataModule, domainModule))
+        modules(commonModule + dataModule + domainModule)
     }
 }

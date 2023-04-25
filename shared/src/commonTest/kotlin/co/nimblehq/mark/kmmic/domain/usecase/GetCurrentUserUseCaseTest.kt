@@ -57,7 +57,7 @@ class GetCurrentUserUseCaseTest {
                 }
             )
 
-        useCase.invoke().collect {
+        useCase().collect {
             it shouldBe mockUser
         }
     }

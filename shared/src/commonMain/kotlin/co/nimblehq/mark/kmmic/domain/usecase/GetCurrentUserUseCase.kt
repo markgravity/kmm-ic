@@ -7,7 +7,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 interface GetCurrentUserUseCase {
-    fun invoke(): Flow<User>
+    operator fun invoke(): Flow<User>
 }
 
 class GetCurrentUserUseCaseImpl : GetCurrentUserUseCase, KoinComponent {
