@@ -14,8 +14,7 @@ struct HomeScreen: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            Color.gray
-                .ignoresSafeArea()
+            HomeSurveys()
             HomeHeader()
                 .padding(.horizontal, 20.0)
                 .padding(.top, 30.0)
