@@ -12,6 +12,8 @@
 		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
 		2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */; };
 		2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */; };
+		2D40AA7329EFDBF800CEADB9 /* commonMain in Resources */ = {isa = PBXBuildFile; fileRef = 2D40AA7229EFDBF800CEADB9 /* commonMain */; };
+		2D40AA8329F05EC800CEADB9 /* Shared.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
 		2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1129EE3217006DF40A /* LoginScreen.swift */; };
 		2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -107,6 +109,8 @@
 		2D21F31E29E3C71C00E0913F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Image.swift"; sourceTree = "<group>"; };
+		2D40AA7229EFDBF800CEADB9 /* commonMain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = commonMain; path = ../../shared/src/commonMain; sourceTree = "<group>"; };
+		2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.generated.swift; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		2DFE5F1129EE3217006DF40A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
@@ -252,6 +256,22 @@
 				2DFE5F2129EE3684006DF40A /* Rswift+Font.swift */,
 			);
 			path = Rswift;
+			sourceTree = "<group>";
+		};
+		2D40AA7129EFDBDB00CEADB9 /* Kotlin Debug */ = {
+			isa = PBXGroup;
+			children = (
+				2D40AA7229EFDBF800CEADB9 /* commonMain */,
+			);
+			path = "Kotlin Debug";
+			sourceTree = "<group>";
+		};
+		2D40AA7E29F0554A00CEADB9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2D40AA8229F05EC700CEADB9 /* Shared.generated.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		2DBA869C5529F0FCE523BF7E /* Sources */ = {
@@ -446,6 +466,7 @@
 		70ECD1BA9BEE6313CDE7BFA5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2D40AA7E29F0554A00CEADB9 /* Shared */,
 				227B56B046708557057044C9 /* Rswift */,
 				8558A47D20E6A30E6CE36781 /* Typealiases */,
 			);
@@ -529,6 +550,7 @@
 		8EB5E112F21DFA7A051950A7 = {
 			isa = PBXGroup;
 			children = (
+				2D40AA7129EFDBDB00CEADB9 /* Kotlin Debug */,
 				7CD87CC3933A09C2E7BD32D1 /* Project */,
 				A3D23A9ECB22ED9C64FF444C /* Frameworks */,
 				E42EB7C932465BADFC3EFE33 /* Products */,
@@ -692,6 +714,7 @@
 			buildConfigurationList = 9733618F72F2F921F14D7D20 /* Build configuration list for PBXNativeTarget "KMMIC" */;
 			buildPhases = (
 				403A4ED4AA1C32AD4C47FEDD /* [CP] Check Pods Manifest.lock */,
+				2D40AA7429F040B900CEADB9 /* Generate Shared code */,
 				09567295DA68978E8B12D592 /* Sourcery */,
 				25EEEEF8E2FB0370DF37C707 /* R.swift */,
 				F674A531DC1B69736E92BD6E /* SwiftLint */,
@@ -800,6 +823,7 @@
 				3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */,
 				2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				2DFE5F1C29EE3506006DF40A /* NeuzeitSLTStd-Book.otf in Resources */,
+				2D40AA7329EFDBF800CEADB9 /* commonMain in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,7 +860,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"";
+			shellScript = "\"$PODS_ROOT/Sourcery/bin/sourcery\"\n";
 		};
 		25EEEEF8E2FB0370DF37C707 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -856,7 +880,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Rswift/R.generated.swift\"\n";
+		};
+		2D40AA7429F040B900CEADB9 /* Generate Shared code */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Shared code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/$(PROJECT_NAME)/Sources/Supports/Helpers/Shared/Shared.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"import Shared\\n:type lookup Shared\" | \\\n\txcrun --sdk macosx swift repl -F\"$SRCROOT/../shared/build/cocoapods/framework/\" | \\\n\ttail -n+2 >| \"$SRCROOT/$PROJECT_NAME/Sources/Supports/Helpers/Shared/Shared.generated.swift\"\n";
 		};
 		342DDCF25736486EE261EE45 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1027,7 +1070,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi";
+			shellScript = "if [ -z \"$CI\" ]; then\n    ${PODS_ROOT}/SwiftLint/swiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1053,6 +1096,7 @@
 				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
+				2D40AA8329F05EC800CEADB9 /* Shared.generated.swift in Sources */,
 				B0533A9E9DFCBE932E28423A /* Navigator+Scene.swift in Sources */,
 				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				DB152548068EF20B15EF56D6 /* Navigator+Transition.swift in Sources */,
