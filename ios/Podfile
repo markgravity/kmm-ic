@@ -28,6 +28,8 @@ target 'KMMIC' do
   pod 'Factory'
   pod 'KMPNativeCoroutinesAsync'
   pod 'KMPNativeCoroutinesCombine'
+  pod 'FlowStacks'
+  pod 'Factory'
 
   # Development
   pod 'SwiftLint'
