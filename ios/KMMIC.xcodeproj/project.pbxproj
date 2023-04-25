@@ -25,7 +25,11 @@
 		2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */; };
 		2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6729F196D10015BC99 /* Error+Dummy.swift */; };
 		2D967A6F29F19B220015BC99 /* TestableCombinePublishers in Frameworks */ = {isa = PBXBuildFile; productRef = 2D967A6E29F19B220015BC99 /* TestableCombinePublishers */; };
+		2D967A7229F22BA70015BC99 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7129F22BA70015BC99 /* HomeScreen.swift */; };
+		2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7329F22C4E0015BC99 /* HomeHeader.swift */; };
+		2D967A7629F232300015BC99 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7529F232300015BC99 /* Font+App.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
+		2DF8055029F63B680079651F /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2DF8054F29F63B680079651F /* NukeUI */; };
 		2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1129EE3217006DF40A /* LoginScreen.swift */; };
 		2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */; };
 		2DFE5F1C29EE3506006DF40A /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2DFE5F1A29EE3506006DF40A /* NeuzeitSLTStd-Book.otf */; };
@@ -128,6 +132,9 @@
 		2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
 		2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthToken+Dummy.swift"; sourceTree = "<group>"; };
 		2D967A6729F196D10015BC99 /* Error+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Dummy.swift"; sourceTree = "<group>"; };
+		2D967A7129F22BA70015BC99 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		2D967A7329F22C4E0015BC99 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
+		2D967A7529F232300015BC99 /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		2DFE5F1129EE3217006DF40A /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		2DFE5F1929EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
@@ -188,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15FB33899C7F703E8896254 /* Pods_KMMIC.framework in Frameworks */,
+				2DF8055029F63B680079651F /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +330,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2D967A7029F22B660015BC99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2D967A7129F22BA70015BC99 /* HomeScreen.swift */,
+				2D967A7329F22C4E0015BC99 /* HomeHeader.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2DBA869C5529F0FCE523BF7E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,13 +353,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		2DFE5F1029EE317E006DF40A /* LoginScreen */ = {
+		2DFE5F1029EE317E006DF40A /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				2DFE5F1129EE3217006DF40A /* LoginScreen.swift */,
 				2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */,
 			);
-			path = LoginScreen;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2DFE5F1829EE3506006DF40A /* Fonts */ = {
@@ -401,7 +418,8 @@
 		3E59ED3B60404CFF8E6D509A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				2DFE5F1029EE317E006DF40A /* LoginScreen */,
+				2D967A7029F22B660015BC99 /* Home */,
+				2DFE5F1029EE317E006DF40A /* Login */,
 				2D27FB2E29E7E77F00D0C9A5 /* Splash */,
 			);
 			path = Modules;
@@ -441,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				26D27737E7A40BA93FFCEA6F /* Optional+Unwrap.swift */,
+				2D967A7529F232300015BC99 /* Font+App.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -783,6 +802,7 @@
 			);
 			name = KMMIC;
 			packageProductDependencies = (
+				2DF8054F29F63B680079651F /* NukeUI */,
 			);
 			productName = KMMIC;
 			productReference = 76E0A4564442FAF69751E084 /* KMMIC.app */;
@@ -863,6 +883,7 @@
 			mainGroup = 8EB5E112F21DFA7A051950A7;
 			packageReferences = (
 				2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */,
+				2DF8054E29F63B680079651F /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = E42EB7C932465BADFC3EFE33 /* Products */;
 			projectDirPath = "";
@@ -1164,14 +1185,17 @@
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
 				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
+				2D967A7229F22BA70015BC99 /* HomeScreen.swift in Sources */,
 				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				2DFE5F2829EE3E83006DF40A /* PrimaryTextField.swift in Sources */,
 				2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */,
+				2D967A7629F232300015BC99 /* Font+App.swift in Sources */,
 				2D40AA8929F0E05F00CEADB9 /* Navigator+Screen.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */,
+				2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */,
 				5C65F290D588E679684E6914 /* Optional+Unwrap.swift in Sources */,
 				2D40AA8729F0E03E00CEADB9 /* Navigator.swift in Sources */,
 				2D40AA8529F0DFCB00CEADB9 /* NavigatorStack.swift in Sources */,
@@ -1811,6 +1835,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2DF8054E29F63B680079651F /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1818,6 +1850,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */;
 			productName = TestableCombinePublishers;
+		};
+		2DF8054F29F63B680079651F /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DF8054E29F63B680079651F /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

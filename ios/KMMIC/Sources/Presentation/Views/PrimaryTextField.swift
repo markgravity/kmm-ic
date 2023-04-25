@@ -20,11 +20,11 @@ struct PrimaryTextField: View {
             ZStack(alignment: .leading) {
                 if text.isEmpty {
                     Text(title)
-                        .font(R.font.neuzeitSLTStdBook.font(size: 17.0))
+                        .font(.regularBody)
                         .foregroundColor(.white.opacity(0.3))
                 }
                 makeTextField()
-                    .font(R.font.neuzeitSLTStdBook.font(size: 17.0))
+                    .font(.regularBody)
                     .foregroundColor(Color.white)
             }
             if let rightContent {
