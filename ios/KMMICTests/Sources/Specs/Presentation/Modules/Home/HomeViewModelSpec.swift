@@ -33,7 +33,7 @@ final class HomeViewModelSpec: QuickSpec {
                     .register { dateHelperMock }
 
                 dateHelperMock.underlyingToday = todayDate
-                getCurrentUserUseCaseMock.callAsNativeReturnValue = { success, _ in
+                getCurrentUserUseCaseMock.invokeAsNativeReturnValue = { success, _ in
                     _ = success(.dummy, .shared)
                     return { .shared }
                 }
@@ -51,7 +51,7 @@ final class HomeViewModelSpec: QuickSpec {
             context("when getCurrentUserUseCase emits success") {
 
                 beforeEach {
-                    getCurrentUserUseCaseMock.callAsNativeReturnValue = { success, _ in
+                    getCurrentUserUseCaseMock.invokeAsNativeReturnValue = { success, _ in
                         _ = success(.dummy, .shared)
                         return { .shared }
                     }
@@ -69,7 +69,7 @@ final class HomeViewModelSpec: QuickSpec {
             context("when getCurrentUserUseCase emits failure") {
 
                 beforeEach {
-                    getCurrentUserUseCaseMock.callAsNativeReturnValue = { _, failure in
+                    getCurrentUserUseCaseMock.invokeAsNativeReturnValue = { _, failure in
                         _ = failure(TestError.dummy, .shared)
                         return { .shared }
                     }
