@@ -20,4 +20,8 @@ struct KMMApp: App {
             SplashScreen()
         }
     }
+
+    init() {
+        DIKt.doInit()
+    }
 }

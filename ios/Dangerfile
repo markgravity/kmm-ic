@@ -7,13 +7,13 @@ warn("This pull request is quite big (#{git.lines_of_code} lines changed), pleas
 warn("This pull request doesn't have any labels, please consider to add labels to this pull request.") if github.pr_labels.empty?
 
 # SwiftFormat
-swiftformat.binary_path = './Pods/SwiftFormat/CommandLineTool/swiftformat'
+swiftformat.binary_path = 'ios/Pods/SwiftFormat/CommandLineTool/swiftformat'
 swiftformat.exclude = %w(Pods/**  **/*generated.swift fastlane/**)
 swiftformat.check_format
 
 # Swiftlint
-swiftlint.binary_path = './Pods/SwiftLint/swiftlint'
-swiftlint.config_file = '.swiftlint.yml'
+swiftlint.binary_path = 'ios/Pods/SwiftLint/swiftlint'
+swiftlint.config_file = 'ios/swiftlint.yml'
 swiftlint.max_num_violations = 20
 swiftlint.lint_files(
   inline_mode: true,
@@ -21,10 +21,10 @@ swiftlint.lint_files(
   additional_swiftlint_args: '--strict'
 )
 
-xcresultPath = "./fastlane/test_output/KMMIC Staging.xcresult"
+xcresultPath = "ios/fastlane/test_output/KMMIC Staging.xcresult"
 scheme = "KMMIC Staging"
-workspace = "./KMMIC.xcworkspace"
-xcovOutputDirectory = "./fastlane/xcov_output"
+workspace = "ios/KMMIC.xcworkspace"
+xcovOutputDirectory = "ios/fastlane/xcov_output"
 
 # Xcode summary
 changed_files = (git.modified_files - git.deleted_files) + git.added_files
@@ -35,7 +35,7 @@ xcode_summary.ignored_results { |result|
     true
   end
 }
-xcode_summary.ignored_files = 'Pods/**'
+xcode_summary.ignored_files = 'ios/Pods/**'
 xcode_summary.inline_mode = true
 xcode_summary.report xcresultPath
 
