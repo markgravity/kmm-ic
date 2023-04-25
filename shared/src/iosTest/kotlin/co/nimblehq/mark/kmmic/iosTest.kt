@@ -1,8 +1,10 @@
+@file:Suppress("MatchingDeclarationName")
 package co.nimblehq.mark.kmmic
 
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
+@Suppress("naming.MatchingDeclarationName")
 class IosGreetingTest {
 
     @Test

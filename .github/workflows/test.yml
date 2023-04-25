@@ -4,6 +4,14 @@ on:
   pull_request:
     types: [opened, reopened, edited, synchronize]
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+  issues: write
+  pull-requests: write
+  statuses: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -18,7 +26,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 0
+       submodules: recursive
 
     - name: Setup Java JDK
       uses: actions/setup-java@v2.1.0
@@ -46,6 +54,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pods-
 
+    - name: Setup Konfig Properties
+      env:
+       BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+      run: |
+       touch ../buildKonfig.properties
+       echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
+
     - name: Generate KMM frameworks for Cocoapods
       run: |
         cd ..
@@ -59,14 +74,29 @@ jobs:
       env:
         CI: true
 
+    - name: Clean up previous code coverage report
+      run: bundle exec fastlane cleanUpOutput
+
+    - name: Review pull request by Danger
+      uses: MeilCli/danger-action@v5
+      with:
+        plugins_file: 'ios/Gemfile'
+        install_path: 'ios/vendor/bundle'
+        danger_file: 'ios/Dangerfile'
+        danger_id: 'danger-pr'
+      env:
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   shared_test:
       name: Running tests in Shared
-      runs-on: macOS-12
+      runs-on: ubuntu-latest
       defaults:
         run:
-          working-directory: ./Shared
+          working-directory: ./shared
       steps:
       - uses: actions/checkout@v2
+        with:
+         submodules: recursive
 
       - name: Setup Java JDK
         uses: actions/setup-java@v2.1.0
@@ -74,7 +104,24 @@ jobs:
          distribution: 'adopt'
          java-version: '11'
 
+      - name: Setup Konfig Properties
+        env:
+         BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+        run: |
+         touch ../buildKonfig.properties
+         echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
+
       - name: Running tests
         run: |
           cd ..
           ./gradlew clean Shared:test
+
+      - name: Run Detekt
+        run: |
+          cd ..
+          ./gradlew detekt
+
+      - name: Review pull request by Danger
+        uses: danger/kotlin@1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

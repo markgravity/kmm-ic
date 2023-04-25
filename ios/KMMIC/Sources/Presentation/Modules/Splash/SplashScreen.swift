@@ -20,7 +20,7 @@ struct SplashScreen: View {
             R.image.logoWhite.image
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
-                .opacity(isLoaded ? 1 : 0)
+                .opacity(isLoaded ? 1.0 : 0.0)
         }
         .ignoresSafeArea()
         .animation(.easeIn(duration: 1.0).delay(0.5), value: isLoaded)

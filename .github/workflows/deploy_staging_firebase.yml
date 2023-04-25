@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        fetch-depth: 0
+        submodules: recursive
 
     - name: Setup Java JDK
       uses: actions/setup-java@v2.1.0
@@ -50,6 +50,13 @@ jobs:
         mkdir -p KMMIC/Configurations/Plists/GoogleService/Staging
         touch KMMIC/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
         echo $IOS_GOOGLE_SERVICE_INFO_STAGING | base64 --decode > ./KMMIC/Configurations/Plists/GoogleService/Staging/GoogleService-Info.plist
+
+    - name: Setup Konfig Properties
+      env:
+       BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+      run: |
+       touch ../buildKonfig.properties
+       echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
 
     - name: Bundle install
       # if: steps.bundleCache.outputs.cache-hit != 'true'
