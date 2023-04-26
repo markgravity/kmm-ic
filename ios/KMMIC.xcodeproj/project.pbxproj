@@ -31,7 +31,9 @@
 		2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7329F22C4E0015BC99 /* HomeHeader.swift */; };
 		2D967A7629F232300015BC99 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7529F232300015BC99 /* Font+App.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
+		2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */; };
 		2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */; };
+		2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF829F912BB00793619 /* View+Swipe.swift */; };
 		2DF8053D29F62BF90079651F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8053C29F62BF90079651F /* HomeViewModel.swift */; };
 		2DF8053F29F62D7A0079651F /* DateFormatter+Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8053E29F62D7A0079651F /* DateFormatter+Formats.swift */; };
 		2DF8054529F632E10079651F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8054429F632E10079651F /* DateHelper.swift */; };
@@ -146,7 +148,9 @@
 		2D967A7329F22C4E0015BC99 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		2D967A7529F232300015BC99 /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveyUIModel.swift; sourceTree = "<group>"; };
 		2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDarkLinearGradient.swift; sourceTree = "<group>"; };
+		2DED7AF829F912BB00793619 /* View+Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Swipe.swift"; sourceTree = "<group>"; };
 		2DF8053C29F62BF90079651F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2DF8053E29F62D7A0079651F /* DateFormatter+Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formats.swift"; sourceTree = "<group>"; };
 		2DF8054129F632410079651F /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 		2D967A7029F22B660015BC99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2DED7AF329F9032000793619 /* Models */,
 				2D89DD8229F77D3A0093E013 /* Views */,
 				2D967A7129F22BA70015BC99 /* HomeScreen.swift */,
 				2DF8053C29F62BF90079651F /* HomeViewModel.swift */,
@@ -379,6 +384,14 @@
 				D59F7F6D06873C1BC2478ED9 /* Supports */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		2DED7AF329F9032000793619 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2DF8054029F632300079651F /* Home */ = {
@@ -626,6 +639,7 @@
 			children = (
 				2D40AA8A29F0E2B100CEADB9 /* Animation+Completion.swift */,
 				2D40AA9129F1181F00CEADB9 /* View+Alert.swift */,
+				2DED7AF829F912BB00793619 /* View+Swipe.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1234,6 +1248,7 @@
 				2DF8054529F632E10079651F /* DateHelper.swift in Sources */,
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
+				2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */,
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
 				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
 				2D967A7229F22BA70015BC99 /* HomeScreen.swift in Sources */,
@@ -1244,6 +1259,7 @@
 				2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */,
 				2D967A7629F232300015BC99 /* Font+App.swift in Sources */,
 				2D40AA8929F0E05F00CEADB9 /* Navigator+Screen.swift in Sources */,
+				2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,

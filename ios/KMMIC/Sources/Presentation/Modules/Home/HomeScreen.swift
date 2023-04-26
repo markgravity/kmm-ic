@@ -19,7 +19,15 @@ struct HomeScreen: View {
                 .padding(.horizontal, 20.0)
                 .padding(.top, 30.0)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .environmentObject(viewModel)
+        .progressHUD($viewModel.isLoading)
+        .onAppear {
+            viewModel.fetch()
+        }
+        .swipe(.down, tolerance: 100.0) { _ in
+            viewModel.refresh()
+        }
     }
 }
 
