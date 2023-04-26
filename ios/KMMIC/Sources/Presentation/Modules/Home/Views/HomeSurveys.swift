@@ -28,11 +28,12 @@ struct HomeSurveys: View {
                 .lineLimit(2)
                 .padding(.bottom, 16.0)
                 .foregroundColor(.white)
-            HStack(spacing: 20.0) {
+            HStack {
                 Text("We would like to know how you feel about our work from home")
                     .font(.regularBody)
                     .foregroundColor(.white.opacity(0.7))
                     .lineLimit(2)
+                Spacer(minLength: 20.0)
                 ArrowButton {
                     // TODO: Show Survey Detail screen
                 }
