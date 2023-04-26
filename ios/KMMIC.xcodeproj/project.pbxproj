@@ -31,6 +31,7 @@
 		2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7329F22C4E0015BC99 /* HomeHeader.swift */; };
 		2D967A7629F232300015BC99 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7529F232300015BC99 /* Font+App.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
+		2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */; };
 		2DF8053D29F62BF90079651F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8053C29F62BF90079651F /* HomeViewModel.swift */; };
 		2DF8053F29F62D7A0079651F /* DateFormatter+Formats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8053E29F62D7A0079651F /* DateFormatter+Formats.swift */; };
 		2DF8054529F632E10079651F /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF8054429F632E10079651F /* DateHelper.swift */; };
@@ -145,6 +146,7 @@
 		2D967A7329F22C4E0015BC99 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		2D967A7529F232300015BC99 /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDarkLinearGradient.swift; sourceTree = "<group>"; };
 		2DF8053C29F62BF90079651F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2DF8053E29F62D7A0079651F /* DateFormatter+Formats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Formats.swift"; sourceTree = "<group>"; };
 		2DF8054129F632410079651F /* HomeViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModelSpec.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 				2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */,
 				2DFE5F2929EE4535006DF40A /* PrimaryButton.swift */,
 				2D89DD8529F780270093E013 /* ArrowButton.swift */,
+				2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1245,6 +1248,7 @@
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */,
+				2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */,
 				2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */,
 				2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */,
 				5C65F290D588E679684E6914 /* Optional+Unwrap.swift in Sources */,

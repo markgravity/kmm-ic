@@ -59,6 +59,9 @@ struct HomeSurveys: View {
                 }
             }
             .ignoresSafeArea()
+
+            ClearDarkLinearGradient()
+
             bottomContent
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
