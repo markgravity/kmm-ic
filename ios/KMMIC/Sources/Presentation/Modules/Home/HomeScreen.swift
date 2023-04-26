@@ -28,6 +28,7 @@ struct HomeScreen: View {
         .swipe(.down, tolerance: 100.0) { _ in
             viewModel.refresh()
         }
+        .alert($viewModel.alertDescription)
     }
 }
 

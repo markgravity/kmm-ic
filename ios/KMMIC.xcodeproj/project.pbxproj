@@ -20,6 +20,7 @@
 		2D40AA8D29F0EB3F00CEADB9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */; };
 		2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */; };
 		2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA9129F1181F00CEADB9 /* View+Alert.swift */; };
+		2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */; };
 		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
@@ -138,6 +139,7 @@
 		2D40AA8C29F0EB3F00CEADB9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Domain.swift"; sourceTree = "<group>"; };
 		2D40AA9129F1181F00CEADB9 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
+		2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Survey+Dummy.swift"; sourceTree = "<group>"; };
 		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */,
 				2D967A6729F196D10015BC99 /* Error+Dummy.swift */,
+				2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */,
 				2DF8054829F634680079651F /* User+Dummy.swift */,
 			);
 			path = Dummy;
@@ -1226,6 +1229,7 @@
 			files = (
 				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
 				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
+				2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */,
 				2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */,
 				2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */,
 				2DF8054A29F6348C0079651F /* User+Dummy.swift in Sources */,
