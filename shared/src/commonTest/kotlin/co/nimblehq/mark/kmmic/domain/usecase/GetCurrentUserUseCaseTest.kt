@@ -57,9 +57,7 @@ class GetCurrentUserUseCaseTest {
                 }
             )
 
-        useCase().collect {
-            it shouldBe mockUser
-        }
+        useCase().first() shouldBe mockUser
     }
 
 }
