@@ -50,25 +50,8 @@ struct HomeSurveys: View {
         Group {
             if !viewModel.surveys.isEmpty {
                 ZStack {
-                    GeometryReader { geometry in
-                        LazyImage(url: viewModel.selectedSurvey?.coverImageURL) {
-                            if let image = $0.image {
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(
-                                        width: geometry.size.width,
-                                        height: geometry.size.height
-                                    )
-                            } else {
-                                EmptyView()
-                            }
-                        }
-                    }
-                    .ignoresSafeArea()
-
-                    ClearDarkLinearGradient()
-
+                    DarkBackground(url: viewModel.selectedSurvey?.coverImageURL)
+                        .ignoresSafeArea()
                     bottomContent
                 }
             }
