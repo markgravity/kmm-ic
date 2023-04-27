@@ -26,9 +26,7 @@ internal class CachedSurveyServiceImpl: CachedSurveyService, KoinComponent {
         }
     }
 
-    override fun get(): List<CachedSurvey> {
-        return realm.query<CachedSurvey>().find()
-    }
+    override fun get(): List<CachedSurvey> = realm.query<CachedSurvey>().find()
 
     override fun clear() {
         realm.writeBlocking {

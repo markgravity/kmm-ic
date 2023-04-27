@@ -2,8 +2,11 @@ package co.nimblehq.mark.kmmic.data.repository
 
 import co.nimblehq.mark.kmmic.data.service.cached.survey.CachedSurveyService
 import co.nimblehq.mark.kmmic.data.service.cached.survey.model.CachedSurvey
+import co.nimblehq.mark.kmmic.data.service.cached.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
 import co.nimblehq.mark.kmmic.data.service.survey.model.GetSurveysParams
+import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
+import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import kotlinx.coroutines.flow.Flow
@@ -31,16 +34,16 @@ internal class SurveyRepositoryImpl: SurveyRepository, KoinComponent {
 
             if (!isRefresh && pageNumber == FIRST_PAGE_NUMBER) {
                 val surveys = cachedSurveyService.get()
-                    .map { Survey(it) }
+                    .map { it.toSurvey() }
                 if (surveys.isNotEmpty()) emit(surveys)
             }
 
             val surveys = surveyService
                 .getSurveys(GetSurveysParams(pageNumber, pageSize))
                 .last()
-            emit(surveys.map { Survey(it) })
+            emit(surveys.map { it.toSurvey() })
 
-            cachedSurveyService.save(surveys.map { CachedSurvey(it) })
+            cachedSurveyService.save(surveys.map { it.toCachedSurvey() })
         }
     }
 }

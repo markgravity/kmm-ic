@@ -1,6 +1,7 @@
 package co.nimblehq.mark.kmmic.domain.usecase
 
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
+import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import co.nimblehq.mark.kmmic.dummy.dummy
@@ -24,7 +25,7 @@ class GetSurveysUseCaseTest {
 
     @Mock
     private val mockSurveyRepository = mock(classOf<SurveyRepository>())
-    private val mockSurvey = Survey(SurveyApiModel.dummy)
+    private val mockSurvey = SurveyApiModel.dummy.toSurvey()
 
     @BeforeTest
     fun setUp() {

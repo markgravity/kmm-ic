@@ -5,6 +5,8 @@ import co.nimblehq.mark.kmmic.data.service.cached.survey.CachedSurveyService
 import co.nimblehq.mark.kmmic.data.service.cached.survey.model.CachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
+import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
+import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import co.nimblehq.mark.kmmic.dummy.dummy
@@ -32,8 +34,8 @@ class SurveyRepositoryTest {
     private val mockCachedSurveyService = mock(classOf<CachedSurveyService>())
     private val mockThrowable = Throwable("mock")
     private val mockSurveyApiModel = SurveyApiModel.dummy
-    private val mockCachedSurvey = CachedSurvey(mockSurveyApiModel)
-    private val mockSurvey = Survey(mockSurveyApiModel)
+    private val mockCachedSurvey = mockSurveyApiModel.toCachedSurvey()
+    private val mockSurvey = mockSurveyApiModel.toSurvey()
 
     @BeforeTest
     fun setUp() {
