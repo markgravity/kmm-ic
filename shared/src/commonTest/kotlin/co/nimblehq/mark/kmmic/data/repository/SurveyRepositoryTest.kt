@@ -24,16 +24,16 @@ import kotlin.test.AfterTest
 @ExperimentalCoroutinesApi
 class SurveyRepositoryTest {
 
+    private lateinit var repository: SurveyRepository
+
     @Mock
     private val mockSurveyService = mock(classOf<SurveyService>())
     @Mock
     private val mockCachedSurveyService = mock(classOf<CachedSurveyService>())
-
     private val mockThrowable = Throwable("mock")
-    private lateinit var repository: SurveyRepository
     private val mockSurveyApiModel = SurveyApiModel.dummy
     private val mockCachedSurvey = CachedSurvey(mockSurveyApiModel)
-    private  val mockSurvey = Survey(mockSurveyApiModel)
+    private val mockSurvey = Survey(mockSurveyApiModel)
 
     @BeforeTest
     fun setUp() {

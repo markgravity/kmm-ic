@@ -8,6 +8,7 @@ import kotlin.test.BeforeTest
 import io.kotest.matchers.shouldBe
 import io.mockative.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -19,9 +20,10 @@ import kotlin.test.AfterTest
 @ExperimentalCoroutinesApi
 class GetSurveysUseCaseTest {
 
+    private lateinit var useCase: GetSurveysUseCase
+
     @Mock
     private val mockSurveyRepository = mock(classOf<SurveyRepository>())
-    private lateinit var useCase: GetSurveysUseCase
     private val mockSurvey = Survey(SurveyApiModel.dummy)
 
     @BeforeTest
@@ -43,14 +45,12 @@ class GetSurveysUseCaseTest {
     }
 
     @Test
-    fun `when invoke is called - it returns the correctly surveys`() = runTest {
+    fun `when invoke is called - it returns surveys correctly`() = runTest {
         given(mockSurveyRepository)
             .function(mockSurveyRepository::getSurveys)
             .whenInvokedWith(any())
             .thenReturn(flowOf(listOf(mockSurvey)))
 
-        useCase(1, 1, false).collect {
-            it shouldBe listOf(mockSurvey)
-        }
+        useCase(1, 1, false).first() shouldBe listOf(mockSurvey)
     }
 }

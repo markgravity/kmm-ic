@@ -15,9 +15,7 @@ object FullSizeUrlSerializer : KSerializer<Url> {
     override val descriptor: SerialDescriptor =
         PrimitiveSerialDescriptor("Url", PrimitiveKind.STRING)
 
-    override fun serialize(encoder: Encoder, value: Url) {
-        encoder.encodeString(value.string)
-    }
+    override fun serialize(encoder: Encoder, value: Url) = encoder.encodeString(value.string)
 
     override fun deserialize(decoder: Decoder): Url {
         val string = decoder.decodeString() + "l"
