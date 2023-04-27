@@ -8,7 +8,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 interface LoginUseCase {
-    fun invoke(email: String, password: String): Flow<AuthToken>
+    operator fun invoke(email: String, password: String): Flow<AuthToken>
 }
 
 class LoginUseCaseImpl : LoginUseCase, KoinComponent {

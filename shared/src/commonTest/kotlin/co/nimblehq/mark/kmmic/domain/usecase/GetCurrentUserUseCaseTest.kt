@@ -9,6 +9,7 @@ import io.mockative.classOf
 import io.mockative.given
 import io.mockative.mock
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
@@ -57,9 +58,7 @@ class GetCurrentUserUseCaseTest {
                 }
             )
 
-        useCase.invoke().collect {
-            it shouldBe mockUser
-        }
+        useCase().first() shouldBe mockUser
     }
 
 }

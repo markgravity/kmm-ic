@@ -7,7 +7,7 @@ import Combine
 // sourcery:begin: AutoMockable
 extension {{ type.name }} {
 
-  func invokeAsPublisher(
+  func callAsFunction(
     {% for parameter in method.parameters %}
     {{ parameter.asSource }}{% if not forloop.last %},{% endif %}
     {% endfor %}
