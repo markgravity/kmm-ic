@@ -5,6 +5,7 @@ import co.nimblehq.mark.kmmic.data.service.api.extension.path
 import co.nimblehq.mark.kmmic.data.service.api.extension.setQueryParameters
 import co.nimblehq.mark.kmmic.data.service.survey.model.GetSurveysParams
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
+import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyDetailApiModel
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.http.HttpMethod
 import kotlinx.coroutines.flow.Flow
@@ -14,6 +15,7 @@ import org.koin.core.component.inject
 internal interface SurveyService {
 
     fun getSurveys(params: GetSurveysParams): Flow<List<SurveyApiModel>>
+    fun getSurvey(id: String): Flow<SurveyDetailApiModel>
 }
 
 internal class SurveyServiceImpl: SurveyService, KoinComponent {
@@ -26,6 +28,15 @@ internal class SurveyServiceImpl: SurveyService, KoinComponent {
                 path("/v1/surveys")
                 method = HttpMethod.Get
                 setQueryParameters(params)
+            }
+        )
+    }
+
+    override fun getSurvey(id: String): Flow<SurveyDetailApiModel> {
+        return apiService.performRequest(
+            HttpRequestBuilder().apply {
+                path("/v1/surveys/${id}")
+                method = HttpMethod.Get
             }
         )
     }

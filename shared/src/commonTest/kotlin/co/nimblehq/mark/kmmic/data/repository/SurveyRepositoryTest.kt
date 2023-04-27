@@ -8,12 +8,14 @@ import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.domain.model.Survey
+import co.nimblehq.mark.kmmic.domain.model.SurveyDetail
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import co.nimblehq.mark.kmmic.dummy.dummy
 import kotlin.test.BeforeTest
 import io.kotest.matchers.shouldBe
 import io.mockative.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import org.koin.core.context.startKoin
@@ -120,6 +122,32 @@ class SurveyRepositoryTest {
             )
 
         repository.getSurveys(1, 1, true).test {
+            this.awaitError().message shouldBe mockThrowable.message
+        }
+    }
+
+    @Test
+    fun `when get survey - it emits survey detail`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::getSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(flowOf(SurveyDetailApiModel.dummy))
+
+        repository.getSurvey("abc").first() shouldBe SurveyDetail(SurveyDetailApiModel.dummy)
+    }
+
+    @Test
+    fun `when get survey is failed - it emits error`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::getSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(
+                flow {
+                    throw mockThrowable
+                }
+            )
+
+        repository.getSurvey("abc").test {
             this.awaitError().message shouldBe mockThrowable.message
         }
     }
