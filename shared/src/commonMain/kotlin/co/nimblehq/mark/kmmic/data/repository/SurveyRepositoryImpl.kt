@@ -7,6 +7,7 @@ import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
 import co.nimblehq.mark.kmmic.data.service.survey.model.GetSurveysParams
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
+import co.nimblehq.mark.kmmic.data.service.survey.model.toSurveyDetail
 import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.model.SurveyDetail
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
@@ -52,6 +53,6 @@ internal class SurveyRepositoryImpl: SurveyRepository, KoinComponent {
     override fun getSurvey(id: String): Flow<SurveyDetail> {
         return surveyService
             .getSurvey(id)
-            .map { SurveyDetail(it) }
+            .map { it.toSurveyDetail() }
     }
 }

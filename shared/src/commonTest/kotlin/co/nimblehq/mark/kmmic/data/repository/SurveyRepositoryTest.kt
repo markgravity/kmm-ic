@@ -133,7 +133,7 @@ class SurveyRepositoryTest {
             .whenInvokedWith(any())
             .thenReturn(flowOf(SurveyDetailApiModel.dummy))
 
-        repository.getSurvey("abc").first() shouldBe SurveyDetail(SurveyDetailApiModel.dummy)
+        repository.getSurvey("abc").first() shouldBe SurveyDetailApiModel.dummy.toSurveyDetail()
     }
 
     @Test

@@ -7,11 +7,4 @@ data class SurveyAnswer(
     val text: String?,
     val displayOrder: Int,
     var inputMaskPlaceholder: String?
-) {
-    internal constructor(surveyAnswerApiModel: SurveyAnswerApiModel) : this(
-        surveyAnswerApiModel.id,
-        surveyAnswerApiModel.text,
-        surveyAnswerApiModel.displayOrder,
-        surveyAnswerApiModel.inputMaskPlaceholder
-    )
-}
+)

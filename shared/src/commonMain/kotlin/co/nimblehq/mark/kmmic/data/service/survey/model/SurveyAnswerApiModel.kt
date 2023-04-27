@@ -1,5 +1,6 @@
 package co.nimblehq.mark.kmmic.data.service.survey.model
 
+import co.nimblehq.mark.kmmic.domain.model.SurveyAnswer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -14,3 +15,5 @@ data class SurveyAnswerApiModel(
     @SerialName("input_mask_placeholder")
     var inputMaskPlaceholder: String?
 )
+
+fun SurveyAnswerApiModel.toAnswer() = SurveyAnswer(id, text, displayOrder, inputMaskPlaceholder)

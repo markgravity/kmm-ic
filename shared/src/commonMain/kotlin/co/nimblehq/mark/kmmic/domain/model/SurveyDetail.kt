@@ -9,13 +9,4 @@ data class SurveyDetail(
     val isActive: Boolean,
     val coverImageUrl: String,
     val questions: List<SurveyQuestion>
-) {
-    internal constructor(surveyDetailApiModel: SurveyDetailApiModel) : this(
-        surveyDetailApiModel.id,
-        surveyDetailApiModel.title,
-        surveyDetailApiModel.description,
-        surveyDetailApiModel.isActive,
-        surveyDetailApiModel.coverImageUrl.string,
-        surveyDetailApiModel.questions.map { SurveyQuestion(it) }
-    )
-}
+)

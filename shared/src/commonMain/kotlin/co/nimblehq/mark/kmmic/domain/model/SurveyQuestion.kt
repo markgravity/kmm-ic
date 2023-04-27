@@ -13,14 +13,4 @@ data class SurveyQuestion(
 ) {
     val sortedAnswers: List<SurveyAnswer>
         get() = answers.sortedBy { it.displayOrder }
-
-    internal constructor(surveyQuestionApiModel: SurveyQuestionApiModel) : this(
-        surveyQuestionApiModel.id,
-        surveyQuestionApiModel.text,
-        surveyQuestionApiModel.displayOrder,
-        surveyQuestionApiModel.displayType,
-        surveyQuestionApiModel.pick,
-        surveyQuestionApiModel.coverImageUrl.string,
-        surveyQuestionApiModel.answers.map { SurveyAnswer(it) }
-    )
 }

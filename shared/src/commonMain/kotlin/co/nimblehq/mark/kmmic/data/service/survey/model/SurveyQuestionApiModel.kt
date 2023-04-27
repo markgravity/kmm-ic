@@ -1,6 +1,7 @@
 package co.nimblehq.mark.kmmic.data.service.survey.model
 
 import co.nimblehq.mark.kmmic.data.service.api.serializer.Url
+import co.nimblehq.mark.kmmic.domain.model.SurveyQuestion
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -20,4 +21,14 @@ data class SurveyQuestionApiModel(
     val coverImageUrl: Url,
     @SerialName("answers")
     val answers: List<SurveyAnswerApiModel>
+)
+
+fun SurveyQuestionApiModel.toQuestion() = SurveyQuestion(
+    id,
+    text,
+    displayOrder,
+    displayType,
+    pick,
+    coverImageUrl.string,
+    answers.map { it.toAnswer() }
 )
