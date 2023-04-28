@@ -19,6 +19,10 @@ extension Container {
         Factory(self) { GetCurrentUserUseCaseImpl() }
     }
 
+    var getSurveysUseCase: Factory<GetSurveysUseCase> {
+        Factory(self) { GetSurveysUseCaseImpl() }
+    }
+
     var dateHelper: Factory<DateHelperProtocol> {
         Factory(self) { DateHelper() }
     }
