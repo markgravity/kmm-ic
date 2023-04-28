@@ -13,10 +13,12 @@ struct ArrowButton: View {
     let action: () -> Void
 
     var body: some View {
-        ZStack {
-            Circle()
-                .fill(.white)
-            R.image.arrowIcon.image
+        Button(action: action) {
+            ZStack {
+                Circle()
+                    .fill(.white)
+                R.image.arrowIcon.image
+            }
         }
         .frame(width: 56.0, height: 56.0)
     }
