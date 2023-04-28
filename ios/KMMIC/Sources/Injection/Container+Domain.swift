@@ -14,4 +14,12 @@ extension Container {
     var loginUseCase: Factory<LoginUseCase> {
         Factory(self) { LoginUseCaseImpl() }
     }
+
+    var getCurrentUserUseCase: Factory<GetCurrentUserUseCase> {
+        Factory(self) { GetCurrentUserUseCaseImpl() }
+    }
+
+    var dateHelper: Factory<DateHelperProtocol> {
+        Factory(self) { DateHelper() }
+    }
 }

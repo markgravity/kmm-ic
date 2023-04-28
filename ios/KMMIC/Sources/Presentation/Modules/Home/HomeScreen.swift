@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HomeScreen: View {
 
+    @StateObject var viewModel = HomeViewModel()
+
     var body: some View {
         ZStack(alignment: .top) {
             Color.gray
@@ -18,6 +20,7 @@ struct HomeScreen: View {
                 .padding(.horizontal, 20.0)
                 .padding(.top, 30.0)
         }
+        .environmentObject(viewModel)
     }
 }
 

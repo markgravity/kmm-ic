@@ -56,7 +56,7 @@ struct LoginScreen: View {
         }
         .onChange(of: viewModel.didLogin) {
             guard $0 else { return }
-            // TODO: Navigate to Home screen
+            navigator.show(screen: .home, by: .root)
         }
     }
 }

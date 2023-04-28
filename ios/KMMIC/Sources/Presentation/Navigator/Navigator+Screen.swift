@@ -12,5 +12,6 @@ extension Navigator {
 
         case splash
         case login
+        case home
     }
 }
