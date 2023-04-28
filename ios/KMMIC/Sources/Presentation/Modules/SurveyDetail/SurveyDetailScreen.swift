@@ -25,7 +25,7 @@ struct SurveyDetailScreen: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    PrimaryButton("Start Survey") {
+                    PrimaryButton(R.string.localizable.surveyDetailScreenStartButtonTitle()) {
                         // TODO: Begin survey
                     }
                     .frame(width: 140.0)
