@@ -4,7 +4,9 @@ import app.cash.turbine.test
 import co.nimblehq.mark.kmmic.data.service.cached.survey.CachedSurveyService
 import co.nimblehq.mark.kmmic.data.service.cached.survey.model.CachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
+import co.nimblehq.mark.kmmic.data.service.survey.model.*
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
+import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyDetailApiModel
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.domain.model.Survey
