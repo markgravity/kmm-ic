@@ -10,11 +10,13 @@ import Shared
 
 struct HomeSurveyUIModel: Equatable {
 
+    let survey: Survey
     let title: String
     let description: String
     let coverImageURL: URL?
 
     init(survey: Survey) {
+        self.survey = survey
         title = survey.title
         description = survey.description_
         coverImageURL = .init(string: survey.coverImageUrl)

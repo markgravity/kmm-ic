@@ -11,15 +11,18 @@ import SwiftUI
 
 struct SurveyDetailScreen: View {
 
+    @Environment(\.presentationMode) var presentation
+    @StateObject var viewModel: SurveyDetailViewModel
+
     var body: some View {
         ZStack {
-            DarkBackground(url: .init(string: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_l"))
+            DarkBackground(url: viewModel.survey.coverImageURL)
             VStack(alignment: .leading) {
-                Text("Wokring from home Check-In")
+                Text(viewModel.survey.title)
                     .font(.boldTitle)
                     .padding(.bottom, 16.0)
                     .foregroundColor(.white)
-                Text("We would like to know how you feel about our work from home (WFH) experience.")
+                Text(viewModel.survey.description)
                     .font(.regularBody)
                     .foregroundColor(.white.opacity(0.7))
                 Spacer()
@@ -36,17 +39,33 @@ struct SurveyDetailScreen: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    // TODO: Navigate back
+                    presentation.wrappedValue.dismiss()
                 } label: {
                     R.image.backAccentIcon.image
                 }
             }
+        }
+        .navigationBarBackButtonHidden()
+        .progressHUD($viewModel.isLoading)
+        .alert($viewModel.alertDescription)
+        .onLoad {
+            viewModel.fetch()
         }
     }
 }
 
 struct SurveyDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SurveyDetailScreen()
+        SurveyDetailScreen(
+            viewModel: .init(
+                survey: .init(
+                    id: "",
+                    title: "",
+                    description: "",
+                    isActive: true,
+                    coverImageUrl: ""
+                )
+            )
+        )
     }
 }

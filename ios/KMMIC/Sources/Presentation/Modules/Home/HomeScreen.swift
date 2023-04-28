@@ -22,7 +22,7 @@ struct HomeScreen: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .environmentObject(viewModel)
         .progressHUD($viewModel.isLoading)
-        .onAppear {
+        .onLoad {
             viewModel.fetch()
         }
         .swipe(.down, tolerance: 100.0) { _ in
