@@ -23,6 +23,8 @@ struct NavigatorStack: View {
                     LoginScreen()
                 case .home:
                     HomeScreen()
+                case let .surveyDetail(viewModel):
+                    SurveyDetailScreen(viewModel: viewModel)
                 }
             }
             .environmentObject(navigator)

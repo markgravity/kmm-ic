@@ -13,5 +13,6 @@ extension Navigator {
         case splash
         case login
         case home
+        case surveyDetail(viewModel: SurveyDetailViewModel)
     }
 }

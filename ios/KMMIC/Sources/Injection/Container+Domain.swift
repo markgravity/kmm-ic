@@ -23,6 +23,10 @@ extension Container {
         Factory(self) { GetSurveysUseCaseImpl() }
     }
 
+    var getSurveyUseCase: Factory<GetSurveyUseCase> {
+        Factory(self) { GetSurveyUseCaseImpl() }
+    }
+
     var dateHelper: Factory<DateHelperProtocol> {
         Factory(self) { DateHelper() }
     }
