@@ -50,7 +50,7 @@ internal class SurveyRepositoryImpl: SurveyRepository, KoinComponent {
         }
     }
 
-    override fun getSurvey(id: String): Flow<SurveyDetail> {
+    override fun getSurveyDetail(id: String): Flow<SurveyDetail> {
         return surveyService
             .getSurvey(id)
             .map { it.toSurveyDetail() }

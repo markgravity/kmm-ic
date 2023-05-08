@@ -20,7 +20,7 @@ import kotlin.test.AfterTest
 @ExperimentalCoroutinesApi
 class GetSurveyUseCaseTest {
 
-    private lateinit var useCase: GetSurveyUseCase
+    private lateinit var getSurveyUseCase: GetSurveyUseCase
 
     @Mock
     private val mockSurveyRepository = mock(classOf<SurveyRepository>())
@@ -36,7 +36,7 @@ class GetSurveyUseCaseTest {
             )
         }
 
-        useCase = GetSurveyUseCaseImpl()
+        getSurveyUseCase = GetSurveyUseCaseImpl()
     }
 
     @AfterTest
@@ -47,10 +47,10 @@ class GetSurveyUseCaseTest {
     @Test
     fun `when invoke is called - it returns survey correctly`() = runTest {
         given(mockSurveyRepository)
-            .function(mockSurveyRepository::getSurvey)
+            .function(mockSurveyRepository::getSurveyDetail)
             .whenInvokedWith(any())
             .thenReturn(flowOf(mockSurveyDetail))
 
-        useCase("abc").first() shouldBe mockSurveyDetail
+        getSurveyUseCase("abc").first() shouldBe mockSurveyDetail
     }
 }

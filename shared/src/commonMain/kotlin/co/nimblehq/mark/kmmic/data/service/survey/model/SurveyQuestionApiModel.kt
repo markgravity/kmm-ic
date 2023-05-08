@@ -23,7 +23,7 @@ data class SurveyQuestionApiModel(
     val answers: List<SurveyAnswerApiModel>
 )
 
-fun SurveyQuestionApiModel.toQuestion() = SurveyQuestion(
+fun SurveyQuestionApiModel.toSurveyQuestion() = SurveyQuestion(
     id,
     text,
     displayOrder,

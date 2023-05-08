@@ -1,7 +1,6 @@
 package co.nimblehq.mark.kmmic.data.service.survey.model
 
 import co.nimblehq.mark.kmmic.data.service.api.serializer.Url
-import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.model.SurveyDetail
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -30,5 +29,5 @@ internal fun SurveyDetailApiModel.toSurveyDetail() = SurveyDetail(
     description,
     isActive,
     coverImageUrl.string,
-    questions.map { it.toQuestion() }
+    questions.map { it.toSurveyQuestion() }
 )

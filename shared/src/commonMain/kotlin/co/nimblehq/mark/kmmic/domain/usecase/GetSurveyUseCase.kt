@@ -1,6 +1,5 @@
 package co.nimblehq.mark.kmmic.domain.usecase
 
-import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.model.SurveyDetail
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import kotlinx.coroutines.flow.Flow
@@ -18,6 +17,6 @@ class GetSurveyUseCaseImpl : GetSurveyUseCase, KoinComponent {
 
     override fun invoke(id: String): Flow<SurveyDetail> {
         return surveyRepository
-            .getSurvey(id)
+            .getSurveyDetail(id)
     }
 }
