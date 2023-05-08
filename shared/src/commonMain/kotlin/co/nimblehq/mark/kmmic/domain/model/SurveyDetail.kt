@@ -13,5 +13,5 @@ data class SurveyDetail(
 
 val SurveyDetail.questionsWithAvailableAnswers: List<SurveyQuestion>
     get() = questions.filter {
-        it.displayType != QUESTION_DISPLAY_TYPE_INTRO && it.displayType != QUESTION_DISPLAY_TYPE_OUTRO
+        it.displayType != QuestionDisplayType.INTRO && it.displayType != QuestionDisplayType.OUTRO
     }

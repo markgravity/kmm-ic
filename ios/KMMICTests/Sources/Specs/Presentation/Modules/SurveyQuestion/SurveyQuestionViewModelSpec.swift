@@ -33,7 +33,9 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                 expect(viewModel.surveyQuestionUIModel) == SurveyQuestionUIModel(
                     step: "1/1",
                     title: question?.text ?? "",
-                    coverImageURL: .init(string: question?.coverImageUrl ?? "")
+                    coverImageURL: .init(string: question?.coverImageUrl ?? ""),
+                    displayType: QuestionDisplayType.heart,
+                    answers: question?.answers ?? []
                 )
             }
         }

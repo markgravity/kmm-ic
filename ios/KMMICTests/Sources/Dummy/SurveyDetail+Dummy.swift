@@ -23,7 +23,7 @@ extension SurveyDetail {
                 id: "id",
                 text: "text",
                 displayOrder: 1,
-                displayType: "heart",
+                displayType: QuestionDisplayType.heart,
                 pick: "pick",
                 coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
                 answers: [
