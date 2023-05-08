@@ -2,18 +2,19 @@ package co.nimblehq.mark.kmmic.data.repository
 
 import app.cash.turbine.test
 import co.nimblehq.mark.kmmic.data.service.cached.survey.CachedSurveyService
-import co.nimblehq.mark.kmmic.data.service.cached.survey.model.CachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
+import co.nimblehq.mark.kmmic.data.service.survey.model.*
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
+import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyDetailApiModel
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
-import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import co.nimblehq.mark.kmmic.dummy.dummy
 import kotlin.test.BeforeTest
 import io.kotest.matchers.shouldBe
 import io.mockative.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import org.koin.core.context.startKoin
@@ -120,6 +121,32 @@ class SurveyRepositoryTest {
             )
 
         repository.getSurveys(1, 1, true).test {
+            this.awaitError().message shouldBe mockThrowable.message
+        }
+    }
+
+    @Test
+    fun `when get survey detail - it emits survey detail`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::getSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(flowOf(SurveyDetailApiModel.dummy))
+
+        repository.getSurveyDetail("abc").first() shouldBe SurveyDetailApiModel.dummy.toSurveyDetail()
+    }
+
+    @Test
+    fun `when get survey detail is failed - it emits error`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::getSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(
+                flow {
+                    throw mockThrowable
+                }
+            )
+
+        repository.getSurveyDetail("abc").test {
             this.awaitError().message shouldBe mockThrowable.message
         }
     }
