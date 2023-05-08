@@ -19,7 +19,6 @@ final class SurveyDetailViewModelSpec: QuickSpec {
     override func spec() {
         var getSurveyUseCaseMock: GetSurveyUseCaseMock!
         var viewModel: SurveyDetailViewModel!
-        let dummySurveyUIModel = HomeSurveyUIModel(survey: .dummy)
 
         describe("a SurveyDetailViewModel") {
 
