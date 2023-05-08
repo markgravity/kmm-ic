@@ -31,8 +31,7 @@ struct SurveyDetailScreen: View {
                     .frame(width: 140.0)
                 }
             }
-            .padding(.horizontal, 20.0)
-            .padding(.top, 20.0)
+            .padding([.top, .horizontal], 20.0)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
