@@ -1,12 +1,16 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
-import java.util.*
 
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
+    kotlin("plugin.serialization")
+    id("kotlinx-serialization")
     id("com.android.library")
     id("com.codingfeline.buildkonfig")
+    id("com.google.devtools.ksp").version("1.7.10-1.0.6")
+    id("com.rickclephas.kmp.nativecoroutines").version("0.12.6-new-mm")
+    id("io.realm.kotlin") version "1.3.0"
 }
 
 kotlin {
@@ -24,17 +28,57 @@ kotlin {
             baseName = "Shared"
         }
 
+
         xcodeConfigurationToNativeBuildType["Debug Production"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Debug Staging"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["Release Production"] = NativeBuildType.RELEASE
         xcodeConfigurationToNativeBuildType["Release Staging"] = NativeBuildType.RELEASE
     }
-    
+
     sourceSets {
-        val commonMain by getting
+        all {
+            languageSettings.optIn("kotlin.experimental.ExperimentalObjCName")
+        }
+        val commonMain by getting {
+            dependencies {
+                // Coroutines
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+                // Koin
+                implementation("io.insert-koin:koin-core:3.2.0")
+                implementation("io.insert-koin:koin-test:3.2.0")
+
+                // Ktor
+                implementation("io.ktor:ktor-client-core:2.1.1")
+                implementation("io.ktor:ktor-client-content-negotiation:2.1.1")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.1")
+                implementation("io.ktor:ktor-client-logging:2.1.1")
+                implementation("io.ktor:ktor-client-auth:2.1.1")
+
+                // JsonApi
+                implementation("co.nimblehq.jsonapi:core:0.1.0")
+
+                // Kotlinx Serialization
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0")
+
+                // Napier
+                implementation("io.github.aakira:napier:2.4.0")
+
+                // Setting
+                implementation("com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC")
+                implementation("com.russhwolf:multiplatform-settings-serialization:1.0.0-RC")
+
+                // Realm
+                implementation("io.realm.kotlin:library-base:1.3.0")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+                implementation("io.mockative:mockative:1.4.0")
+                implementation("io.kotest:kotest-framework-engine:5.5.1")
+                implementation("app.cash.turbine:turbine:0.12.3")
             }
         }
         val androidMain by getting
@@ -47,6 +91,10 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:2.1.1")
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -77,7 +125,7 @@ val detektTask = tasks.register<JavaExec>("detekt") {
 
     val input = "$projectDir"
     val config = "$projectDir/detekt.yml"
-    val exclude = ".*/build/.*,.*/resources/.*,**/*.kts"
+    val exclude = ".*/build/.*,.*/resources/.*,**/*.kts,.*/commentTest/.*,**/*.Mockative.kt"
     val report = "sarif:$buildDir/reports/detekt/report.sarif"
     val params = listOf("-i", input, "-c", config, "-ex", exclude, "-r", report)
 
@@ -128,4 +176,34 @@ buildkonfig {
             buildKonfigProperties.getProperty("PRODUCTION_BASE_URL")
         )
     }
+}
+
+tasks.withType<com.google.devtools.ksp.gradle.KspTask>().configureEach {
+    when (this) {
+        is com.google.devtools.ksp.gradle.KspTaskNative -> {
+            this.compilerPluginOptions.addPluginArgument(
+                tasks
+                    .named<org.jetbrains.kotlin.gradle.tasks.KotlinNativeCompile>(compilation.compileKotlinTaskName)
+                    .get()
+                    .compilerPluginOptions
+            )
+        }
+    }
+}
+
+nativeCoroutines {
+    // The suffix used to generate the native coroutine function and property names.
+    suffix = "AsNative"
+}
+
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, "io.mockative:mockative-processor:1.4.0")
+        }
+}
+
+ksp {
+    arg("mockative.stubsUnitByDefault", "true")
 }

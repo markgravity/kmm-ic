@@ -31,8 +31,8 @@ jobs:
     - name: Setup Java JDK
       uses: actions/setup-java@v2.1.0
       with:
-       distribution: 'adopt'
-       java-version: '11'
+        distribution: 'adopt'
+        java-version: '11'
 
     - uses: actions/cache@v2
       id: bunlderCache
@@ -56,7 +56,7 @@ jobs:
 
     - name: Setup Konfig Properties
       env:
-       BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+        BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
       run: |
        touch ../buildKonfig.properties
        echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties
@@ -96,17 +96,17 @@ jobs:
       steps:
       - uses: actions/checkout@v2
         with:
-         submodules: recursive
+          fetch-depth: 0
 
       - name: Setup Java JDK
         uses: actions/setup-java@v2.1.0
         with:
-         distribution: 'adopt'
-         java-version: '11'
+          distribution: 'adopt'
+          java-version: '11'
 
       - name: Setup Konfig Properties
         env:
-         BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
+          BUILD_KONFIG_PROPERTIES: ${{ secrets.BUILD_KONFIG_PROPERTIES }}
         run: |
          touch ../buildKonfig.properties
          echo $BUILD_KONFIG_PROPERTIES | base64 --decode > ../buildKonfig.properties

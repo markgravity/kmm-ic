@@ -26,6 +26,10 @@ target 'KMMIC' do
   pod 'NimbleExtension', :git => 'https://github.com/nimblehq/NimbleExtension', :branch => 'master'
   pod 'R.swift'
   pod 'Factory'
+  pod 'KMPNativeCoroutinesAsync'
+  pod 'KMPNativeCoroutinesCombine'
+  pod 'FlowStacks'
+  pod 'Factory'
 
   # Development
   pod 'SwiftLint'

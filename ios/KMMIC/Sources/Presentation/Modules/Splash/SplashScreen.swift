@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SplashScreen: View {
 
-    @State private var isLoaded = false
+    @EnvironmentObject var navigator: Navigator
+    @State private var logoOpacity = 0.0
 
     var body: some View {
         ZStack {
@@ -20,13 +21,17 @@ struct SplashScreen: View {
             R.image.logoWhite.image
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
-                .opacity(isLoaded ? 1.0 : 0.0)
+                .opacity(logoOpacity)
         }
         .ignoresSafeArea()
-        .animation(.easeIn(duration: 1.0).delay(0.5), value: isLoaded)
         .onAppear {
-            isLoaded.toggle()
+            withAnimation(.easeIn(duration: 1.0).delay(0.5)) {
+                logoOpacity = 1.0
+            }
         }
+        .animationObserver(for: logoOpacity, onComplete: {
+            navigator.show(screen: .login, by: .root)
+        })
     }
 }
 

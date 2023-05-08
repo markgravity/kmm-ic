@@ -12,14 +12,16 @@ struct PrimaryButton: View {
 
     private let title: String
     private let action: () -> Void
+    @Environment(\.isEnabled) private var isEnabled
 
     var body: some View {
         Button(title, action: action)
-            .font(R.font.neuzeitSLTStdBookHeavy.font(size: 17.0))
+            .font(.boldBody)
             .frame(maxWidth: .infinity, maxHeight: 56.0)
-            .background(Color.white)
+            .background(isEnabled ? Color.white : Color.gray)
             .foregroundColor(Color.black)
             .cornerRadius(10.0)
+            .animation(.easeIn(duration: 0.3), value: isEnabled)
     }
 
     init(_ title: String, action: @escaping () -> Void) {

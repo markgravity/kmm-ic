@@ -1,9 +1,12 @@
 sources:
   - KMMIC/Sources
+forceParse:
+  - generated
 templates:
-  - tools/sourcery/templates
+  - tools/sourcery/templates/AutoMockable.stencil
 output:
-  KMMICTests/Sources/Mocks/Sourcery 
+  KMMICTests/Sources/Mocks/Sourcery
 args:
   autoMockableTestableImports:
     - KMMIC
+    - Shared

@@ -17,7 +17,11 @@ struct KMMApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
+            NavigatorStack()
         }
+    }
+
+    init() {
+        DIKt.doInit()
     }
 }
