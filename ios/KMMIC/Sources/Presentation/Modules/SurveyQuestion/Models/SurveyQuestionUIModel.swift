@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SurveyQuestionUIModel {
+struct SurveyQuestionUIModel: Equatable {
 
     let step: String
     let title: String
