@@ -21,6 +21,8 @@
 		2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */; };
 		2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA9129F1181F00CEADB9 /* View+Alert.swift */; };
 		2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */; };
+		2D49BD4D29FA219100C77D7B /* SurveyDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD4C29FA219100C77D7B /* SurveyDetailScreen.swift */; };
+		2D49BD4F29FA233500C77D7B /* DarkBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD4E29FA233500C77D7B /* DarkBackground.swift */; };
 		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
@@ -140,6 +142,8 @@
 		2D40AA8F29F0F59B00CEADB9 /* Container+Domain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Domain.swift"; sourceTree = "<group>"; };
 		2D40AA9129F1181F00CEADB9 /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
 		2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Survey+Dummy.swift"; sourceTree = "<group>"; };
+		2D49BD4C29FA219100C77D7B /* SurveyDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreen.swift; sourceTree = "<group>"; };
+		2D49BD4E29FA233500C77D7B /* DarkBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkBackground.swift; sourceTree = "<group>"; };
 		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
@@ -330,6 +334,14 @@
 			path = Injection;
 			sourceTree = "<group>";
 		};
+		2D49BD4B29FA217E00C77D7B /* SurveyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2D49BD4C29FA219100C77D7B /* SurveyDetailScreen.swift */,
+			);
+			path = SurveyDetail;
+			sourceTree = "<group>";
+		};
 		2D89DD8229F77D3A0093E013 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +493,7 @@
 				2D967A7029F22B660015BC99 /* Home */,
 				2DFE5F1029EE317E006DF40A /* Login */,
 				2D27FB2E29E7E77F00D0C9A5 /* Splash */,
+				2D49BD4B29FA217E00C77D7B /* SurveyDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -614,6 +627,7 @@
 				2DFE5F2929EE4535006DF40A /* PrimaryButton.swift */,
 				2D89DD8529F780270093E013 /* ArrowButton.swift */,
 				2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */,
+				2D49BD4E29FA233500C77D7B /* DarkBackground.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1255,6 +1269,7 @@
 				2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */,
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
 				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
+				2D49BD4F29FA233500C77D7B /* DarkBackground.swift in Sources */,
 				2D967A7229F22BA70015BC99 /* HomeScreen.swift in Sources */,
 				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				2DFE5F2829EE3E83006DF40A /* PrimaryTextField.swift in Sources */,
@@ -1266,6 +1281,7 @@
 				2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
+				2D49BD4D29FA219100C77D7B /* SurveyDetailScreen.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */,
 				2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */,
