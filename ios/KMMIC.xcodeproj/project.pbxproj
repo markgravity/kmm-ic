@@ -27,6 +27,8 @@
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
+		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
+		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
 		2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */; };
 		2D967A6529F194E20015BC99 /* AuthToken+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */; };
 		2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A6729F196D10015BC99 /* Error+Dummy.swift */; };
@@ -154,6 +156,8 @@
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
+		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
+		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
 		2D967A5E29F18CD40015BC99 /* LoginViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelSpec.swift; sourceTree = "<group>"; };
 		2D967A6329F1949F0015BC99 /* AuthToken+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthToken+Dummy.swift"; sourceTree = "<group>"; };
 		2D967A6729F196D10015BC99 /* Error+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Dummy.swift"; sourceTree = "<group>"; };
@@ -369,9 +373,19 @@
 		2D94C3142A08A09300571F59 /* SurveyQuestion */ = {
 			isa = PBXGroup;
 			children = (
+				2D94C3192A08A6EF00571F59 /* Models */,
 				2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */,
+				2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */,
 			);
 			path = SurveyQuestion;
+			sourceTree = "<group>";
+		};
+		2D94C3192A08A6EF00571F59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2D967A5B29F18CBC0015BC99 /* Presentation */ = {
@@ -1311,6 +1325,7 @@
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
 				2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */,
+				2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */,
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
 				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
 				2D49BD4F29FA233500C77D7B /* DarkBackground.swift in Sources */,
@@ -1321,6 +1336,7 @@
 				2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */,
 				2D40AA9029F0F59B00CEADB9 /* Container+Domain.swift in Sources */,
 				2D967A7629F232300015BC99 /* Font+App.swift in Sources */,
+				2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */,
 				2D40AA8929F0E05F00CEADB9 /* Navigator+Screen.swift in Sources */,
 				2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
