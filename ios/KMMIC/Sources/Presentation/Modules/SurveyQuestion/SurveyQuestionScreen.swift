@@ -56,7 +56,7 @@ struct SurveyQuestionScreen: View {
             EmojiAnswerView(
                 emojis: emojis,
                 highlightStyle: highlightStyle,
-                selected: .constant(0)
+                selectedIndex: .constant(0)
             )
         default:
             EmptyView()
