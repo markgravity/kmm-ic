@@ -11,7 +11,7 @@ import SwiftUI
 struct SelectAnswerView: View {
 
     let options: [Option]
-    let selections: Binding<Set<Option>>
+    @Binding var selections: Set<Option>
 
     var body: some View {
         ScrollView {
@@ -19,10 +19,10 @@ struct SelectAnswerView: View {
                 ForEach(options) { option in
                     Button(
                         action: {
-                            if selections.wrappedValue.contains(option) {
-                                selections.wrappedValue.remove(option)
+                            if selections.contains(option) {
+                                selections.remove(option)
                             } else {
-                                selections.wrappedValue.insert(option)
+                                selections.insert(option)
                             }
                         },
                         label: { optionView(of: option) }
@@ -40,7 +40,7 @@ struct SelectAnswerView: View {
 
     @ViewBuilder
     func optionView(of option: Option) -> some View {
-        let isSelected = selections.wrappedValue.contains(option)
+        let isSelected = selections.contains(option)
         HStack {
             Text(option.text)
                 .foregroundColor(isSelected ? .white : .white.opacity(0.5))
