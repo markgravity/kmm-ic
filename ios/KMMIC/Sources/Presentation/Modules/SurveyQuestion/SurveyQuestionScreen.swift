@@ -24,6 +24,8 @@ struct SurveyQuestionScreen: View {
                     .font(.boldLargeTitle)
                     .foregroundColor(.white)
                 Spacer()
+                answerView
+                Spacer()
                 HStack {
                     Spacer()
                     ArrowButton {}
@@ -42,5 +44,22 @@ struct SurveyQuestionScreen: View {
             }
         }
         .navigationBarBackButtonHidden()
+    }
+
+    @ViewBuilder var answerView: some View {
+        // TODO: Update selected to view model
+        let displayType = viewModel.surveyQuestionUIModel.displayType
+        switch displayType {
+        case .heart, .star, .smiley:
+            let emojis = SurveyQuestionUIModel.emojisForQuestionDisplayType(displayType)
+            let highlightStyle: EmojiAnswerView.EmojiHighlightStyle = displayType == .smiley ? .one : .leftItems
+            EmojiAnswerView(
+                emojis: emojis,
+                highlightStyle: highlightStyle,
+                selectedIndex: .constant(0)
+            )
+        default:
+            EmptyView()
+        }
     }
 }

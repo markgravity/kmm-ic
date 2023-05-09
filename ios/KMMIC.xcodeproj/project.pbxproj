@@ -26,6 +26,8 @@
 		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
+		2D928B1E2A08E29200FC4930 /* EmojiAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B1D2A08E29200FC4930 /* EmojiAnswerView.swift */; };
+		2D928B202A08F06500FC4930 /* Constant+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B1F2A08F06500FC4930 /* Constant+Emoji.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
 		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
 		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
@@ -156,6 +158,8 @@
 		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
+		2D928B1D2A08E29200FC4930 /* EmojiAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAnswerView.swift; sourceTree = "<group>"; };
+		2D928B1F2A08F06500FC4930 /* Constant+Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+Emoji.swift"; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
@@ -372,10 +376,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2D928B1C2A08E27400FC4930 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2D928B1D2A08E29200FC4930 /* EmojiAnswerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2D94C3142A08A09300571F59 /* SurveyQuestion */ = {
 			isa = PBXGroup;
 			children = (
 				2D94C3192A08A6EF00571F59 /* Models */,
+				2D928B1C2A08E27400FC4930 /* Views */,
 				2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */,
 				2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */,
 			);
@@ -713,6 +726,7 @@
 			children = (
 				7A2E522FB6BBDAB0E2417653 /* Constants.swift */,
 				D0C5AC0BC393EF070DD097EE /* Constants+API.swift */,
+				2D928B1F2A08F06500FC4930 /* Constant+Emoji.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1326,6 +1340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D928B202A08F06500FC4930 /* Constant+Emoji.swift in Sources */,
 				2DFE5F2629EE3816006DF40A /* PrimaryDimmedBackground.swift in Sources */,
 				2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */,
 				2D40AA8D29F0EB3F00CEADB9 /* LoginViewModel.swift in Sources */,
@@ -1335,6 +1350,7 @@
 				21163164F33C5496651AD9C9 /* UseCaseFactoryProtocol.swift in Sources */,
 				2DF8054529F632E10079651F /* DateHelper.swift in Sources */,
 				2D21F31F29E3C71C00E0913F /* App.swift in Sources */,
+				2D928B1E2A08E29200FC4930 /* EmojiAnswerView.swift in Sources */,
 				2DFE5F1229EE3217006DF40A /* LoginScreen.swift in Sources */,
 				2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */,
 				2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */,

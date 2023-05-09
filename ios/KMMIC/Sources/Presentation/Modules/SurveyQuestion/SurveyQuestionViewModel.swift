@@ -19,7 +19,9 @@ final class SurveyQuestionViewModel: ObservableObject {
         surveyQuestionUIModel = .init(
             step: "\(questionIndex + 1)/\(surveyDetail.questions.count)",
             title: question.text,
-            coverImageURL: .init(string: question.coverImageUrl)
+            coverImageURL: .init(string: question.coverImageUrl),
+            displayType: question.displayType,
+            answers: question.sortedAnswers
         )
     }
 }
