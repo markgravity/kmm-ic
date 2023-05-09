@@ -11,12 +11,12 @@ import SwiftUI
 struct DropdownAnswerView: View {
 
     let options: [Option]
-    let selection: Binding<Option?>
+    @Binding var selection: Option?
 
     var body: some View {
-        Picker("", selection: selection) {
+        Picker("", selection: $selection) {
             ForEach(options) { option in
-                let font = selection.wrappedValue == option
+                let font = selection == option
                     ? Font.boldLarge
                     : Font.regularLarge
                 Text(option.text)
