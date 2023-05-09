@@ -69,9 +69,18 @@ struct SurveyQuestionScreen: View {
                 DropdownAnswerView.Option(id: $0.id, text: $0.text.string)
             }
             DropdownAnswerView(options: options, selection: $selectionOption)
-        case .textfield:
-            let fields = answers.map {
-                FormAnswerView.Field(id: $0.id, placeholder: $0.inputMaskPlaceholder.string)
+        case .textfield, .textarea:
+            let fields: [FormAnswerView.Field] = answers.map {
+                var type: FormAnswerView.FieldType = .textField
+                if displayType == .textarea {
+                    type = .textarea
+                }
+
+                return FormAnswerView.Field(
+                    id: $0.id,
+                    placeholder: $0.inputMaskPlaceholder.string,
+                    type: type
+                )
             }
             FormAnswerView(fields: fields, data: $formData)
         default:

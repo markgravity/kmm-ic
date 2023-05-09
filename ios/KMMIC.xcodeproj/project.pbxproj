@@ -30,6 +30,8 @@
 		2D928B202A08F06500FC4930 /* Constant+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B1F2A08F06500FC4930 /* Constant+Emoji.swift */; };
 		2D928B222A09E2D500FC4930 /* DropdownAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B212A09E2D500FC4930 /* DropdownAnswerView.swift */; };
 		2D928B262A09F05300FC4930 /* FormAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B252A09F05300FC4930 /* FormAnswerView.swift */; };
+		2D928B282A09F8AB00FC4930 /* Textarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B272A09F8AB00FC4930 /* Textarea.swift */; };
+		2D928B2A2A09FBD600FC4930 /* View+PrimaryFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
 		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
 		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
@@ -164,6 +166,8 @@
 		2D928B1F2A08F06500FC4930 /* Constant+Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constant+Emoji.swift"; sourceTree = "<group>"; };
 		2D928B212A09E2D500FC4930 /* DropdownAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownAnswerView.swift; sourceTree = "<group>"; };
 		2D928B252A09F05300FC4930 /* FormAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAnswerView.swift; sourceTree = "<group>"; };
+		2D928B272A09F8AB00FC4930 /* Textarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textarea.swift; sourceTree = "<group>"; };
+		2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PrimaryFieldStyle.swift"; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
@@ -713,6 +717,7 @@
 				2D89DD8529F780270093E013 /* ArrowButton.swift */,
 				2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */,
 				2D49BD4E29FA233500C77D7B /* DarkBackground.swift */,
+				2D928B272A09F8AB00FC4930 /* Textarea.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				2D40AA9129F1181F00CEADB9 /* View+Alert.swift */,
 				2DED7AF829F912BB00793619 /* View+Swipe.swift */,
 				2DA6BA0E29FB76720071966D /* View+OnLoad.swift */,
+				2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1376,6 +1382,8 @@
 				2D928B222A09E2D500FC4930 /* DropdownAnswerView.swift in Sources */,
 				2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */,
 				2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */,
+				2D928B2A2A09FBD600FC4930 /* View+PrimaryFieldStyle.swift in Sources */,
+				2D928B282A09F8AB00FC4930 /* Textarea.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
 				2D49BD4D29FA219100C77D7B /* SurveyDetailScreen.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
