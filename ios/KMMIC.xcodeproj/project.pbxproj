@@ -32,6 +32,7 @@
 		2D928B262A09F05300FC4930 /* FormAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B252A09F05300FC4930 /* FormAnswerView.swift */; };
 		2D928B282A09F8AB00FC4930 /* Textarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B272A09F8AB00FC4930 /* Textarea.swift */; };
 		2D928B2A2A09FBD600FC4930 /* View+PrimaryFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */; };
+		2D928B2C2A0A20CE00FC4930 /* SelectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
 		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
 		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
@@ -168,6 +169,7 @@
 		2D928B252A09F05300FC4930 /* FormAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormAnswerView.swift; sourceTree = "<group>"; };
 		2D928B272A09F8AB00FC4930 /* Textarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textarea.swift; sourceTree = "<group>"; };
 		2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PrimaryFieldStyle.swift"; sourceTree = "<group>"; };
+		2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				2D928B1D2A08E29200FC4930 /* EmojiAnswerView.swift */,
 				2D928B212A09E2D500FC4930 /* DropdownAnswerView.swift */,
 				2D928B252A09F05300FC4930 /* FormAnswerView.swift */,
+				2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1389,6 +1392,7 @@
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */,
 				2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */,
+				2D928B2C2A0A20CE00FC4930 /* SelectAnswerView.swift in Sources */,
 				2D40AA9229F1181F00CEADB9 /* View+Alert.swift in Sources */,
 				2D967A7429F22C4E0015BC99 /* HomeHeader.swift in Sources */,
 				2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */,

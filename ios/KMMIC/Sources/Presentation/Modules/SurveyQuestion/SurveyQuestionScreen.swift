@@ -15,6 +15,7 @@ struct SurveyQuestionScreen: View {
     // TODO: Remove these dummy states
     @State var selectionOption: DropdownAnswerView.Option?
     @State var formData = Set<FormAnswerView.FieldData>()
+    @State var selectionOptions = Set<SelectAnswerView.Option>()
 
     var body: some View {
         ZStack {
@@ -83,6 +84,12 @@ struct SurveyQuestionScreen: View {
                 )
             }
             FormAnswerView(fields: fields, data: $formData)
+        case .choice:
+            let options = answers.map {
+                SelectAnswerView.Option(id: $0.id, text: $0.text.string)
+            }
+            SelectAnswerView(options: options, selections: $selectionOptions)
+                .frame(maxHeight: 170.0)
         default:
             EmptyView()
         }
