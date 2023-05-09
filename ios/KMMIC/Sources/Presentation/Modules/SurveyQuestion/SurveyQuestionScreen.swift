@@ -10,15 +10,17 @@ import SwiftUI
 
 struct SurveyQuestionScreen: View {
 
+    @StateObject var viewModel: SurveyQuestionViewModel
+
     var body: some View {
         ZStack {
-            DarkBackground(url: URL(string: "https://dhdbhh0jsld0o.cloudfront.net/m/1ea51560991bcb7d00d0_"))
+            DarkBackground(url: viewModel.surveyQuestionUIModel.coverImageURL)
             VStack(alignment: .leading) {
-                Text("1/5")
+                Text(viewModel.surveyQuestionUIModel.step)
                     .font(.boldMedium)
                     .foregroundColor(.white.opacity(0.5))
                     .padding(.bottom, 8.0)
-                Text("How fulfilled did you feel during this WFH period?")
+                Text(viewModel.surveyQuestionUIModel.title)
                     .font(.boldLargeTitle)
                     .foregroundColor(.white)
                 Spacer()
@@ -40,12 +42,5 @@ struct SurveyQuestionScreen: View {
             }
         }
         .navigationBarBackButtonHidden()
-    }
-}
-
-struct SurveyQuestionScreen_Previews: PreviewProvider {
-
-    static var previews: some View {
-        SurveyQuestionScreen()
     }
 }

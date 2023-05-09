@@ -12,6 +12,7 @@ import SwiftUI
 struct SurveyDetailScreen: View {
 
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var navigator: Navigator
     @StateObject var viewModel: SurveyDetailViewModel
 
     var body: some View {
@@ -29,7 +30,11 @@ struct SurveyDetailScreen: View {
                 HStack {
                     Spacer()
                     PrimaryButton(R.string.localizable.surveyDetailScreenStartButtonTitle()) {
-                        // TODO: Begin survey
+                        guard let surveyQuestionViewModel = viewModel.surveyQuestionViewModel else { return }
+                        navigator.show(
+                            screen: .surveyQuestion(viewModel: surveyQuestionViewModel),
+                            by: .presentCover
+                        )
                     }
                     .frame(width: 140.0)
                 }

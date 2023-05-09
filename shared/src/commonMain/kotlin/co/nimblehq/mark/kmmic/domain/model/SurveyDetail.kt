@@ -10,3 +10,8 @@ data class SurveyDetail(
     val coverImageUrl: String,
     val questions: List<SurveyQuestion>
 )
+
+val SurveyDetail.questionsWithAvailableAnswers: List<SurveyQuestion>
+    get() = questions.filter {
+        it.displayType != QUESTION_DISPLAY_TYPE_INTRO && it.displayType != QUESTION_DISPLAY_TYPE_OUTRO
+    }

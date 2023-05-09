@@ -18,6 +18,23 @@ extension SurveyDetail {
         description: "description",
         isActive: true,
         coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
-        questions: []
+        questions: [
+            .init(
+                id: "id",
+                text: "text",
+                displayOrder: 1,
+                displayType: "heart",
+                pick: "pick",
+                coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
+                answers: [
+                    .init(
+                        id: "id",
+                        text: "text",
+                        displayOrder: 1,
+                        inputMaskPlaceholder: "inputMaskPlaceholder"
+                    )
+                ]
+            )
+        ]
     )
 }

@@ -20,6 +20,8 @@ final class SurveyDetailViewModel: ObservableObject {
     @Published var alertDescription: AlertDescription?
     @Published var isLoading = false
 
+    private(set) var surveyQuestionViewModel: SurveyQuestionViewModel?
+
     init(survey: Survey) {
         self.survey = .init(survey: survey)
     }
@@ -40,6 +42,7 @@ final class SurveyDetailViewModel: ObservableObject {
                 guard let self else { return }
                 self.isLoading = false
                 self.survey = .init(surveyDetail: detail)
+                self.surveyQuestionViewModel = .init(surveyDetail: detail, questionIndex: 0)
             }
             .store(in: &cancellableBag)
     }
