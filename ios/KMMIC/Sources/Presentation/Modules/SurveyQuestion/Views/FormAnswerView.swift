@@ -11,7 +11,7 @@ import SwiftUI
 struct FormAnswerView: View {
 
     let fields: [Field]
-    let data: Binding<Set<FieldData>>
+    @Binding var data: Set<FieldData>
 
     var body: some View {
         VStack(spacing: 16.0) {
@@ -25,17 +25,17 @@ struct FormAnswerView: View {
     func text(of field: Field) -> Binding<String> {
         return Binding<String>(
             get: {
-                data.wrappedValue.first {
+                data.first {
                     $0.id == field.id
                 }?.content ?? ""
             },
             set: {
-                if let fieldData = data.wrappedValue.first(where: {
+                if let fieldData = data.first(where: {
                     $0.id == field.id
                 }) {
-                    data.wrappedValue.remove(fieldData)
+                    data.remove(fieldData)
                 }
-                data.wrappedValue.insert(
+                data.insert(
                     .init(id: field.id, content: $0)
                 )
             }
