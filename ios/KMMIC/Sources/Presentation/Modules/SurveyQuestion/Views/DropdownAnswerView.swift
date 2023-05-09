@@ -23,6 +23,11 @@ struct DropdownAnswerView: View {
                     .font(font)
                     .foregroundColor(Color.white)
                     .tag(option as Option?)
+                if option != options.last {
+                    Divider()
+                        .frame(minHeight: 0.5)
+                        .background(Color.white)
+                }
             }
         }
         .pickerStyle(.wheel)
