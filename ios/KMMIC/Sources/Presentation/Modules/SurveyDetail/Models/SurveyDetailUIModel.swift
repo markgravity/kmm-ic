@@ -14,14 +14,12 @@ struct SurveyDetailUIModel: Equatable {
     let title: String
     let description: String
     let coverImageURL: URL?
-    let detail: SurveyDetail?
 
     init(surveyDetail: SurveyDetail) {
         id = surveyDetail.id
         title = surveyDetail.title
         description = surveyDetail.description_
         coverImageURL = .init(string: surveyDetail.coverImageUrl)
-        detail = surveyDetail
     }
 
     init(survey: Survey) {
@@ -29,6 +27,5 @@ struct SurveyDetailUIModel: Equatable {
         title = survey.title
         description = survey.description_
         coverImageURL = .init(string: survey.coverImageUrl)
-        detail = nil
     }
 }

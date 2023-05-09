@@ -30,13 +30,9 @@ struct SurveyDetailScreen: View {
                 HStack {
                     Spacer()
                     PrimaryButton(R.string.localizable.surveyDetailScreenStartButtonTitle()) {
-                        guard let surveyDetail = viewModel.survey.detail else { return }
-                        let viewModel = SurveyQuestionViewModel(
-                            surveyDetail: surveyDetail,
-                            questionIndex: 0
-                        )
+                        guard let surveyQuestionViewModel = viewModel.surveyQuestionViewModel else { return }
                         navigator.show(
-                            screen: .surveyQuestion(viewModel: viewModel),
+                            screen: .surveyQuestion(viewModel: surveyQuestionViewModel),
                             by: .presentCover
                         )
                     }
