@@ -16,6 +16,7 @@ struct SurveyQuestionScreen: View {
     @State var selectionOption: DropdownAnswerView.Option?
     @State var formData = Set<FormAnswerView.FieldData>()
     @State var selectionOptions = Set<SelectAnswerView.Option>()
+    @State var selectionNPS: Int?
 
     var body: some View {
         ZStack {
@@ -90,6 +91,8 @@ struct SurveyQuestionScreen: View {
             }
             SelectAnswerView(options: options, selections: $selectionOptions)
                 .frame(maxHeight: 170.0)
+        case .nps:
+            NPSAnswerView(selection: $selectionNPS)
         default:
             EmptyView()
         }
