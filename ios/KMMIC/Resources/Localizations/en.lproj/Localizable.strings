@@ -8,3 +8,6 @@
 "homeScreen.today.text" = "TODAY";
 
 "surveyDetailScreen.startButton.title" = "Start Survey";
+
+"surveyQuestionScreen.nps.unlike" = "Not at all Likely";
+"surveyQuestionScreen.nps.like" = "Extremely Likely";
