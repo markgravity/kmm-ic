@@ -12,6 +12,9 @@ struct SurveyQuestionScreen: View {
 
     @StateObject var viewModel: SurveyQuestionViewModel
 
+    // TODO: Remove these dummy states
+    @State var selectionOption: DropdownAnswerView.Option?
+
     var body: some View {
         ZStack {
             DarkBackground(url: viewModel.surveyQuestionUIModel.coverImageURL)
@@ -49,6 +52,8 @@ struct SurveyQuestionScreen: View {
     @ViewBuilder var answerView: some View {
         // TODO: Update selected to view model
         let displayType = viewModel.surveyQuestionUIModel.displayType
+        let answers = viewModel.surveyQuestionUIModel.answers
+
         switch displayType {
         case .heart, .star, .smiley:
             let emojis = SurveyQuestionUIModel.emojisForQuestionDisplayType(displayType)
@@ -58,6 +63,11 @@ struct SurveyQuestionScreen: View {
                 highlightStyle: highlightStyle,
                 selectedIndex: .constant(0)
             )
+        case .dropdown:
+            let options = answers.map {
+                DropdownAnswerView.Option(id: $0.id, text: $0.text.string)
+            }
+            DropdownAnswerView(options: options, selection: $selectionOption)
         default:
             EmptyView()
         }
