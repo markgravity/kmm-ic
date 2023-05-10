@@ -16,8 +16,14 @@ struct FormAnswerView: View {
     var body: some View {
         VStack(spacing: 16.0) {
             ForEach(fields) { field in
-                PrimaryTextField(field.placeholder, text: text(of: field))
-                    .padding(.horizontal, 12.0)
+                switch field.type {
+                case .textField:
+                    PrimaryTextField(field.placeholder, text: text(of: field))
+                        .padding(.horizontal, 12.0)
+                case .textarea:
+                    Textarea(placeholder: field.placeholder, text: text(of: field))
+                        .frame(maxHeight: 170.0)
+                }
             }
         }
     }
@@ -45,10 +51,17 @@ struct FormAnswerView: View {
 
 extension FormAnswerView {
 
+    enum FieldType {
+
+        case textField
+        case textarea
+    }
+
     struct Field: Identifiable, Equatable, Hashable {
 
         let id: String
         let placeholder: String
+        let type: FieldType
     }
 
     struct FieldData: Hashable {
