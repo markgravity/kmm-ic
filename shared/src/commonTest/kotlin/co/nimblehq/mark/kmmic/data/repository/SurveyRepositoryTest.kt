@@ -25,6 +25,7 @@ import kotlinx.coroutines.test.runTest
 import org.koin.core.context.stopKoin
 import kotlin.test.AfterTest
 
+@Suppress("TooManyFunctions")
 @ExperimentalCoroutinesApi
 class SurveyRepositoryTest {
 
