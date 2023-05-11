@@ -14,12 +14,6 @@ struct SurveyQuestionScreen: View {
 
     @StateObject var viewModel: SurveyQuestionViewModel
 
-    // TODO: Remove these dummy states
-    @State var selectionOption: DropdownAnswerView.Option?
-    @State var formData = Set<FormAnswerView.FieldData>()
-    @State var selectionOptions = Set<SelectAnswerView.Option>()
-    @State var selectionNPS: Int?
-
     var body: some View {
         ZStack {
             DarkBackground(url: viewModel.surveyQuestionUIModel.coverImageURL)
