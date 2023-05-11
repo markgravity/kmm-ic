@@ -12,14 +12,22 @@ private let numberOfItems = 10
 
 struct NPSAnswerView: View {
 
-    @Binding var selection: Int?
+    @EnvironmentObject private var viewModel: SurveyQuestionViewModel
+    @State private var selectedIndex: Int? {
+        didSet {
+            guard let index = selectedIndex,
+                  let answer = viewModel.surveyQuestionUIModel.answers[safe: index]
+            else { return }
+            viewModel.setAnswerInput(for: answer.id, with: nil)
+        }
+    }
 
     var body: some View {
         VStack(spacing: 16.0) {
             HStack(spacing: 0.0) {
                 ForEach(1 ... numberOfItems, id: \.self) { index in
                     Button {
-                        selection = index
+                        selectedIndex = index
                     } label: {
                         Text("\(index)")
                             .font(
@@ -44,7 +52,7 @@ struct NPSAnswerView: View {
 
     @ViewBuilder var bottomView: some View {
         HStack {
-            let selection = selection ?? -1
+            let selection = selectedIndex ?? -1
             let leftRangeAlpha = (selection < numberOfItems / 2) ? 1.0 : 0.5
             let isInvalidIndex = selection < 0
 
@@ -62,6 +70,6 @@ struct NPSAnswerView: View {
     }
 
     func isHighlight(for index: Int) -> Bool {
-        index <= (selection ?? -1)
+        index <= (selectedIndex ?? -1)
     }
 }

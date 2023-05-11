@@ -10,8 +10,16 @@ import SwiftUI
 
 struct SelectAnswerView: View {
 
-    let options: [Option]
-    @Binding var selections: Set<Option>
+    @EnvironmentObject private var viewModel: SurveyQuestionViewModel
+
+    @State private var selections = Set<Option>()
+
+    private var options: [Option] {
+        let answers = viewModel.surveyQuestionUIModel.answers
+        return answers.map {
+            SelectAnswerView.Option(id: $0.id, text: $0.text)
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -35,6 +43,13 @@ struct SelectAnswerView: View {
                 }
             }
             .padding(.horizontal, 60.0)
+        }
+        .onChange(of: selections) { data in
+            viewModel.setAnswerInputs(
+                data.map {
+                    .init(id: $0.id, content: nil)
+                }
+            )
         }
     }
 

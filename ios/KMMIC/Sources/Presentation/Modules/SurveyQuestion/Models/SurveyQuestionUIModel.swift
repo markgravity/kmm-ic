@@ -15,7 +15,7 @@ struct SurveyQuestionUIModel: Equatable {
     let title: String
     let coverImageURL: URL?
     let displayType: QuestionDisplayType
-    let answers: [SurveyAnswer]
+    let answers: [SurveyAnswerUIModel]
 
     static func emojisForQuestionDisplayType(_ type: QuestionDisplayType) -> [String] {
         switch type {

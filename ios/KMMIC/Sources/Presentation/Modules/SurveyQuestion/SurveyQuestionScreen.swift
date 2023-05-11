@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SurveyQuestionScreen: View {
 
+    @EnvironmentObject var navigator: Navigator
+
     @StateObject var viewModel: SurveyQuestionViewModel
 
     // TODO: Remove these dummy states
@@ -31,11 +33,23 @@ struct SurveyQuestionScreen: View {
                     .foregroundColor(.white)
                 Spacer()
                 answerView
+                    .environmentObject(viewModel)
                 Spacer()
                 HStack {
                     Spacer()
-                    ArrowButton {}
+                    if viewModel.isLast {
+                        PrimaryButton(R.string.localizable.surveyQuestionScreenSubmitButtonTitle()) {
+                            // TODO: Submit survey
+                        }
+                        .frame(width: 120.0)
+                    } else {
+                        ArrowButton {
+                            guard let nextViewModel = viewModel.getNextViewModel() else { return }
+                            navigator.show(screen: .surveyQuestion(viewModel: nextViewModel), by: .push)
+                        }
+                    }
                 }
+                .disabled(!viewModel.isAllValid)
             }
             .padding(.horizontal, 20.0)
             .padding(.top, 32.0)
@@ -53,46 +67,20 @@ struct SurveyQuestionScreen: View {
     }
 
     @ViewBuilder var answerView: some View {
-        // TODO: Update selected to view model
         let displayType = viewModel.surveyQuestionUIModel.displayType
-        let answers = viewModel.surveyQuestionUIModel.answers
 
         switch displayType {
         case .heart, .star, .smiley:
-            let emojis = SurveyQuestionUIModel.emojisForQuestionDisplayType(displayType)
-            let highlightStyle: EmojiAnswerView.EmojiHighlightStyle = displayType == .smiley ? .one : .leftItems
-            EmojiAnswerView(
-                emojis: emojis,
-                highlightStyle: highlightStyle,
-                selectedIndex: .constant(0)
-            )
+            EmojiAnswerView()
         case .dropdown:
-            let options = answers.map {
-                DropdownAnswerView.Option(id: $0.id, text: $0.text.string)
-            }
-            DropdownAnswerView(options: options, selection: $selectionOption)
+            DropdownAnswerView()
         case .textfield, .textarea:
-            let fields: [FormAnswerView.Field] = answers.map {
-                var type: FormAnswerView.FieldType = .textField
-                if displayType == .textarea {
-                    type = .textarea
-                }
-
-                return FormAnswerView.Field(
-                    id: $0.id,
-                    placeholder: $0.inputMaskPlaceholder.string,
-                    type: type
-                )
-            }
-            FormAnswerView(fields: fields, data: $formData)
+            FormAnswerView()
         case .choice:
-            let options = answers.map {
-                SelectAnswerView.Option(id: $0.id, text: $0.text.string)
-            }
-            SelectAnswerView(options: options, selections: $selectionOptions)
+            SelectAnswerView()
                 .frame(maxHeight: 170.0)
         case .nps:
-            NPSAnswerView(selection: $selectionNPS)
+            NPSAnswerView()
         default:
             EmptyView()
         }
