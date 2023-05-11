@@ -11,7 +11,7 @@ import SwiftUI
 struct ArrowButton: View {
 
     @Environment(\.isEnabled) private var isEnabled
-    
+
     let action: () -> Void
 
     var body: some View {

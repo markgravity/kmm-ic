@@ -54,6 +54,7 @@
 		2DC21BE12A0B8C4C00A5324B /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE02A0B8C4C00A5324B /* Collection+Safe.swift */; };
 		2DC21BE32A0C864800A5324B /* SurveyAnswerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE22A0C864800A5324B /* SurveyAnswerInput.swift */; };
 		2DC21BE52A0C919700A5324B /* SurveyAnswerUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE42A0C919700A5324B /* SurveyAnswerUIModel.swift */; };
+		2DC21BE82A0CA14800A5324B /* SurveyQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */; };
 		2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */; };
 		2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */; };
 		2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF829F912BB00793619 /* View+Swipe.swift */; };
@@ -194,6 +195,7 @@
 		2DC21BE02A0B8C4C00A5324B /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 		2DC21BE22A0C864800A5324B /* SurveyAnswerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerInput.swift; sourceTree = "<group>"; };
 		2DC21BE42A0C919700A5324B /* SurveyAnswerUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerUIModel.swift; sourceTree = "<group>"; };
+		2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SurveyQuestion+Dummy.swift"; sourceTree = "<group>"; };
 		2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveyUIModel.swift; sourceTree = "<group>"; };
 		2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearDarkLinearGradient.swift; sourceTree = "<group>"; };
 		2DED7AF829F912BB00793619 /* View+Swipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Swipe.swift"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				2D967A6729F196D10015BC99 /* Error+Dummy.swift */,
 				2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */,
 				2DA6BA1429FB78C10071966D /* SurveyDetail+Dummy.swift */,
+				2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */,
 				2DF8054829F634680079651F /* User+Dummy.swift */,
 			);
 			path = Dummy;
@@ -1351,6 +1354,7 @@
 			files = (
 				2D94C3202A08AFE400571F59 /* SurveyQuestionViewModelSpec.swift in Sources */,
 				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
+				2DC21BE82A0CA14800A5324B /* SurveyQuestion+Dummy.swift in Sources */,
 				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
 				2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */,
 				2D967A6929F196FE0015BC99 /* Error+Dummy.swift in Sources */,
