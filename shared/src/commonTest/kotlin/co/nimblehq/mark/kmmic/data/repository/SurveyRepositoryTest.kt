@@ -8,6 +8,7 @@ import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyApiModel
 import co.nimblehq.mark.kmmic.data.service.survey.model.SurveyDetailApiModel
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
+import co.nimblehq.mark.kmmic.domain.model.SurveySubmission
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import co.nimblehq.mark.kmmic.dummy.dummy
 import kotlin.test.BeforeTest
@@ -24,6 +25,7 @@ import kotlinx.coroutines.test.runTest
 import org.koin.core.context.stopKoin
 import kotlin.test.AfterTest
 
+@Suppress("TooManyFunctions")
 @ExperimentalCoroutinesApi
 class SurveyRepositoryTest {
 
@@ -147,6 +149,32 @@ class SurveyRepositoryTest {
             )
 
         repository.getSurveyDetail("abc").test {
+            this.awaitError().message shouldBe mockThrowable.message
+        }
+    }
+
+    @Test
+    fun `when submit survey - it emits empty response`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::submitSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(flow { emit(Unit) })
+
+        repository.submitSurvey(SurveySubmission("id", emptyList())).first() shouldBe Unit
+    }
+
+    @Test
+    fun `when submit survey is failed - it emits error`() = runTest {
+        given(mockSurveyService)
+            .function(mockSurveyService::submitSurvey)
+            .whenInvokedWith(any())
+            .thenReturn(
+                flow {
+                    throw mockThrowable
+                }
+            )
+
+        repository.submitSurvey(SurveySubmission("id", emptyList())).test {
             this.awaitError().message shouldBe mockThrowable.message
         }
     }

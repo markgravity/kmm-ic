@@ -4,12 +4,14 @@ import co.nimblehq.mark.kmmic.data.service.cached.survey.CachedSurveyService
 import co.nimblehq.mark.kmmic.data.service.cached.survey.model.CachedSurvey
 import co.nimblehq.mark.kmmic.data.service.cached.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.SurveyService
+import co.nimblehq.mark.kmmic.data.service.survey.model.*
 import co.nimblehq.mark.kmmic.data.service.survey.model.GetSurveysParams
 import co.nimblehq.mark.kmmic.data.service.survey.model.toCachedSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurvey
 import co.nimblehq.mark.kmmic.data.service.survey.model.toSurveyDetail
 import co.nimblehq.mark.kmmic.domain.model.Survey
 import co.nimblehq.mark.kmmic.domain.model.SurveyDetail
+import co.nimblehq.mark.kmmic.domain.model.SurveySubmission
 import co.nimblehq.mark.kmmic.domain.repository.SurveyRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -54,5 +56,9 @@ internal class SurveyRepositoryImpl: SurveyRepository, KoinComponent {
         return surveyService
             .getSurvey(id)
             .map { it.toSurveyDetail() }
+    }
+
+    override fun submitSurvey(submission: SurveySubmission): Flow<Unit> {
+        return surveyService.submitSurvey(SurveySubmissionParams(submission))
     }
 }
