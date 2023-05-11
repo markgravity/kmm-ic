@@ -195,6 +195,17 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                     }
                 }
             }
+
+            describe("its showExitAlert call") {
+
+                beforeEach {
+                    viewModel.showExitAlert()
+                }
+
+                it("returns isExitAlertPresented correctly") {
+                    expect(viewModel.isExitAlertPresented) == true
+                }
+            }
         }
     }
 }
