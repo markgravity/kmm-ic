@@ -12,6 +12,8 @@ import Shared
 
 final class SurveyQuestionViewModel: ObservableObject {
 
+    @Injected(\.submitSurveyUseCase) private var submitSurveyUseCase
+
     private let surveyDetail: SurveyDetail
     private let question: SurveyQuestion
     private var questionSubmissions: [SurveySubmissionQuestion]
@@ -22,6 +24,9 @@ final class SurveyQuestionViewModel: ObservableObject {
     @Published var isAllValid: Bool = false
     @Published var isLast: Bool
     @Published var isExitAlertPresented = false
+    @Published var isLoading = false
+    @Published var alertDescription: AlertDescription?
+    @Published var didSubmitSurvey = false
 
     init(
         surveyDetail: SurveyDetail,
@@ -80,6 +85,27 @@ final class SurveyQuestionViewModel: ObservableObject {
 
     func showExitAlert() {
         isExitAlertPresented = true
+    }
+
+    func submitSurvey() {
+        let submission = SurveySubmission(id: surveyDetail.id, questions: questionSubmissions)
+        isLoading = true
+        submitSurveyUseCase(submission: submission)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] result in
+                guard let self else { return }
+                self.isLoading = false
+                switch result {
+                case let .failure(error):
+                    self.alertDescription = error.alertDescription
+                case .finished: break
+                }
+            } receiveValue: { [weak self] _ in
+                guard let self else { return }
+                self.isLoading = false
+                self.didSubmitSurvey = true
+            }
+            .store(in: &cancellableBag)
     }
 
     private func clearAllAnswerInputs() {

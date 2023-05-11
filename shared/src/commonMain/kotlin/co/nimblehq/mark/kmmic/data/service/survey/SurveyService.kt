@@ -45,7 +45,7 @@ internal class SurveyServiceImpl: SurveyService, KoinComponent {
     }
 
     override fun submitSurvey(body: SurveySubmissionParams): Flow<Unit> {
-        return apiService.performRequest(
+        return apiService.performRequestWithEmptyResponse(
             HttpRequestBuilder().apply {
                 path("/v1/responses")
                 method = HttpMethod.Post

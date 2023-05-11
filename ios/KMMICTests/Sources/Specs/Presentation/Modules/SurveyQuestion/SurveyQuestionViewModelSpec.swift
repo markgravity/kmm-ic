@@ -17,12 +17,16 @@ import TestableCombinePublishers
 final class SurveyQuestionViewModelSpec: QuickSpec {
 
     override func spec() {
+        var submitSurveyUseCase: SubmitSurveyUseCaseMock!
         var viewModel: SurveyQuestionViewModel!
         let question = SurveyDetail.dummy.questions.first
 
         describe("a SurveyQuestionViewModel") {
 
             beforeEach {
+                submitSurveyUseCase = .init()
+                Container.shared.submitSurveyUseCase.register { submitSurveyUseCase }
+
                 viewModel = SurveyQuestionViewModel(
                     surveyDetail: .dummy,
                     questionIndex: 0
@@ -204,6 +208,56 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
 
                 it("returns isExitAlertPresented correctly") {
                     expect(viewModel.isExitAlertPresented) == true
+                }
+            }
+
+            describe("its submitSurvey call") {
+
+                context("when submitSurveyUseCase emits success") {
+
+                    beforeEach {
+                        submitSurveyUseCase.invokeAsNativeSubmissionReturnValue = { success, _ in
+                            _ = success(.shared, .shared)
+                            return { .shared }
+                        }
+                        viewModel.submitSurvey()
+                    }
+
+                    it("sets isLoading correctly") {
+                        viewModel.$isLoading
+                            .collect(2)
+                            .expect([true, false])
+                            .waitForExpectations(timeout: 1.0)
+                    }
+
+                    it("sets didSubmitSurvey correctly") {
+                        viewModel.$didSubmitSurvey
+                            .collect(2)
+                            .expect([false, true])
+                            .waitForExpectations(timeout: 1.0)
+                    }
+                }
+
+                context("when submitSurveyUseCase emits failure") {
+
+                    beforeEach {
+                        submitSurveyUseCase.invokeAsNativeSubmissionReturnValue = { _, failure in
+                            _ = failure(TestError.dummy, .shared)
+                            return { .shared }
+                        }
+                        viewModel.submitSurvey()
+                    }
+
+                    it("sets isLoading correctly") {
+                        viewModel.$isLoading
+                            .collect(2)
+                            .expect([true, false])
+                            .waitForExpectations(timeout: 1.0)
+                    }
+
+                    it("sets alertDescription correctly") {
+                        expect(viewModel.alertDescription).toEventually(equal(TestError.dummy.alertDescription))
+                    }
                 }
             }
         }
