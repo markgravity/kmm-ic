@@ -85,7 +85,7 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                     ])
                     context("when displayType is \(displayType)") {
 
-                        context("when answer inputs is empty") {
+                        context("when answer inputs are empty") {
 
                             beforeEach {
                                 viewModel = SurveyQuestionViewModel(
@@ -99,7 +99,7 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                             }
                         }
 
-                        context("when answer inputs is not empty") {
+                        context("when answer inputs are not empty") {
 
                             beforeEach {
                                 viewModel = SurveyQuestionViewModel(
@@ -120,7 +120,7 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                     let surveyDetail = SurveyDetail.dummy(questions: [
                         .dummy(id: "1", displayType: .textfield)
                     ])
-                    context("when answer inputs is empty") {
+                    context("when answer inputs are empty") {
 
                         beforeEach {
                             viewModel = SurveyQuestionViewModel(
@@ -134,7 +134,7 @@ final class SurveyQuestionViewModelSpec: QuickSpec {
                         }
                     }
 
-                    context("when answer inputs is not empty") {
+                    context("when answer inputs are not empty") {
 
                         beforeEach {
                             viewModel = SurveyQuestionViewModel(
