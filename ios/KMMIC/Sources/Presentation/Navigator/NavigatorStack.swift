@@ -23,6 +23,12 @@ struct NavigatorStack: View {
                     LoginScreen()
                 case .home:
                     HomeScreen()
+                case let .surveyDetail(viewModel):
+                    SurveyDetailScreen(viewModel: viewModel)
+                        // FIXME: Navigator is not found if we don't add this
+                        .environmentObject(navigator)
+                case let .surveyQuestion(viewModel):
+                    SurveyQuestionScreen(viewModel: viewModel)
                 }
             }
             .environmentObject(navigator)

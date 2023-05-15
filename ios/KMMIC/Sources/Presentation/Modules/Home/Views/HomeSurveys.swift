@@ -12,18 +12,24 @@ import SwiftUI
 struct HomeSurveys: View {
 
     @EnvironmentObject private var viewModel: HomeViewModel
+    @EnvironmentObject private var navigator: Navigator
+
+    private var pageControl: some View {
+        HStack(spacing: 10.0) {
+            ForEach(0 ... viewModel.surveys.count - 1, id: \.self) { index in
+                Circle()
+                    .fill(index == viewModel.selectedSurveyIndex ? .white : .white.opacity(0.2))
+                    .frame(width: 8.0, height: 8.0)
+            }
+            .padding(.bottom, 26.0)
+        }
+    }
 
     private var bottomContent: some View {
         VStack(alignment: .leading, spacing: 0.0) {
             Spacer()
-            HStack(spacing: 10.0) {
-                ForEach(0 ... viewModel.surveys.count - 1, id: \.self) { index in
-                    Circle()
-                        .fill(index == viewModel.selectedSurveyIndex ? .white : .white.opacity(0.2))
-                        .frame(width: 8.0, height: 8.0)
-                }
-                .padding(.bottom, 26.0)
-            }
+
+            pageControl
 
             if let survey = viewModel.selectedSurvey {
                 Text(survey.title)
@@ -38,7 +44,12 @@ struct HomeSurveys: View {
                         .lineLimit(2)
                     Spacer(minLength: 20.0)
                     ArrowButton {
-                        // TODO: Show Survey Detail screen
+                        guard let survey = viewModel.selectedSurvey?.survey else { return }
+                        let viewModel = SurveyDetailViewModel(survey: survey)
+                        navigator.show(
+                            screen: .surveyDetail(viewModel: viewModel),
+                            by: .push
+                        )
                     }
                 }
             }
@@ -50,25 +61,8 @@ struct HomeSurveys: View {
         Group {
             if !viewModel.surveys.isEmpty {
                 ZStack {
-                    GeometryReader { geometry in
-                        LazyImage(url: viewModel.selectedSurvey?.coverImageURL) {
-                            if let image = $0.image {
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(
-                                        width: geometry.size.width,
-                                        height: geometry.size.height
-                                    )
-                            } else {
-                                EmptyView()
-                            }
-                        }
-                    }
-                    .ignoresSafeArea()
-
-                    ClearDarkLinearGradient()
-
+                    DarkBackground(url: viewModel.selectedSurvey?.coverImageURL)
+                        .ignoresSafeArea()
                     bottomContent
                 }
             }
