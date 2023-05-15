@@ -29,21 +29,7 @@ struct SurveyQuestionScreen: View {
                 answerView
                     .environmentObject(viewModel)
                 Spacer()
-                HStack {
-                    Spacer()
-                    if viewModel.isLast {
-                        PrimaryButton(R.string.localizable.surveyQuestionScreenSubmitButtonTitle()) {
-                            viewModel.submitSurvey()
-                        }
-                        .frame(width: 120.0)
-                    } else {
-                        ArrowButton {
-                            guard let nextViewModel = viewModel.getNextViewModel() else { return }
-                            navigator.show(screen: .surveyQuestion(viewModel: nextViewModel), by: .push)
-                        }
-                    }
-                }
-                .disabled(!viewModel.isAllValid)
+                bottomButton
             }
             .padding(.horizontal, 20.0)
             .padding(.top, 32.0)
@@ -58,20 +44,12 @@ struct SurveyQuestionScreen: View {
             }
         }
         .navigationBarBackButtonHidden()
-        .alert(isPresented: $viewModel.isExitAlertPresented, content: {
-            Alert(
-                title: Text(R.string.localizable.alertWarningTitle()),
-                message: Text(R.string.localizable.surveyQuestionScreenExitAlertMessage()),
-                primaryButton: .default(Text(R.string.localizable.alertYesButtonTitle())) { navigator.pop() },
-                secondaryButton: .cancel(Text(R.string.localizable.alertCancelButtonTitle())) {}
-            )
-        })
+        .alert(isPresented: $viewModel.isExitAlertPresented, content: { exitAlert })
         .alert($viewModel.alertDescription)
         .progressHUD($viewModel.isLoading)
         .onChange(of: viewModel.didSubmitSurvey) {
             guard $0 else { return }
-            // TODO: Show Survey Complete screen
-            print("Survey submitted!!!")
+            navigator.show(screen: .thank, by: .push)
         }
     }
 
@@ -93,5 +71,32 @@ struct SurveyQuestionScreen: View {
         default:
             EmptyView()
         }
+    }
+
+    @ViewBuilder var bottomButton: some View {
+        HStack {
+            Spacer()
+            if viewModel.isLast {
+                PrimaryButton(R.string.localizable.surveyQuestionScreenSubmitButtonTitle()) {
+                    viewModel.submitSurvey()
+                }
+                .frame(width: 120.0)
+            } else {
+                ArrowButton {
+                    guard let nextViewModel = viewModel.getNextViewModel() else { return }
+                    navigator.show(screen: .surveyQuestion(viewModel: nextViewModel), by: .push)
+                }
+            }
+        }
+        .disabled(!viewModel.isAllValid)
+    }
+
+    var exitAlert: Alert {
+        Alert(
+            title: Text(R.string.localizable.alertWarningTitle()),
+            message: Text(R.string.localizable.surveyQuestionScreenExitAlertMessage()),
+            primaryButton: .default(Text(R.string.localizable.alertYesButtonTitle())) { navigator.pop() },
+            secondaryButton: .cancel(Text(R.string.localizable.alertCancelButtonTitle())) {}
+        )
     }
 }

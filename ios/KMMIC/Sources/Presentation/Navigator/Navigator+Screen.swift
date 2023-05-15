@@ -15,6 +15,7 @@ extension Navigator {
         case home
         case surveyDetail(viewModel: SurveyDetailViewModel)
         case surveyQuestion(viewModel: SurveyQuestionViewModel)
+        case thank
 
         private var name: String {
             switch self {
@@ -28,6 +29,8 @@ extension Navigator {
                 return "surveyDetail"
             case .surveyQuestion:
                 return "surveyQuestion"
+            case .thank:
+                return "thank"
             }
         }
 

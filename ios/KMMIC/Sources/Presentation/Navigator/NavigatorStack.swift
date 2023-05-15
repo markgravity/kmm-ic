@@ -31,6 +31,9 @@ struct NavigatorStack: View {
                 case let .surveyQuestion(viewModel):
                     SurveyQuestionScreen(viewModel: viewModel)
                         .environmentObject(navigator)
+                case .thank:
+                    ThankScreen()
+                        .environmentObject(navigator)
                 }
             }
             .environmentObject(navigator)
