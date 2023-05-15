@@ -6,12 +6,13 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import FlowStacks
 import SwiftUI
 
 struct NavigatorStack: View {
 
-    @StateObject var navigator = Navigator()
+    @InjectedObject(\.navigator) var navigator: Navigator
 
     var body: some View {
         NavigationView {
