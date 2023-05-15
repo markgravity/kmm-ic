@@ -15,3 +15,5 @@
 "surveyQuestionScreen.nps.like" = "Extremely Likely";
 "surveyQuestionScreen.submitButton.title" = "Submit";
 "surveyQuestionScreen.exitAlert.message" = "Are you sure you want to quit the survey?";
+
+"thankScreen.title.text" = "Thanks for taking the survey.";
