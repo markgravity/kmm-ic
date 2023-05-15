@@ -11,3 +11,4 @@
 
 "surveyQuestionScreen.nps.unlike" = "Not at all Likely";
 "surveyQuestionScreen.nps.like" = "Extremely Likely";
+"surveyQuestionScreen.submitButton.title" = "Submit";

@@ -10,10 +10,26 @@ import SwiftUI
 
 struct EmojiAnswerView: View {
 
-    let emojis: [String]
-    var highlightStyle: EmojiHighlightStyle = .leftItems
+    @EnvironmentObject private var viewModel: SurveyQuestionViewModel
 
-    @Binding var selectedIndex: Int
+    private var emojis: [String] {
+        let displayType = viewModel.surveyQuestionUIModel.displayType
+        return SurveyQuestionUIModel.emojisForQuestionDisplayType(displayType)
+    }
+
+    private var highlightStyle: EmojiHighlightStyle {
+        let displayType = viewModel.surveyQuestionUIModel.displayType
+        return displayType == .smiley ? .one : .leftItems
+    }
+
+    @State private var selectedIndex: Int? {
+        didSet {
+            guard let index = selectedIndex,
+                  let answer = viewModel.surveyQuestionUIModel.answers[safe: index]
+            else { return }
+            viewModel.setAnswerInput(for: answer.id, with: nil)
+        }
+    }
 
     var body: some View {
         HStack(spacing: 16.0) {
@@ -26,6 +42,7 @@ struct EmojiAnswerView: View {
                         .font(.boldTitle)
                         .opacity(isHighlighted(for: index) ? 1.0 : 0.5)
                 }
+                .tag(index as Int?)
             }
             Spacer()
         }
@@ -33,7 +50,7 @@ struct EmojiAnswerView: View {
 
     func isHighlighted(for index: Int) -> Bool {
         switch highlightStyle {
-        case .leftItems: return index <= selectedIndex
+        case .leftItems: return index <= selectedIndex ?? -1
         case .one: return index == selectedIndex
         }
     }

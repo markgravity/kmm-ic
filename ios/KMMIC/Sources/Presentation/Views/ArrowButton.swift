@@ -10,13 +10,15 @@ import SwiftUI
 
 struct ArrowButton: View {
 
+    @Environment(\.isEnabled) private var isEnabled
+
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
             ZStack {
                 Circle()
-                    .fill(.white)
+                    .fill(isEnabled ? .white : .gray)
                 R.image.arrowIcon.image
             }
         }
