@@ -26,7 +26,6 @@ class NavigatorMock: Navigator {
     var showScreenByClosure: ((Navigator.Screen, Navigator.Transition) -> Void)?
 
     override func show(screen: Navigator.Screen, by transition: Navigator.Transition) {
-        print("xxxxx", screen, self)
         showScreenByCallsCount += 1
         showScreenByReceivedArguments = (screen: screen, transition: transition)
         showScreenByReceivedInvocations.append((screen: screen, transition: transition))
