@@ -10,3 +10,5 @@ args:
   autoMockableTestableImports:
     - KMMIC
     - Shared
+  autoMockableImports:
+    - FlowStacks

@@ -47,7 +47,7 @@ import {{ import }}
 
 {% macro methodClosureCallParameters method %}{% for param in method.parameters %}{{ param.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endmacro %}
 
-{% macro mockMethod method %}
+{% macro mockMethod method modifiers %}
     //MARK: - {{ method.shortName }}
 
     {% if method.throws %}
@@ -72,11 +72,13 @@ import {{ import }}
     {% call methodClosureDeclaration method %}
 
 {% if method.isInitializer %}
+    {{ modifiers }}
     required {{ method.name }} {
         {% call methodReceivedParameters method %}
         {% call methodClosureName method %}?({% call methodClosureCallParameters method %})
     }
 {% else %}
+    {{ modifiers }}
     func {{ method.name }}{{ ' throws' if method.throws }}{% if not method.returnTypeName.isVoid %} -> {{ method.returnTypeName }}{% endif %} {
         {% if method.throws %}
         {% call methodThrowableErrorUsage method %}
@@ -106,7 +108,7 @@ import {{ import }}
         get { return {% call underlyingMockedVariableName variable %} }
         set(value) { {% call underlyingMockedVariableName variable %} = value }
     }
-    var {% call underlyingMockedVariableName variable %}: {{ variable.typeName }}!
+    var {% call underlyingMockedVariableName variable %}: {{ variable.typeName }}{% if not variable.isOptional %}!{% endif %}{% if variable.defaultValue %} = {{ variable.defaultValue}}{% endif %}
 {% endmacro %}
 
 {% macro underlyingMockedVariableName variable %}underlying{{ variable.name|upperFirstLetter }}{% endmacro %}
@@ -120,8 +122,27 @@ class {{ type.name }}Mock: {{ type.name }} {
 
 {% for method in type.allMethods|!definedInExtension %}
     {% if method.attributes.available[0].arguments.renamed == null %}
-    {% call mockMethod method %}
+    {% call mockMethod method "" %}
     {% endif %}
+{% endfor %}
+}
+
+{% endif %}{% endfor %}
+
+{% for type in types.classes where type.based.AutoMockable or type|annotated:"AutoMockable" %}{% if type.name != "AutoMockable" %}
+class {{ type.name }}Mock: {{ type.name }} {
+{% for variable in type.allVariables|!definedInExtension %}
+{% if variable.readAccess != "private" and variable.readAccess != "fileprivate" %}
+    override {% if variable.isArray or variable.isDictionary %}{% call mockNonOptionalArrayOrDictionaryVariable variable %}{% else %}{% call mockNonOptionalVariable variable %}{% endif %}
+{% endif %}
+{% endfor %}
+
+{% for method in type.allMethods|!definedInExtension %}
+{% if method.attributes.available[0].arguments.renamed == null %}
+{% if method.readAccess != "private" and method.readAccess != "fileprivate" %}
+{% call mockMethod method "override" %}
+{% endif %}
+{% endif %}
 {% endfor %}
 }
 

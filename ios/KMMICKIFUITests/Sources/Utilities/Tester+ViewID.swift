@@ -15,6 +15,10 @@ extension KIFUITestActor {
         waitForView(withAccessibilityIdentifier: viewID())
     }
 
+    func waitForTappableView(withViewID viewID: ViewID) {
+        waitForTappableView(withAccessibilityIdentifier: viewID())
+    }
+
     func enterText(_ text: String, intoViewWithViewID viewID: ViewID) {
         enterText(text, intoViewWithAccessibilityIdentifier: viewID())
     }

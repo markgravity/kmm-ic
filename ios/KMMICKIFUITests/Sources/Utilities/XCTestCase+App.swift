@@ -13,8 +13,11 @@ import XCTest
 
 class App {
 
+    static var originNavigator: Navigator?
+
     func setScreen(screen: Navigator.Screen, navigator: Navigator? = nil) {
-        let originNavigator = Container.shared.navigator()
+        let originNavigator = Self.originNavigator ?? Container.shared.navigator()
+        Self.originNavigator = originNavigator
         if let navigator = navigator {
             Container.shared.navigator.register {
                 navigator
