@@ -21,6 +21,7 @@ final class SurveyQuestionViewModel: ObservableObject {
     @Published var surveyQuestionUIModel: SurveyQuestionUIModel
     @Published var isAllValid: Bool = false
     @Published var isLast: Bool
+    @Published var isExitAlertPresented = false
 
     init(
         surveyDetail: SurveyDetail,
@@ -75,6 +76,10 @@ final class SurveyQuestionViewModel: ObservableObject {
             questionIndex: index + 1,
             questionSubmissions: questionSubmissions
         )
+    }
+
+    func showExitAlert() {
+        isExitAlertPresented = true
     }
 
     private func clearAllAnswerInputs() {

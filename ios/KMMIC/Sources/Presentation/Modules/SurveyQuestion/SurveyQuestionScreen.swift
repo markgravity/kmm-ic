@@ -51,13 +51,21 @@ struct SurveyQuestionScreen: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // TODO: Show confirm alert
+                    viewModel.showExitAlert()
                 } label: {
                     R.image.closeIcon.image
                 }
             }
         }
         .navigationBarBackButtonHidden()
+        .alert(isPresented: $viewModel.isExitAlertPresented, content: {
+            Alert(
+                title: Text(R.string.localizable.alertWarningTitle()),
+                message: Text(R.string.localizable.surveyQuestionScreenExitAlertMessage()),
+                primaryButton: .default(Text(R.string.localizable.alertYesButtonTitle())) { navigator.pop() },
+                secondaryButton: .cancel(Text(R.string.localizable.alertCancelButtonTitle())) {}
+            )
+        })
     }
 
     @ViewBuilder var answerView: some View {
