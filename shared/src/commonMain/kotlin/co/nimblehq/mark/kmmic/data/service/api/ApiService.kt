@@ -81,4 +81,21 @@ internal class ApiService(requiresAuthentication: Boolean = false): KoinComponen
             }
         }
     }
+
+    fun performRequestWithEmptyResponse(builder: HttpRequestBuilder): Flow<Unit> {
+        return flow {
+            val body = httpClient.request(
+                builder.apply {
+                    contentType(ContentType.Application.Json)
+                }
+            ).bodyAsText()
+            try {
+                if (body != "{}") JsonApi(jsonConfigs).decodeFromJsonApiString<Unit>(body)
+                emit(Unit)
+            } catch (e: JsonApiException) {
+                val message = e.errors.first().detail
+                throw ApiError(message)
+            }
+        }
+    }
 }

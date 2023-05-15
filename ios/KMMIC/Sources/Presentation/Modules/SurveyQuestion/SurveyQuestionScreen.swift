@@ -33,7 +33,7 @@ struct SurveyQuestionScreen: View {
                     Spacer()
                     if viewModel.isLast {
                         PrimaryButton(R.string.localizable.surveyQuestionScreenSubmitButtonTitle()) {
-                            // TODO: Submit survey
+                            viewModel.submitSurvey()
                         }
                         .frame(width: 120.0)
                     } else {
@@ -66,6 +66,13 @@ struct SurveyQuestionScreen: View {
                 secondaryButton: .cancel(Text(R.string.localizable.alertCancelButtonTitle())) {}
             )
         })
+        .alert($viewModel.alertDescription)
+        .progressHUD($viewModel.isLoading)
+        .onChange(of: viewModel.didSubmitSurvey) {
+            guard $0 else { return }
+            // TODO: Show Survey Complete screen
+            print("Survey submitted!!!")
+        }
     }
 
     @ViewBuilder var answerView: some View {
