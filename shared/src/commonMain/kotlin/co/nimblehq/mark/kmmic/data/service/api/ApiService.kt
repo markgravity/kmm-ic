@@ -71,11 +71,10 @@ internal class ApiService(requiresAuthentication: Boolean = false): KoinComponen
                         }
 
                         refreshTokens {
-                            print(this)
                             authService
                                 .refreshToken(
                                     AuthRefreshTokenParams(
-                                        refreshToken = oldTokens?.refreshToken ?: ""
+                                        refreshToken = oldTokens?.refreshToken.orEmpty()
                                     )
                                 )
                                 .last()
