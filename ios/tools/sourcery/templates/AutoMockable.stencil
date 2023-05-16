@@ -73,6 +73,9 @@ import {{ import }}
 {% if method.isInitializer %}
     {% if isClass %}override{% endif %}
     required {{ method.name }} {
+        {% if isClass %}
+        super.init({% for parameter in method.parameters %}{%if parameter.argumentLabel %}{{ parameter.argumentLabel }}: {% endif %}{{ parameter.name }}{% if not forloop.last %},{% endif %}{% endfor %})
+        {% endif %}
         {% call methodReceivedParameters method %}
         {% call methodClosureName method %}?({% call methodClosureCallParameters method %})
     }
