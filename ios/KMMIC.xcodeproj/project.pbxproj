@@ -23,6 +23,10 @@
 		2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */; };
 		2D49BD4D29FA219100C77D7B /* SurveyDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD4C29FA219100C77D7B /* SurveyDetailScreen.swift */; };
 		2D49BD4F29FA233500C77D7B /* DarkBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD4E29FA233500C77D7B /* DarkBackground.swift */; };
+		2D66D5E72A11CFC9006AB0AC /* ThankScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5E62A11CFC9006AB0AC /* ThankScreen.swift */; };
+		2D66D5EA2A11D10B006AB0AC /* success-lottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D66D5E92A11D10B006AB0AC /* success-lottie.json */; };
+		2D66D5EC2A11D140006AB0AC /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5EB2A11D140006AB0AC /* LottieView.swift */; };
+		2D66D5EE2A11D25E006AB0AC /* Rswift+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5ED2A11D25E006AB0AC /* Rswift+Color.swift */; };
 		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
@@ -165,6 +169,10 @@
 		2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Survey+Dummy.swift"; sourceTree = "<group>"; };
 		2D49BD4C29FA219100C77D7B /* SurveyDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreen.swift; sourceTree = "<group>"; };
 		2D49BD4E29FA233500C77D7B /* DarkBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkBackground.swift; sourceTree = "<group>"; };
+		2D66D5E62A11CFC9006AB0AC /* ThankScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankScreen.swift; sourceTree = "<group>"; };
+		2D66D5E92A11D10B006AB0AC /* success-lottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "success-lottie.json"; sourceTree = "<group>"; };
+		2D66D5EB2A11D140006AB0AC /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		2D66D5ED2A11D25E006AB0AC /* Rswift+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Color.swift"; sourceTree = "<group>"; };
 		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
@@ -350,6 +358,7 @@
 			children = (
 				2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */,
 				2DFE5F2129EE3684006DF40A /* Rswift+Font.swift */,
+				2D66D5ED2A11D25E006AB0AC /* Rswift+Color.swift */,
 			);
 			path = Rswift;
 			sourceTree = "<group>";
@@ -386,6 +395,22 @@
 				2DA6BA0929FB6B190071966D /* SurveyDetailViewModel.swift */,
 			);
 			path = SurveyDetail;
+			sourceTree = "<group>";
+		};
+		2D66D5E52A11CFB9006AB0AC /* Thank */ = {
+			isa = PBXGroup;
+			children = (
+				2D66D5E62A11CFC9006AB0AC /* ThankScreen.swift */,
+			);
+			path = Thank;
+			sourceTree = "<group>";
+		};
+		2D66D5E82A11D0FA006AB0AC /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D66D5E92A11D10B006AB0AC /* success-lottie.json */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		2D89DD8229F77D3A0093E013 /* Views */ = {
@@ -560,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				A2BBB1C6F0A34C5B607C5C5E /* Assets */,
+				2D66D5E82A11D0FA006AB0AC /* Files */,
 				2DFE5F1829EE3506006DF40A /* Fonts */,
 				973A6181FF6ADD7810429A9D /* LaunchScreen */,
 				2DFE5F1D29EE3535006DF40A /* Localizations */,
@@ -600,6 +626,7 @@
 				2D27FB2E29E7E77F00D0C9A5 /* Splash */,
 				2D49BD4B29FA217E00C77D7B /* SurveyDetail */,
 				2D94C3142A08A09300571F59 /* SurveyQuestion */,
+				2D66D5E52A11CFB9006AB0AC /* Thank */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -736,6 +763,7 @@
 				2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */,
 				2D49BD4E29FA233500C77D7B /* DarkBackground.swift */,
 				2D928B272A09F8AB00FC4930 /* Textarea.swift */,
+				2D66D5EB2A11D140006AB0AC /* LottieView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1094,6 +1122,7 @@
 				2DFE5F2029EE3535006DF40A /* Localizable.strings in Resources */,
 				948867088067BB9EB3C94D19 /* Assets.xcassets in Resources */,
 				3CC4BE796903A9AA63D1D251 /* LaunchScreen.storyboard in Resources */,
+				2D66D5EA2A11D10B006AB0AC /* success-lottie.json in Resources */,
 				2DFE5F1B29EE3506006DF40A /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				2DFE5F1C29EE3506006DF40A /* NeuzeitSLTStd-Book.otf in Resources */,
 				2D40AA7329EFDBF800CEADB9 /* commonMain in Resources */,
@@ -1373,6 +1402,7 @@
 			files = (
 				2D928B202A08F06500FC4930 /* Constant+Emoji.swift in Sources */,
 				2DC21BE52A0C919700A5324B /* SurveyAnswerUIModel.swift in Sources */,
+				2D66D5E72A11CFC9006AB0AC /* ThankScreen.swift in Sources */,
 				2DFE5F2629EE3816006DF40A /* PrimaryDimmedBackground.swift in Sources */,
 				2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */,
 				2D40AA8D29F0EB3F00CEADB9 /* LoginViewModel.swift in Sources */,
@@ -1390,6 +1420,7 @@
 				2D40AA8B29F0E2B100CEADB9 /* Animation+Completion.swift in Sources */,
 				2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */,
 				2D49BD4F29FA233500C77D7B /* DarkBackground.swift in Sources */,
+				2D66D5EC2A11D140006AB0AC /* LottieView.swift in Sources */,
 				2D967A7229F22BA70015BC99 /* HomeScreen.swift in Sources */,
 				2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */,
 				2DFE5F2829EE3E83006DF40A /* PrimaryTextField.swift in Sources */,
@@ -1423,6 +1454,7 @@
 				2DC21BE12A0B8C4C00A5324B /* Collection+Safe.swift in Sources */,
 				2DA6BA0F29FB76720071966D /* View+OnLoad.swift in Sources */,
 				2D928B2E2A0A279E00FC4930 /* NPSAnswerView.swift in Sources */,
+				2D66D5EE2A11D25E006AB0AC /* Rswift+Color.swift in Sources */,
 				45C74EE307D4EC4F0E5578AC /* R.generated.swift in Sources */,
 				876DCB90B926758C03181811 /* Typealiases.swift in Sources */,
 				2DF8053F29F62D7A0079651F /* DateFormatter+Formats.swift in Sources */,

@@ -30,6 +30,7 @@ target 'KMMIC' do
   pod 'KMPNativeCoroutinesCombine'
   pod 'FlowStacks'
   pod 'Factory'
+  pod 'lottie-ios'
 
   # Development
   pod 'SwiftLint'
