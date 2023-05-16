@@ -9,8 +9,7 @@
 import FlowStacks
 import SwiftUI
 
-final class Navigator: ObservableObject {
-
+class Navigator: ObservableObject {
     @Published var routes: Routes<Screen> = [.root(.splash)]
 
     func show(screen: Screen, by transition: Transition) {

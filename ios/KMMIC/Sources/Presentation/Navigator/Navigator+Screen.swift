@@ -8,12 +8,31 @@
 
 extension Navigator {
 
-    enum Screen {
+    enum Screen: Equatable {
 
         case splash
         case login
         case home
         case surveyDetail(viewModel: SurveyDetailViewModel)
         case surveyQuestion(viewModel: SurveyQuestionViewModel)
+
+        private var name: String {
+            switch self {
+            case .splash:
+                return "splash"
+            case .login:
+                return "login"
+            case .home:
+                return "home"
+            case .surveyDetail:
+                return "surveyDetail"
+            case .surveyQuestion:
+                return "surveyQuestion"
+            }
+        }
+
+        static func == (lhs: Navigator.Screen, rhs: Navigator.Screen) -> Bool {
+            lhs.name == rhs.name
+        }
     }
 }

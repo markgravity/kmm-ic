@@ -34,4 +34,8 @@ extension Container {
     var dateHelper: Factory<DateHelperProtocol> {
         Factory(self) { DateHelper() }
     }
+
+    var navigator: Factory<Navigator> {
+        Factory(self) { Navigator() }.scope(.singleton)
+    }
 }
