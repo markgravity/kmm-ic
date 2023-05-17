@@ -18,8 +18,12 @@ final class SplashSpec: QuickSpec {
         describe("a Splash screen") {
 
             var navigator: NavigatorMock!
+            var didSetScreen = false
 
-            beforeSuite {
+            beforeEach {
+                guard !didSetScreen else { return }
+                didSetScreen = true
+
                 navigator = .init()
                 self.app().setScreen(screen: .splash, navigator: navigator)
                 self.tester().waitForAnimationsToFinish()

@@ -38,4 +38,8 @@ extension Container {
     var navigator: Factory<Navigator> {
         Factory(self) { Navigator() }.scope(.singleton)
     }
+
+    var loginViewModel: Factory<LoginViewModel> {
+        Factory(self) { LoginViewModel() }
+    }
 }

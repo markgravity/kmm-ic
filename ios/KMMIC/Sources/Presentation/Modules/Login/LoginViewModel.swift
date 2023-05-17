@@ -9,7 +9,8 @@
 import Combine
 import Factory
 
-final class LoginViewModel: ObservableObject {
+// sourcery: AutoMockable
+class LoginViewModel: ObservableObject {
 
     @Injected(\.loginUseCase) private var loginUseCase
 

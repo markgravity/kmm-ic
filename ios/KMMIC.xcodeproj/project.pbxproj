@@ -30,6 +30,7 @@
 		2D66D5F42A11E295006AB0AC /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A718F62CC6F6121EF0895 /* AutoMockable.generated.swift */; };
 		2D66D5F62A11E426006AB0AC /* XCTestCase+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5F52A11E426006AB0AC /* XCTestCase+App.swift */; };
 		2D66D5FA2A11E973006AB0AC /* NavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5F92A11E973006AB0AC /* NavigatorMock.swift */; };
+		2D66D5FC2A121417006AB0AC /* LoginScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5FB2A121417006AB0AC /* LoginScreenSpec.swift */; };
 		2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */; };
 		2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8329F77D480093E013 /* HomeSurveys.swift */; };
 		2D89DD8629F780270093E013 /* ArrowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D89DD8529F780270093E013 /* ArrowButton.swift */; };
@@ -183,6 +184,7 @@
 		2D66D5ED2A11D25E006AB0AC /* Rswift+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Color.swift"; sourceTree = "<group>"; };
 		2D66D5F52A11E426006AB0AC /* XCTestCase+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+App.swift"; sourceTree = "<group>"; };
 		2D66D5F92A11E973006AB0AC /* NavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorMock.swift; sourceTree = "<group>"; };
+		2D66D5FB2A121417006AB0AC /* LoginScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenSpec.swift; sourceTree = "<group>"; };
 		2D89DD7B29F68C1A0093E013 /* AlertDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDescription.swift; sourceTree = "<group>"; };
 		2D89DD8329F77D480093E013 /* HomeSurveys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSurveys.swift; sourceTree = "<group>"; };
 		2D89DD8529F780270093E013 /* ArrowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButton.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				2DBC460A2A0DDE6F00356B34 /* SplashSpec.swift */,
+				2D66D5FB2A121417006AB0AC /* LoginScreenSpec.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1531,6 +1534,7 @@
 				2D66D5F42A11E295006AB0AC /* AutoMockable.generated.swift in Sources */,
 				2D66D5F62A11E426006AB0AC /* XCTestCase+App.swift in Sources */,
 				4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */,
+				2D66D5FC2A121417006AB0AC /* LoginScreenSpec.swift in Sources */,
 				2D66D5FA2A11E973006AB0AC /* NavigatorMock.swift in Sources */,
 				2DBC46142A0DE14100356B34 /* ViewID.swift in Sources */,
 				2DBC460C2A0DDE8000356B34 /* SplashSpec.swift in Sources */,
