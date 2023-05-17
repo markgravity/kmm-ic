@@ -6,25 +6,29 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import SwiftUI
 
 struct SurveyQuestionScreen: View {
 
-    @EnvironmentObject var navigator: Navigator
+    @InjectedObject(\.navigator) var navigator: Navigator
 
     @StateObject var viewModel: SurveyQuestionViewModel
 
     var body: some View {
         ZStack {
             DarkBackground(url: viewModel.surveyQuestionUIModel.coverImageURL)
+                .accessibility(.surveyQuestion(.backgroundImage))
             VStack(alignment: .leading) {
                 Text(viewModel.surveyQuestionUIModel.step)
                     .font(.boldMedium)
                     .foregroundColor(.white.opacity(0.5))
                     .padding(.bottom, 8.0)
+                    .accessibility(.surveyQuestion(.stepText))
                 Text(viewModel.surveyQuestionUIModel.title)
                     .font(.boldLargeTitle)
                     .foregroundColor(.white)
+                    .accessibility(.surveyQuestion(.questionText))
                 Spacer()
                 answerView
                     .environmentObject(viewModel)
@@ -41,6 +45,7 @@ struct SurveyQuestionScreen: View {
                 } label: {
                     R.image.closeIcon.image
                 }
+                .accessibility(.surveyQuestion(.backButton))
             }
         }
         .navigationBarBackButtonHidden()
@@ -59,15 +64,20 @@ struct SurveyQuestionScreen: View {
         switch displayType {
         case .heart, .star, .smiley:
             EmojiAnswerView()
+                .accessibility(.surveyQuestion(.emojiAnswer))
         case .dropdown:
             DropdownAnswerView()
+                .accessibility(.surveyQuestion(.dropdownAnswer))
         case .textfield, .textarea:
             FormAnswerView()
+                .accessibility(.surveyQuestion(.formAnswer))
         case .choice:
             SelectAnswerView()
                 .frame(maxHeight: 170.0)
+                .accessibility(.surveyQuestion(.selectAnswer))
         case .nps:
             NPSAnswerView()
+                .accessibility(.surveyQuestion(.npsAnswer))
         default:
             EmptyView()
         }
@@ -81,11 +91,13 @@ struct SurveyQuestionScreen: View {
                     viewModel.submitSurvey()
                 }
                 .frame(width: 120.0)
+                .accessibility(.surveyQuestion(.submitButton))
             } else {
                 ArrowButton {
                     guard let nextViewModel = viewModel.getNextViewModel() else { return }
                     navigator.show(screen: .surveyQuestion(viewModel: nextViewModel), by: .push)
                 }
+                .accessibility(.surveyQuestion(.nextButton))
             }
         }
         .disabled(!viewModel.isAllValid)

@@ -156,7 +156,7 @@ class {{ type.name }}Mock: {{ type.name }} {
         {% endfor %}
 
         {% for method in type.allMethods|!definedInExtension %}
-            {% if method.attributes.available[0].arguments.renamed == null and method.readAccess != "private" and method.readAccess != "fileprivate" %}
+            {% if method.attributes.available[0].arguments.renamed == null and method.accessLevel != "private" and method.accessLevel != "fileprivate" %}
                 {% call mockMethod method true %}
             {% endif %}
         {% endfor %}

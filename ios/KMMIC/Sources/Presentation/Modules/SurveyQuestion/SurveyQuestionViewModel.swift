@@ -10,7 +10,8 @@ import Combine
 import Factory
 import Shared
 
-final class SurveyQuestionViewModel: ObservableObject {
+// sourcery: AutoMockable
+class SurveyQuestionViewModel: ObservableObject {
 
     @Injected(\.submitSurveyUseCase) private var submitSurveyUseCase
 

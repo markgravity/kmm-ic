@@ -14,6 +14,7 @@ enum ViewID {
     case splash(Splash)
     case login(Login)
     case surveyDetail(SurveyDetail)
+    case surveyQuestion(SurveyQuestion)
 
     enum General: String {
         case progressHUD = "general.progressHUD"
@@ -38,6 +39,20 @@ enum ViewID {
         case backButton = "surveyDetail.backButton"
     }
 
+    enum SurveyQuestion: String {
+        case backgroundImage = "surveyQuestion.backgroundImage"
+        case stepText = "surveyQuestion.stepText"
+        case questionText = "surveyQuestion.questionText"
+        case nextButton = "surveyQuestion.nextButton"
+        case backButton = "surveyQuestion.backButton"
+        case submitButton = "surveyQuestion.submitButton"
+        case emojiAnswer = "surveyQuestion.emojiAnswer"
+        case dropdownAnswer = "surveyQuestion.dropdownAnswer"
+        case formAnswer = "surveyQuestion.formAnswer"
+        case selectAnswer = "surveyQuestion.selectAnswer"
+        case npsAnswer = "surveyQuestion.npsAnswer"
+    }
+
     func callAsFunction() -> String {
         switch self {
         case let .general(general):
@@ -48,6 +63,8 @@ enum ViewID {
             return login.rawValue
         case let .surveyDetail(surveyDetail):
             return surveyDetail.rawValue
+        case let .surveyQuestion(surveyQuestion):
+            return surveyQuestion.rawValue
         }
     }
 }
