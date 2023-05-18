@@ -6,26 +6,30 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import NukeUI
 import SwiftUI
 
 struct SurveyDetailScreen: View {
 
-    @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var navigator: Navigator
+    @InjectedObject(\.navigator) var navigator: Navigator
+
     @StateObject var viewModel: SurveyDetailViewModel
 
     var body: some View {
         ZStack {
             DarkBackground(url: viewModel.survey.coverImageURL)
+                .accessibility(.surveyDetail(.backgroundImage))
             VStack(alignment: .leading) {
                 Text(viewModel.survey.title)
                     .font(.boldTitle)
                     .padding(.bottom, 16.0)
                     .foregroundColor(.white)
+                    .accessibility(.surveyDetail(.titleText))
                 Text(viewModel.survey.description)
                     .font(.regularBody)
                     .foregroundColor(.white.opacity(0.7))
+                    .accessibility(.surveyDetail(.descriptionText))
                 Spacer()
                 HStack {
                     Spacer()
@@ -37,6 +41,7 @@ struct SurveyDetailScreen: View {
                         )
                     }
                     .frame(width: 140.0)
+                    .accessibility(.surveyDetail(.startButton))
                 }
             }
             .padding([.top, .horizontal], 20.0)
@@ -44,10 +49,11 @@ struct SurveyDetailScreen: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    presentation.wrappedValue.dismiss()
+                    navigator.goBack()
                 } label: {
                     R.image.backAccentIcon.image
                 }
+                .accessibility(.surveyDetail(.backButton))
             }
         }
         .navigationBarBackButtonHidden()
@@ -56,21 +62,5 @@ struct SurveyDetailScreen: View {
         .onLoad {
             viewModel.fetch()
         }
-    }
-}
-
-struct SurveyDetailScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        SurveyDetailScreen(
-            viewModel: .init(
-                survey: .init(
-                    id: "",
-                    title: "",
-                    description: "",
-                    isActive: true,
-                    coverImageUrl: ""
-                )
-            )
-        )
     }
 }

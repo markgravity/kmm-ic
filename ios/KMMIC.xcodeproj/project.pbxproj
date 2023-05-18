@@ -42,6 +42,10 @@
 		2D928B2A2A09FBD600FC4930 /* View+PrimaryFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */; };
 		2D928B2C2A0A20CE00FC4930 /* SelectAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */; };
 		2D928B2E2A0A279E00FC4930 /* NPSAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D928B2D2A0A279E00FC4930 /* NPSAnswerView.swift */; };
+		2D93AC982A13328200A1D05D /* SurveyDetailScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93AC972A13328200A1D05D /* SurveyDetailScreenSpec.swift */; };
+		2D93AC9A2A135B7B00A1D05D /* Survey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */; };
+		2D93AC9B2A13625D00A1D05D /* SurveyDetail+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6BA1429FB78C10071966D /* SurveyDetail+Dummy.swift */; };
+		2D93AC9C2A1362E600A1D05D /* SurveyQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
 		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
 		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
@@ -196,6 +200,7 @@
 		2D928B292A09FBD600FC4930 /* View+PrimaryFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PrimaryFieldStyle.swift"; sourceTree = "<group>"; };
 		2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
 		2D928B2D2A0A279E00FC4930 /* NPSAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSAnswerView.swift; sourceTree = "<group>"; };
+		2D93AC972A13328200A1D05D /* SurveyDetailScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreenSpec.swift; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
@@ -584,6 +589,7 @@
 			children = (
 				2DBC460A2A0DDE6F00356B34 /* SplashSpec.swift */,
 				2D66D5FB2A121417006AB0AC /* LoginScreenSpec.swift */,
+				2D93AC972A13328200A1D05D /* SurveyDetailScreenSpec.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1530,11 +1536,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D93AC9B2A13625D00A1D05D /* SurveyDetail+Dummy.swift in Sources */,
 				2DBC46152A0DE16400356B34 /* Tester+ViewID.swift in Sources */,
+				2D93AC9C2A1362E600A1D05D /* SurveyQuestion+Dummy.swift in Sources */,
 				2D66D5F42A11E295006AB0AC /* AutoMockable.generated.swift in Sources */,
 				2D66D5F62A11E426006AB0AC /* XCTestCase+App.swift in Sources */,
 				4B11F4DF6B794BA665067110 /* KIF+Swift.swift in Sources */,
+				2D93AC982A13328200A1D05D /* SurveyDetailScreenSpec.swift in Sources */,
 				2D66D5FC2A121417006AB0AC /* LoginScreenSpec.swift in Sources */,
+				2D93AC9A2A135B7B00A1D05D /* Survey+Dummy.swift in Sources */,
 				2D66D5FA2A11E973006AB0AC /* NavigatorMock.swift in Sources */,
 				2DBC46142A0DE14100356B34 /* ViewID.swift in Sources */,
 				2DBC460C2A0DDE8000356B34 /* SplashSpec.swift in Sources */,
