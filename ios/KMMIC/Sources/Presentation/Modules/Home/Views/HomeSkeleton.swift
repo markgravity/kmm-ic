@@ -57,7 +57,7 @@ struct HomeSkeleton: View {
                 with: true,
                 size: CGSize(
                     width: width,
-                    height: (20.0 * CGFloat(lines)) + (6.0 * (CGFloat(lines) - 1))
+                    height: (20.0 * CGFloat(lines)) + (6.0 * (CGFloat(lines) - 1.0))
                 )
             )
             .shape(type: .capsule)
