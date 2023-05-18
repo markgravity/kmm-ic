@@ -42,4 +42,8 @@ extension Container {
     var loginViewModel: Factory<LoginViewModel> {
         Factory(self) { LoginViewModel() }
     }
+
+    var homeViewModel: Factory<HomeViewModel> {
+        Factory(self) { HomeViewModel() }
+    }
 }

@@ -147,11 +147,7 @@ class {{ type.name }}Mock: {{ type.name }} {
             {% if variable.readAccess != "private" and variable.readAccess != "fileprivate" %}
 
     override
-                {% if variable.isArray or variable.isDictionary %}
-                    {% call mockNonOptionalArrayOrDictionaryVariable variable %}
-                {% else %}
-                    {% call mockNonOptionalVariable variable %}
-                {% endif %}
+                {% call mockNonOptionalVariable variable %}
             {% endif %}
         {% endfor %}
 

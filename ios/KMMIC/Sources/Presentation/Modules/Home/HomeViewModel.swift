@@ -10,7 +10,8 @@ import Combine
 import Factory
 import Shared
 
-final class HomeViewModel: ObservableObject {
+// sourcery: AutoMockable
+class HomeViewModel: ObservableObject {
 
     @Injected(\.getCurrentUserUseCase) private var getCurrentUserUseCase
     @Injected(\.getSurveysUseCase) private var getSurveysUseCase
