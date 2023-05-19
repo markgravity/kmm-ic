@@ -207,8 +207,8 @@ final class HomeViewModelSpec: QuickSpec {
                             .waitForExpectations(timeout: 1.0)
                     }
 
-                    it("sets isLoading correctly") {
-                        viewModel.$isLoading
+                    it("sets isRefreshing correctly") {
+                        viewModel.$isRefreshing
                             .collect(2)
                             .expect([true, false])
                             .waitForExpectations(timeout: 1.0)
@@ -244,8 +244,8 @@ final class HomeViewModelSpec: QuickSpec {
                         viewModel.refresh()
                     }
 
-                    it("sets isLoading correctly") {
-                        viewModel.$isLoading
+                    it("sets isRefreshing correctly") {
+                        viewModel.$isRefreshing
                             .collect(2)
                             .expect([true, false])
                             .waitForExpectations(timeout: 1.0)

@@ -46,6 +46,7 @@
 		2D93AC9A2A135B7B00A1D05D /* Survey+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D49BD2129F928D400C77D7B /* Survey+Dummy.swift */; };
 		2D93AC9B2A13625D00A1D05D /* SurveyDetail+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6BA1429FB78C10071966D /* SurveyDetail+Dummy.swift */; };
 		2D93AC9C2A1362E600A1D05D /* SurveyQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */; };
+		2D93AC9E2A146FCA00A1D05D /* HomeSkeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D93AC9D2A146FCA00A1D05D /* HomeSkeleton.swift */; };
 		2D94C3162A08A0A500571F59 /* SurveyQuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */; };
 		2D94C3182A08A6C900571F59 /* SurveyQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */; };
 		2D94C31B2A08A6FA00571F59 /* SurveyQuestionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */; };
@@ -203,6 +204,7 @@
 		2D928B2B2A0A20CE00FC4930 /* SelectAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnswerView.swift; sourceTree = "<group>"; };
 		2D928B2D2A0A279E00FC4930 /* NPSAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPSAnswerView.swift; sourceTree = "<group>"; };
 		2D93AC972A13328200A1D05D /* SurveyDetailScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreenSpec.swift; sourceTree = "<group>"; };
+		2D93AC9D2A146FCA00A1D05D /* HomeSkeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSkeleton.swift; sourceTree = "<group>"; };
 		2D94C3152A08A0A500571F59 /* SurveyQuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreen.swift; sourceTree = "<group>"; };
 		2D94C3172A08A6C900571F59 /* SurveyQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionViewModel.swift; sourceTree = "<group>"; };
 		2D94C31A2A08A6FA00571F59 /* SurveyQuestionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUIModel.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			children = (
 				2D967A7329F22C4E0015BC99 /* HomeHeader.swift */,
 				2D89DD8329F77D480093E013 /* HomeSurveys.swift */,
+				2D93AC9D2A146FCA00A1D05D /* HomeSkeleton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1512,6 +1515,7 @@
 				2D928B282A09F8AB00FC4930 /* Textarea.swift in Sources */,
 				2DFE5F2229EE3684006DF40A /* Rswift+Font.swift in Sources */,
 				2D49BD4D29FA219100C77D7B /* SurveyDetailScreen.swift in Sources */,
+				2D93AC9E2A146FCA00A1D05D /* HomeSkeleton.swift in Sources */,
 				2D89DD7C29F68C1A0093E013 /* AlertDescription.swift in Sources */,
 				2D89DD8429F77D480093E013 /* HomeSurveys.swift in Sources */,
 				2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */,

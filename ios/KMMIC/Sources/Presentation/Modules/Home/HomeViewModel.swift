@@ -23,6 +23,7 @@ final class HomeViewModel: ObservableObject {
     @Published var surveys = [HomeSurveyUIModel]()
     @Published var alertDescription: AlertDescription?
     @Published var isLoading = false
+    @Published var isRefreshing = false
     @Published var selectedSurveyIndex = 0
 
     var selectedSurvey: HomeSurveyUIModel? {
@@ -50,6 +51,7 @@ final class HomeViewModel: ObservableObject {
     }
 
     func refresh() {
+        guard !isLoading else { return }
         getSurveys(isRefresh: true)
     }
 
@@ -64,12 +66,12 @@ final class HomeViewModel: ObservableObject {
     }
 
     private func getSurveys(isRefresh: Bool) {
-        isLoading = true
+        updateLoadingState(isRefresh: isRefresh, value: true)
         getSurveysUseCase(pageNumber: 1, pageSize: 5, isRefresh: isRefresh)
             .receive(on: RunLoop.main)
             .sink { [weak self] result in
                 guard let self else { return }
-                self.isLoading = false
+                self.updateLoadingState(isRefresh: isRefresh, value: false)
                 switch result {
                 case let .failure(error):
                     self.alertDescription = error.alertDescription
@@ -77,10 +79,18 @@ final class HomeViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] surveys in
                 guard let self else { return }
-                self.isLoading = false
+                self.updateLoadingState(isRefresh: isRefresh, value: false)
                 self.surveys = surveys.map { .init(survey: $0) }
                 self.selectedSurveyIndex = 0
             }
             .store(in: &cancellableBag)
+    }
+
+    private func updateLoadingState(isRefresh: Bool, value: Bool) {
+        if isRefresh {
+            isRefreshing = value
+        } else {
+            isLoading = value
+        }
     }
 }

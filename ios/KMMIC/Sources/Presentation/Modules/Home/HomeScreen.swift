@@ -14,14 +14,18 @@ struct HomeScreen: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            HomeSurveys()
-            HomeHeader()
-                .padding(.horizontal, 20.0)
-                .padding(.top, 30.0)
+            if viewModel.isLoading {
+                HomeSkeleton()
+            } else {
+                HomeSurveys()
+                HomeHeader()
+                    .padding(.horizontal, 20.0)
+                    .padding(.top, 30.0)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .environmentObject(viewModel)
-        .progressHUD($viewModel.isLoading)
+        .progressHUD($viewModel.isRefreshing)
         .onLoad {
             viewModel.fetch()
         }
