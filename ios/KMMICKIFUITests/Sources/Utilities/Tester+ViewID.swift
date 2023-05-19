@@ -26,4 +26,8 @@ extension KIFUITestActor {
     func tapView(withViewID viewID: ViewID) {
         tapView(withAccessibilityIdentifier: viewID())
     }
+
+    func swipeView(withViewID viewID: ViewID, in direction: KIFSwipeDirection) {
+        swipeView(withAccessibilityIdentifier: viewID(), in: direction)
+    }
 }

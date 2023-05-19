@@ -16,6 +16,7 @@ enum ViewID {
     case surveyDetail(SurveyDetail)
     case surveyQuestion(SurveyQuestion)
     case thank(Thank)
+    case home(Home)
 
     enum General: String {
         case progressHUD = "general.progressHUD"
@@ -59,6 +60,12 @@ enum ViewID {
         case successAnimation = "thank.successAnimation"
     }
 
+    enum Home: String {
+        case skeletonLoading = "home.skeletonLoading"
+        case surveys = "home.surveys"
+        case header = "home.header"
+    }
+
     func callAsFunction() -> String {
         switch self {
         case let .general(general):
@@ -73,6 +80,8 @@ enum ViewID {
             return surveyQuestion.rawValue
         case let .thank(thank):
             return thank.rawValue
+        case let .home(home):
+            return home.rawValue
         }
     }
 }

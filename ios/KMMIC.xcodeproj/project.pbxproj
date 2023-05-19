@@ -60,6 +60,7 @@
 		2D967A7629F232300015BC99 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D967A7529F232300015BC99 /* Font+App.swift */; };
 		2D97FBB62A14C43A0091D9D3 /* SurveyQuestionScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97FBB52A14C4390091D9D3 /* SurveyQuestionScreenSpec.swift */; };
 		2D97FBB82A15CBC00091D9D3 /* ThankScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97FBB72A15CBC00091D9D3 /* ThankScreenSpec.swift */; };
+		2D97FBBA2A15D1C50091D9D3 /* HomeScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97FBB92A15D1C50091D9D3 /* HomeScreenSpec.swift */; };
 		2D9B9DA229E7B66D001F955C /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */; };
 		2DA6BA0A29FB6B190071966D /* SurveyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6BA0929FB6B190071966D /* SurveyDetailViewModel.swift */; };
 		2DA6BA0D29FB6B540071966D /* SurveyDetailUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6BA0C29FB6B540071966D /* SurveyDetailUIModel.swift */; };
@@ -217,6 +218,7 @@
 		2D967A7529F232300015BC99 /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
 		2D97FBB52A14C4390091D9D3 /* SurveyQuestionScreenSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyQuestionScreenSpec.swift; sourceTree = "<group>"; };
 		2D97FBB72A15CBC00091D9D3 /* ThankScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankScreenSpec.swift; sourceTree = "<group>"; };
+		2D97FBB92A15D1C50091D9D3 /* HomeScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenSpec.swift; sourceTree = "<group>"; };
 		2D9B9DA129E7B66D001F955C /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		2DA6BA0929FB6B190071966D /* SurveyDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailViewModel.swift; sourceTree = "<group>"; };
 		2DA6BA0C29FB6B540071966D /* SurveyDetailUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailUIModel.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				2D93AC972A13328200A1D05D /* SurveyDetailScreenSpec.swift */,
 				2D97FBB52A14C4390091D9D3 /* SurveyQuestionScreenSpec.swift */,
 				2D97FBB72A15CBC00091D9D3 /* ThankScreenSpec.swift */,
+				2D97FBB92A15D1C50091D9D3 /* HomeScreenSpec.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1560,6 +1563,7 @@
 				2D66D5FA2A11E973006AB0AC /* NavigatorMock.swift in Sources */,
 				2DBC46142A0DE14100356B34 /* ViewID.swift in Sources */,
 				2DBC460C2A0DDE8000356B34 /* SplashSpec.swift in Sources */,
+				2D97FBBA2A15D1C50091D9D3 /* HomeScreenSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
