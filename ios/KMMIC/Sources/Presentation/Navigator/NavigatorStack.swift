@@ -25,7 +25,8 @@ struct NavigatorStack: View {
                 case .home:
                     HomeScreen()
                 case let .surveyDetail(viewModel):
-                    SurveyDetailScreen(viewModel: viewModel)
+                    SurveyDetailScreen()
+                        .environmentObject(viewModel)
                         // FIXME: Navigator is not found if we don't add this
                         .environmentObject(navigator)
                 case let .surveyQuestion(viewModel):

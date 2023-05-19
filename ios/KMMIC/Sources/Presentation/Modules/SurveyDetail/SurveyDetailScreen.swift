@@ -12,9 +12,8 @@ import SwiftUI
 
 struct SurveyDetailScreen: View {
 
-    @InjectedObject(\.navigator) var navigator: Navigator
-
-    @StateObject var viewModel: SurveyDetailViewModel
+    @EnvironmentObject var navigator: Navigator
+    @EnvironmentObject var viewModel: SurveyDetailViewModel
 
     var body: some View {
         ZStack {

@@ -17,6 +17,15 @@
         "revision" : "38d345b6097171afa226d96ff3e213bd139c1c8c",
         "version" : "1.2.0"
       }
+    },
+    {
+      "identity" : "viewinspector",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/markgravity/ViewInspector",
+      "state" : {
+        "branch" : "main",
+        "revision" : "82e66c94fac475b3d723e7f27642c1816cb3394d"
+      }
     }
   ],
   "version" : 2

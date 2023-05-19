@@ -16,11 +16,13 @@ private struct ProgressHUDModifier: ViewModifier {
         if #available(iOS 15.0, *) {
             content.overlay {
                 ProgressHUD(isPresented: isPresented)
+                    .accessibility(.general(.progressHUD))
             }
         } else {
             ZStack {
                 content
                 ProgressHUD(isPresented: isPresented)
+                    .accessibility(.general(.progressHUD))
             }
             .ignoresSafeArea()
         }
@@ -52,7 +54,6 @@ struct ProgressHUD: View {
         .ignoresSafeArea()
         .opacity(isPresented ? 1.0 : 0.0)
         .animation(.easeIn(duration: 0.3), value: isPresented)
-        .accessibility(.general(.progressHUD))
     }
 }
 

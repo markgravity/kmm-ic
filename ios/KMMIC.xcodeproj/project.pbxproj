@@ -11,6 +11,9 @@
 		2D21F31F29E3C71C00E0913F /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D21F31E29E3C71C00E0913F /* App.swift */; };
 		2D27FB3029E7E79A00D0C9A5 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */; };
 		2D27FB3329E7E7EF00D0C9A5 /* Rswift+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */; };
+		2D3342682A1716A900D0B771 /* SurveyDetailScreenSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3342672A1716A900D0B771 /* SurveyDetailScreenSpec.swift */; };
+		2D3342692A17174800D0B771 /* NavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D66D5F92A11E973006AB0AC /* NavigatorMock.swift */; };
+		2D33426D2A171B4A00D0B771 /* ViewInspector+ViewID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D33426B2A17190A00D0B771 /* ViewInspector+ViewID.swift */; };
 		2D40AA7329EFDBF800CEADB9 /* commonMain in Resources */ = {isa = PBXBuildFile; fileRef = 2D40AA7229EFDBF800CEADB9 /* commonMain */; };
 		2D40AA8329F05EC800CEADB9 /* AutoSharedUseCase.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8229F05EC700CEADB9 /* AutoSharedUseCase.generated.swift */; };
 		2D40AA8529F0DFCB00CEADB9 /* NavigatorStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D40AA8429F0DFCB00CEADB9 /* NavigatorStack.swift */; };
@@ -73,6 +76,7 @@
 		2DC21BE32A0C864800A5324B /* SurveyAnswerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE22A0C864800A5324B /* SurveyAnswerInput.swift */; };
 		2DC21BE52A0C919700A5324B /* SurveyAnswerUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE42A0C919700A5324B /* SurveyAnswerUIModel.swift */; };
 		2DC21BE82A0CA14800A5324B /* SurveyQuestion+Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC21BE62A0CA0C800A5324B /* SurveyQuestion+Dummy.swift */; };
+		2DD97D542A177ABA006B70AB /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 2DD97D532A177ABA006B70AB /* ViewInspector */; };
 		2DED7AF529F9034400793619 /* HomeSurveyUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF429F9034400793619 /* HomeSurveyUIModel.swift */; };
 		2DED7AF729F9062700793619 /* ClearDarkLinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF629F9062700793619 /* ClearDarkLinearGradient.swift */; };
 		2DED7AF929F912BB00793619 /* View+Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED7AF829F912BB00793619 /* View+Swipe.swift */; };
@@ -171,6 +175,8 @@
 		2D21F31E29E3C71C00E0913F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2D27FB2F29E7E79A00D0C9A5 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		2D27FB3229E7E7EF00D0C9A5 /* Rswift+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rswift+Image.swift"; sourceTree = "<group>"; };
+		2D3342672A1716A900D0B771 /* SurveyDetailScreenSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailScreenSpec.swift; sourceTree = "<group>"; };
+		2D33426B2A17190A00D0B771 /* ViewInspector+ViewID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewInspector+ViewID.swift"; sourceTree = "<group>"; };
 		2D40AA7229EFDBF800CEADB9 /* commonMain */ = {isa = PBXFileReference; lastKnownFileType = folder; name = commonMain; path = ../../shared/src/commonMain; sourceTree = "<group>"; };
 		2D40AA8229F05EC700CEADB9 /* AutoSharedUseCase.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSharedUseCase.generated.swift; sourceTree = "<group>"; };
 		2D40AA8429F0DFCB00CEADB9 /* NavigatorStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorStack.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 			files = (
 				8C61280EF5985EA00FA312E6 /* Pods_KMMICTests.framework in Frameworks */,
 				2D967A6F29F19B220015BC99 /* TestableCombinePublishers in Frameworks */,
+				2DD97D542A177ABA006B70AB /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +399,14 @@
 				2D66D5ED2A11D25E006AB0AC /* Rswift+Color.swift */,
 			);
 			path = Rswift;
+			sourceTree = "<group>";
+		};
+		2D33426A2A1718FB00D0B771 /* ViewInspector */ = {
+			isa = PBXGroup;
+			children = (
+				2D33426B2A17190A00D0B771 /* ViewInspector+ViewID.swift */,
+			);
+			path = ViewInspector;
 			sourceTree = "<group>";
 		};
 		2D40AA7129EFDBDB00CEADB9 /* Kotlin Debug */ = {
@@ -559,6 +574,7 @@
 		2DA6BA1029FB77300071966D /* SurveyDetail */ = {
 			isa = PBXGroup;
 			children = (
+				2D3342672A1716A900D0B771 /* SurveyDetailScreenSpec.swift */,
 				2DA6BA1129FB77460071966D /* SurveyDetailViewModelSpec.swift */,
 			);
 			path = SurveyDetail;
@@ -795,6 +811,7 @@
 		667F7DFF5D590917E9560422 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2D33426A2A1718FB00D0B771 /* ViewInspector */,
 				8E3F5D11F87559E3A8104315 /* Foundation */,
 			);
 			path = Extensions;
@@ -1118,6 +1135,7 @@
 			name = KMMICTests;
 			packageProductDependencies = (
 				2D967A6E29F19B220015BC99 /* TestableCombinePublishers */,
+				2DD97D532A177ABA006B70AB /* ViewInspector */,
 			);
 			productName = KMMICTests;
 			productReference = C97B69EAF25CDE733FA325EB /* KMMICTests.xctest */;
@@ -1174,6 +1192,7 @@
 			packageReferences = (
 				2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */,
 				2DF8054E29F63B680079651F /* XCRemoteSwiftPackageReference "Nuke" */,
+				2DD97D522A177ABA006B70AB /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			productRefGroup = E42EB7C932465BADFC3EFE33 /* Products */;
 			projectDirPath = "";
@@ -1455,6 +1474,7 @@
 			files = (
 				2D94C3202A08AFE400571F59 /* SurveyQuestionViewModelSpec.swift in Sources */,
 				D407607DA10797C1E5ADD261 /* AutoMockable.generated.swift in Sources */,
+				2D3342682A1716A900D0B771 /* SurveyDetailScreenSpec.swift in Sources */,
 				2DC21BE82A0CA14800A5324B /* SurveyQuestion+Dummy.swift in Sources */,
 				8792A07D657F50AFC8B3424C /* OptionalUnwrapSpec.swift in Sources */,
 				2D49BD2229F928D400C77D7B /* Survey+Dummy.swift in Sources */,
@@ -1463,8 +1483,10 @@
 				2DF8054A29F6348C0079651F /* User+Dummy.swift in Sources */,
 				2DF8054729F633E30079651F /* HomeViewModelSpec.swift in Sources */,
 				2DA6BA1529FB78C20071966D /* SurveyDetail+Dummy.swift in Sources */,
+				2D3342692A17174800D0B771 /* NavigatorMock.swift in Sources */,
 				2DA6BA1329FB77600071966D /* SurveyDetailViewModelSpec.swift in Sources */,
 				2D967A6029F18CFF0015BC99 /* LoginViewModelSpec.swift in Sources */,
+				2D33426D2A171B4A00D0B771 /* ViewInspector+ViewID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,6 +2199,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2DD97D522A177ABA006B70AB /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markgravity/ViewInspector";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		2DF8054E29F63B680079651F /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
@@ -2192,6 +2222,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2D967A6D29F19B220015BC99 /* XCRemoteSwiftPackageReference "TestableCombinePublishers" */;
 			productName = TestableCombinePublishers;
+		};
+		2DD97D532A177ABA006B70AB /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2DD97D522A177ABA006B70AB /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
 		};
 		2DF8054F29F63B680079651F /* NukeUI */ = {
 			isa = XCSwiftPackageProductDependency;
