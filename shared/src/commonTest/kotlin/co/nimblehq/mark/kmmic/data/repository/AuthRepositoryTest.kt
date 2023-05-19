@@ -26,7 +26,9 @@ class AuthRepositoryTest {
     private val mockAuthService = mock(classOf<AuthService>())
     @Mock
     private val mockTokenService = mock(classOf<TokenService>())
+
     private lateinit var authRepository: AuthRepository
+    
     private val mockTokenApi = AuthTokenApiModel(
         "id",
         "type",
@@ -59,7 +61,7 @@ class AuthRepositoryTest {
     }
 
     @Test
-    fun `when login is called - it returns the correctly token`() = runTest {
+    fun `when login is called - it returns the token correctly`() = runTest {
         given(mockAuthService)
             .function(mockAuthService::login)
             .whenInvokedWith(any())
@@ -95,7 +97,7 @@ class AuthRepositoryTest {
     }
 
     @Test
-    fun `when getToken is called - it returns the correctly token`() = runTest {
+    fun `when getToken is called - it returns the token correctly`() = runTest {
         given(mockTokenService)
             .function(mockTokenService::get)
             .whenInvoked()
