@@ -41,7 +41,7 @@ class Navigator: ObservableObject {
         routes.dismiss()
     }
 
-    func steps(routes: (inout Routes<Screen>) -> Void) {
+    func steps(routes: @escaping (inout Routes<Screen>) -> Void) {
         RouteSteps.withDelaysIfUnsupported(self, \.routes) { routes(&$0) }
     }
 }

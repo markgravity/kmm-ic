@@ -87,6 +87,25 @@ class NavigatorMock: Navigator {
         dismissCallsCount += 1
         dismissClosure?()
     }
+
+    // MARK: - steps
+
+    var stepsRoutesCallsCount = 0
+    var stepsRoutesCalled: Bool {
+        stepsRoutesCallsCount > 0
+    }
+
+    var stepsRoutesReceivedRoutes: ((inout Routes<Screen>) -> Void)?
+    var stepsRoutesReceivedInvocations: [(inout Routes<Screen>) -> Void] = []
+    var stepsRoutesClosure: (((inout Routes<Screen>) -> Void) -> Void)?
+
+    override
+    func steps(routes: @escaping (inout Routes<Screen>) -> Void) {
+        stepsRoutesCallsCount += 1
+        stepsRoutesReceivedRoutes = routes
+        stepsRoutesReceivedInvocations.append(routes)
+        stepsRoutesClosure?(routes)
+    }
 }
 
 // swiftlint:enable type_contents_order

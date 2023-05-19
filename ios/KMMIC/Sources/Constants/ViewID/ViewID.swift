@@ -15,6 +15,7 @@ enum ViewID {
     case login(Login)
     case surveyDetail(SurveyDetail)
     case surveyQuestion(SurveyQuestion)
+    case thank(Thank)
 
     enum General: String {
         case progressHUD = "general.progressHUD"
@@ -53,6 +54,11 @@ enum ViewID {
         case npsAnswer = "surveyQuestion.npsAnswer"
     }
 
+    enum Thank: String {
+        case titleText = "thank.titleText"
+        case successAnimation = "thank.successAnimation"
+    }
+
     func callAsFunction() -> String {
         switch self {
         case let .general(general):
@@ -65,6 +71,8 @@ enum ViewID {
             return surveyDetail.rawValue
         case let .surveyQuestion(surveyQuestion):
             return surveyQuestion.rawValue
+        case let .thank(thank):
+            return thank.rawValue
         }
     }
 }

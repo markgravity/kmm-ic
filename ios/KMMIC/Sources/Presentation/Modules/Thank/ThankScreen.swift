@@ -6,11 +6,12 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import SwiftUI
 
 struct ThankScreen: View {
 
-    @EnvironmentObject var navigator: Navigator
+    @InjectedObject(\.navigator) var navigator: Navigator
 
     var body: some View {
         ZStack {
@@ -27,11 +28,13 @@ struct ThankScreen: View {
                     }
                 }
                 .frame(width: 200.0, height: 200.0)
+                .accessibility(.thank(.successAnimation))
                 Text(R.string.localizable.thankScreenTitleText())
                     .font(.boldLarge)
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
                     .padding()
+                    .accessibility(.thank(.titleText))
             }
         }
         .navigationBarBackButtonHidden(true)
