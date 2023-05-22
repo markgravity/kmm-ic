@@ -6,12 +6,13 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import FlowStacks
 import SwiftUI
 
 struct NavigatorStack: View {
 
-    @StateObject var navigator = Navigator()
+    @InjectedObject(\.navigator) var navigator: Navigator
 
     var body: some View {
         NavigationView {
@@ -29,6 +30,10 @@ struct NavigatorStack: View {
                         .environmentObject(navigator)
                 case let .surveyQuestion(viewModel):
                     SurveyQuestionScreen(viewModel: viewModel)
+                        .environmentObject(navigator)
+                case .thank:
+                    ThankScreen()
+                        .environmentObject(navigator)
                 }
             }
             .environmentObject(navigator)

@@ -9,8 +9,7 @@
 import FlowStacks
 import SwiftUI
 
-final class Navigator: ObservableObject {
-
+class Navigator: ObservableObject {
     @Published var routes: Routes<Screen> = [.root(.splash)]
 
     func show(screen: Screen, by transition: Transition) {
@@ -42,7 +41,7 @@ final class Navigator: ObservableObject {
         routes.dismiss()
     }
 
-    func steps(routes: (inout Routes<Screen>) -> Void) {
+    func steps(routes: @escaping (inout Routes<Screen>) -> Void) {
         RouteSteps.withDelaysIfUnsupported(self, \.routes) { routes(&$0) }
     }
 }

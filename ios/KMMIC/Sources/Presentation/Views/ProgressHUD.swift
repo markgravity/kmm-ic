@@ -52,6 +52,7 @@ struct ProgressHUD: View {
         .ignoresSafeArea()
         .opacity(isPresented ? 1.0 : 0.0)
         .animation(.easeIn(duration: 0.3), value: isPresented)
+        .accessibility(.general(.progressHUD))
     }
 }
 

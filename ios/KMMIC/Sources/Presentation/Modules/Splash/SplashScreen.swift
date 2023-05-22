@@ -6,11 +6,12 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import SwiftUI
 
 struct SplashScreen: View {
 
-    @EnvironmentObject var navigator: Navigator
+    @InjectedObject(\.navigator) var navigator: Navigator
     @State private var logoOpacity = 0.0
 
     var body: some View {
@@ -18,10 +19,12 @@ struct SplashScreen: View {
             R.image.appBackground.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .accessibility(.splash(.background))
             R.image.logoWhite.image
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
                 .opacity(logoOpacity)
+                .accessibility(.splash(.logo))
         }
         .ignoresSafeArea()
         .onAppear {

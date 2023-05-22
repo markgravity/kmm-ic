@@ -10,8 +10,27 @@ import SwiftUI
 
 struct FormAnswerView: View {
 
-    let fields: [Field]
-    @Binding var data: Set<FieldData>
+    @EnvironmentObject private var viewModel: SurveyQuestionViewModel
+
+    @State private var data: Set<FieldData> = []
+
+    private var fields: [Field] {
+        let displayType = viewModel.surveyQuestionUIModel.displayType
+        let answers = viewModel.surveyQuestionUIModel.answers
+
+        return answers.map {
+            var type: FormAnswerView.FieldType = .textField
+            if displayType == .textarea {
+                type = .textarea
+            }
+
+            return FormAnswerView.Field(
+                id: $0.id,
+                placeholder: $0.placeholder,
+                type: type
+            )
+        }
+    }
 
     var body: some View {
         VStack(spacing: 16.0) {
@@ -25,6 +44,13 @@ struct FormAnswerView: View {
                         .frame(maxHeight: 170.0)
                 }
             }
+        }
+        .onChange(of: data) { data in
+            viewModel.setAnswerInputs(
+                data.map {
+                    .init(id: $0.id, content: $0.content)
+                }
+            )
         }
     }
 
@@ -64,7 +90,7 @@ extension FormAnswerView {
         let type: FieldType
     }
 
-    struct FieldData: Hashable {
+    struct FieldData: Hashable, Equatable {
 
         let id: String
         let content: String?

@@ -59,6 +59,7 @@ PODS:
   - KMPNativeCoroutinesCombine (0.13.3):
     - KMPNativeCoroutinesCore (= 0.13.3)
   - KMPNativeCoroutinesCore (0.13.3)
+  - lottie-ios (4.1.3)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -72,6 +73,7 @@ PODS:
   - Quick (5.0.1)
   - R.swift (7.3.0)
   - Shared (1.0)
+  - SkeletonUI (1.0.11)
   - SnapKit (5.6.0)
   - Sourcery (2.0.2):
     - Sourcery/CLI-Only (= 2.0.2)
@@ -92,11 +94,13 @@ DEPENDENCIES:
   - Kingfisher
   - KMPNativeCoroutinesAsync
   - KMPNativeCoroutinesCombine
+  - lottie-ios
   - Nimble
   - NimbleExtension (from `https://github.com/nimblehq/NimbleExtension`, branch `master`)
   - Quick
   - R.swift
   - Shared (from `../shared`)
+  - SkeletonUI
   - SnapKit
   - Sourcery
   - SwiftFormat/CLI
@@ -124,12 +128,14 @@ SPEC REPOS:
     - KMPNativeCoroutinesAsync
     - KMPNativeCoroutinesCombine
     - KMPNativeCoroutinesCore
+    - lottie-ios
     - nanopb
     - Nimble
     - PromisesObjC
     - PromisesSwift
     - Quick
     - R.swift
+    - SkeletonUI
     - SnapKit
     - Sourcery
     - SwiftFormat
@@ -168,6 +174,7 @@ SPEC CHECKSUMS:
   KMPNativeCoroutinesAsync: 0fb5f7258e7b2bae50f03614a134bbbbfa3343ab
   KMPNativeCoroutinesCombine: fbaa0c7d7370a95cceb5481327fdaa14f2617a9e
   KMPNativeCoroutinesCore: 53c5b81bf7b74c556ce595931b3cdde87d6b2e45
+  lottie-ios: d0954d3150061f662ed0adf96ef98d7421864c47
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NimbleExtension: acad4290f27afd4241b1ea20f8597889085e2ce7
@@ -176,6 +183,7 @@ SPEC CHECKSUMS:
   Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
   Shared: 7be6d5d6048c41f41e9453bece21a7a4d29e097b
+  SkeletonUI: a5514a3877d39f28229c852a567660d0f7542330
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Sourcery: 9ae7eb711f830e8c3c02b98dc28fbd7e32e9d971
   SwiftFormat: 8b9a5ca0c8935e734ebd75cf0c60e1be9b592300
@@ -183,6 +191,6 @@ SPEC CHECKSUMS:
   Wormholy: 09da0b876f9276031fd47383627cb75e194fc068
   xcbeautify: 6e2f57af5c3a86d490376d5758030a8dcc201c1b
 
-PODFILE CHECKSUM: 71cdf6a7f87beeee6961f1428b4b1cda99f39e99
+PODFILE CHECKSUM: f5bc2a70da46f8b981a3278b6ff74d493baac970
 
 COCOAPODS: 1.12.0

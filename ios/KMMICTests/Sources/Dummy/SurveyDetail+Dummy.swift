@@ -12,29 +12,16 @@ import Shared
 
 extension SurveyDetail {
 
-    static let dummy = SurveyDetail(
-        id: "id",
-        title: "title",
-        description: "description",
-        isActive: true,
-        coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
-        questions: [
-            .init(
-                id: "id",
-                text: "text",
-                displayOrder: 1,
-                displayType: QuestionDisplayType.heart,
-                pick: "pick",
-                coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
-                answers: [
-                    .init(
-                        id: "id",
-                        text: "text",
-                        displayOrder: 1,
-                        inputMaskPlaceholder: "inputMaskPlaceholder"
-                    )
-                ]
-            )
-        ]
-    )
+    static var dummy: SurveyDetail { .dummy(questions: [.dummy]) }
+
+    static func dummy(questions: [SurveyQuestion]) -> SurveyDetail {
+        return .init(
+            id: "id",
+            title: "title",
+            description: "description",
+            isActive: true,
+            coverImageUrl: "https://secure.gravatar.com/avatar/6733d09432e89459dba795de8312ac2d",
+            questions: questions
+        )
+    }
 }

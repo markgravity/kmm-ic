@@ -1,4 +1,4 @@
-name: Deploy Staging Build To Firebase
+name: Deploy Production Build To AppStore
 
 # SECRETS needed:
 ### SSH_PRIVATE_KEY for Match Repo
@@ -94,6 +94,7 @@ jobs:
         APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
         API_KEY_ID: ${{ secrets.API_KEY_ID }}
         ISSUER_ID: ${{ secrets.ISSUER_ID }}
+        BUMP_APP_STORE_BUILD_NUMBER: ${{ secrets.BUMP_APP_STORE_BUILD_NUMBER }}
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3

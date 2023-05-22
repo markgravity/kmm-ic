@@ -138,7 +138,8 @@ class Fastfile: LaneFile {
         Test.buildAndTest(
             environment: .staging,
             targets: [
-                Constant.testTarget
+                Constant.testTarget,
+                Constant.kifUITestTarget
             ],
             devices: Constant.devices
         )

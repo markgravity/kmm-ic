@@ -1,4 +1,6 @@
 "alert.warning.title" = "Warning!";
+"alert.yesButton.title" = "Yes";
+"alert.cancelButton.title" = "Cancel";
 
 "loginScreen.emailTextField.title" = "Email";
 "loginScreen.passwordTextField.title" = "Password";
@@ -11,3 +13,7 @@
 
 "surveyQuestionScreen.nps.unlike" = "Not at all Likely";
 "surveyQuestionScreen.nps.like" = "Extremely Likely";
+"surveyQuestionScreen.submitButton.title" = "Submit";
+"surveyQuestionScreen.exitAlert.message" = "Are you sure you want to quit the survey?";
+
+"thankScreen.title.text" = "Thanks for taking the survey.";

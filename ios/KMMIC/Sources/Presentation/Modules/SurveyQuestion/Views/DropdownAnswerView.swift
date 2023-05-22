@@ -10,8 +10,22 @@ import SwiftUI
 
 struct DropdownAnswerView: View {
 
-    let options: [Option]
-    @Binding var selection: Option?
+    @EnvironmentObject private var viewModel: SurveyQuestionViewModel
+
+    @State private var selection: Option? {
+        didSet {
+            guard let selection else { return }
+
+            viewModel.setAnswerInput(for: selection.id, with: nil)
+        }
+    }
+
+    var options: [Option] {
+        let answers = viewModel.surveyQuestionUIModel.answers
+        return answers.map {
+            DropdownAnswerView.Option(id: $0.id, text: $0.text)
+        }
+    }
 
     var body: some View {
         Picker("", selection: $selection) {

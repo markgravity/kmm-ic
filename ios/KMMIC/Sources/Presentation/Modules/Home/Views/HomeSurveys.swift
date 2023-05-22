@@ -6,13 +6,14 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import NukeUI
 import SwiftUI
 
 struct HomeSurveys: View {
 
     @EnvironmentObject private var viewModel: HomeViewModel
-    @EnvironmentObject private var navigator: Navigator
+    @InjectedObject(\.navigator) private var navigator: Navigator
 
     private var pageControl: some View {
         HStack(spacing: 10.0) {

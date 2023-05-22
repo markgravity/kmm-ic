@@ -6,22 +6,30 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import SwiftUI
 
 struct HomeScreen: View {
 
-    @StateObject var viewModel = HomeViewModel()
+    @InjectedObject(\.homeViewModel) var viewModel: HomeViewModel
 
     var body: some View {
         ZStack(alignment: .top) {
-            HomeSurveys()
-            HomeHeader()
-                .padding(.horizontal, 20.0)
-                .padding(.top, 30.0)
+            if viewModel.isLoading {
+                HomeSkeleton()
+                    .accessibility(.home(.skeletonLoading))
+            } else {
+                HomeSurveys()
+                    .accessibility(.home(.surveys))
+                HomeHeader()
+                    .padding(.horizontal, 20.0)
+                    .padding(.top, 30.0)
+                    .accessibility(.home(.header))
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .environmentObject(viewModel)
-        .progressHUD($viewModel.isLoading)
+        .progressHUD($viewModel.isRefreshing)
         .onLoad {
             viewModel.fetch()
         }

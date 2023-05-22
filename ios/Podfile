@@ -16,6 +16,7 @@ target 'KMMIC' do
   # UI
   pod 'Kingfisher'
   pod 'SnapKit'
+  pod 'SkeletonUI'
 
   # Storage
   pod 'KeychainAccess'
@@ -30,6 +31,7 @@ target 'KMMIC' do
   pod 'KMPNativeCoroutinesCombine'
   pod 'FlowStacks'
   pod 'Factory'
+  pod 'lottie-ios'
 
   # Development
   pod 'SwiftLint'
@@ -42,6 +44,7 @@ target 'KMMIC' do
   end
 
   target 'KMMICKIFUITests' do
+    inherit! :search_paths
     testing_pods
     pod 'KIF', :configurations => ['Debug Staging', 'Debug Production']
     pod 'KIF/IdentifierTests', :configurations => ['Debug Staging', 'Debug Production']

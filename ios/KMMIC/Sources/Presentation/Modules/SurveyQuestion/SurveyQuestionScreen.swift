@@ -6,36 +6,34 @@
 //  Copyright © 2023 Nimble. All rights reserved.
 //
 
+import Factory
 import SwiftUI
 
 struct SurveyQuestionScreen: View {
 
-    @StateObject var viewModel: SurveyQuestionViewModel
+    @InjectedObject(\.navigator) var navigator: Navigator
 
-    // TODO: Remove these dummy states
-    @State var selectionOption: DropdownAnswerView.Option?
-    @State var formData = Set<FormAnswerView.FieldData>()
-    @State var selectionOptions = Set<SelectAnswerView.Option>()
-    @State var selectionNPS: Int?
+    @StateObject var viewModel: SurveyQuestionViewModel
 
     var body: some View {
         ZStack {
             DarkBackground(url: viewModel.surveyQuestionUIModel.coverImageURL)
+                .accessibility(.surveyQuestion(.backgroundImage))
             VStack(alignment: .leading) {
                 Text(viewModel.surveyQuestionUIModel.step)
                     .font(.boldMedium)
                     .foregroundColor(.white.opacity(0.5))
                     .padding(.bottom, 8.0)
+                    .accessibility(.surveyQuestion(.stepText))
                 Text(viewModel.surveyQuestionUIModel.title)
                     .font(.boldLargeTitle)
                     .foregroundColor(.white)
+                    .accessibility(.surveyQuestion(.questionText))
                 Spacer()
                 answerView
+                    .environmentObject(viewModel)
                 Spacer()
-                HStack {
-                    Spacer()
-                    ArrowButton {}
-                }
+                bottomButton
             }
             .padding(.horizontal, 20.0)
             .padding(.top, 32.0)
@@ -43,58 +41,74 @@ struct SurveyQuestionScreen: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // TODO: Show confirm alert
+                    viewModel.showExitAlert()
                 } label: {
                     R.image.closeIcon.image
                 }
+                .accessibility(.surveyQuestion(.backButton))
             }
         }
         .navigationBarBackButtonHidden()
+        .alert(isPresented: $viewModel.isExitAlertPresented, content: { exitAlert })
+        .alert($viewModel.alertDescription)
+        .progressHUD($viewModel.isLoading)
+        .onChange(of: viewModel.didSubmitSurvey) {
+            guard $0 else { return }
+            navigator.show(screen: .thank, by: .push)
+        }
     }
 
     @ViewBuilder var answerView: some View {
-        // TODO: Update selected to view model
         let displayType = viewModel.surveyQuestionUIModel.displayType
-        let answers = viewModel.surveyQuestionUIModel.answers
 
         switch displayType {
         case .heart, .star, .smiley:
-            let emojis = SurveyQuestionUIModel.emojisForQuestionDisplayType(displayType)
-            let highlightStyle: EmojiAnswerView.EmojiHighlightStyle = displayType == .smiley ? .one : .leftItems
-            EmojiAnswerView(
-                emojis: emojis,
-                highlightStyle: highlightStyle,
-                selectedIndex: .constant(0)
-            )
+            EmojiAnswerView()
+                .accessibility(.surveyQuestion(.emojiAnswer))
         case .dropdown:
-            let options = answers.map {
-                DropdownAnswerView.Option(id: $0.id, text: $0.text.string)
-            }
-            DropdownAnswerView(options: options, selection: $selectionOption)
+            DropdownAnswerView()
+                .accessibility(.surveyQuestion(.dropdownAnswer))
         case .textfield, .textarea:
-            let fields: [FormAnswerView.Field] = answers.map {
-                var type: FormAnswerView.FieldType = .textField
-                if displayType == .textarea {
-                    type = .textarea
-                }
-
-                return FormAnswerView.Field(
-                    id: $0.id,
-                    placeholder: $0.inputMaskPlaceholder.string,
-                    type: type
-                )
-            }
-            FormAnswerView(fields: fields, data: $formData)
+            FormAnswerView()
+                .accessibility(.surveyQuestion(.formAnswer))
         case .choice:
-            let options = answers.map {
-                SelectAnswerView.Option(id: $0.id, text: $0.text.string)
-            }
-            SelectAnswerView(options: options, selections: $selectionOptions)
+            SelectAnswerView()
                 .frame(maxHeight: 170.0)
+                .accessibility(.surveyQuestion(.selectAnswer))
         case .nps:
-            NPSAnswerView(selection: $selectionNPS)
+            NPSAnswerView()
+                .accessibility(.surveyQuestion(.npsAnswer))
         default:
             EmptyView()
         }
+    }
+
+    @ViewBuilder var bottomButton: some View {
+        HStack {
+            Spacer()
+            if viewModel.isLast {
+                PrimaryButton(R.string.localizable.surveyQuestionScreenSubmitButtonTitle()) {
+                    viewModel.submitSurvey()
+                }
+                .frame(width: 120.0)
+                .accessibility(.surveyQuestion(.submitButton))
+            } else {
+                ArrowButton {
+                    guard let nextViewModel = viewModel.getNextViewModel() else { return }
+                    navigator.show(screen: .surveyQuestion(viewModel: nextViewModel), by: .push)
+                }
+                .accessibility(.surveyQuestion(.nextButton))
+            }
+        }
+        .disabled(!viewModel.isAllValid)
+    }
+
+    var exitAlert: Alert {
+        Alert(
+            title: Text(R.string.localizable.alertWarningTitle()),
+            message: Text(R.string.localizable.surveyQuestionScreenExitAlertMessage()),
+            primaryButton: .default(Text(R.string.localizable.alertYesButtonTitle())) { navigator.pop() },
+            secondaryButton: .cancel(Text(R.string.localizable.alertCancelButtonTitle())) {}
+        )
     }
 }

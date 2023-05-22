@@ -2,7 +2,11 @@ package co.nimblehq.mark.kmmic.data.service.api
 
 import co.nimblehq.jsonapi.json.JsonApi
 import co.nimblehq.jsonapi.model.JsonApiException
+import co.nimblehq.mark.kmmic.BuildKonfig
+import co.nimblehq.mark.kmmic.data.service.auth.AuthService
+import co.nimblehq.mark.kmmic.data.service.auth.model.AuthRefreshTokenParams
 import co.nimblehq.mark.kmmic.data.service.token.TokenService
+import co.nimblehq.mark.kmmic.domain.model.AuthToken
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
 import io.ktor.client.HttpClient
@@ -14,17 +18,18 @@ import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import io.ktor.http.ContentType
-import io.ktor.http.contentType
+import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.last
 import kotlinx.serialization.json.Json
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 internal class ApiService(requiresAuthentication: Boolean = false): KoinComponent {
     private val tokenService: TokenService by inject()
+    private val authService: AuthService by inject()
 
     val httpClient: HttpClient
     val jsonConfigs = Json {
@@ -60,6 +65,24 @@ internal class ApiService(requiresAuthentication: Boolean = false): KoinComponen
                                 BearerTokens(accessToken, refreshToken)
                             }
                         }
+
+                        sendWithoutRequest { request ->
+                            request.url.host == Url(BuildKonfig.BASE_URL).host
+                        }
+
+                        refreshTokens {
+                            authService
+                                .refreshToken(
+                                    AuthRefreshTokenParams(
+                                        refreshToken = oldTokens?.refreshToken.orEmpty()
+                                    )
+                                )
+                                .last()
+                                .run {
+                                    tokenService.save(AuthToken(this))
+                                    BearerTokens(accessToken, refreshToken)
+                                }
+                        }
                     }
                 }
             }
@@ -75,6 +98,23 @@ internal class ApiService(requiresAuthentication: Boolean = false): KoinComponen
             try {
                 val data = JsonApi(jsonConfigs).decodeFromJsonApiString<T>(body)
                 emit(data)
+            } catch (e: JsonApiException) {
+                val message = e.errors.first().detail
+                throw ApiError(message)
+            }
+        }
+    }
+
+    fun performRequestWithEmptyResponse(builder: HttpRequestBuilder): Flow<Unit> {
+        return flow {
+            val body = httpClient.request(
+                builder.apply {
+                    contentType(ContentType.Application.Json)
+                }
+            ).bodyAsText()
+            try {
+                if (body != "{}") JsonApi(jsonConfigs).decodeFromJsonApiString<Unit>(body)
+                emit(Unit)
             } catch (e: JsonApiException) {
                 val message = e.errors.first().detail
                 throw ApiError(message)

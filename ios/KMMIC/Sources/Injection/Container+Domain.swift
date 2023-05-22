@@ -27,7 +27,23 @@ extension Container {
         Factory(self) { GetSurveyUseCaseImpl() }
     }
 
+    var submitSurveyUseCase: Factory<SubmitSurveyUseCase> {
+        Factory(self) { SubmitSurveyUseCaseImpl() }
+    }
+
     var dateHelper: Factory<DateHelperProtocol> {
         Factory(self) { DateHelper() }
+    }
+
+    var navigator: Factory<Navigator> {
+        Factory(self) { Navigator() }.scope(.singleton)
+    }
+
+    var loginViewModel: Factory<LoginViewModel> {
+        Factory(self) { LoginViewModel() }
+    }
+
+    var homeViewModel: Factory<HomeViewModel> {
+        Factory(self) { HomeViewModel() }
     }
 }
